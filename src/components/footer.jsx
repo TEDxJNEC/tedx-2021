@@ -2,7 +2,7 @@ import React from 'react'
 import "./common/colors.scss";
 import "./common/main.scss";
 
-const footer = () => {
+const Footer = () => {
     return (
         <div className="main-footer">
             <div className="container-fluid" style="background-color:$BACKGROUND">
