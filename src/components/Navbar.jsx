@@ -7,11 +7,11 @@ import '../common/nav.scss';
          <>
            
     <header>
-      <a href=" " ><img src="tedxjneclogo_white.png" alt='TEDxJNEC_logo' /></a>
+      <a href=" " ><img src="../assets/tedxjneclogo_white.png" alt='TEDxJNEC_logo' /></a>
 	     <nav>
   			<ul>
   				<li className="active"><a href=" ">HOME</a></li>
- 				<li><a href=" ">SPEAKERS</a></li>
+ 				  <li><a href=" ">SPEAKERS</a></li>
   				<li><a href=" ">ABOUT</a></li>
   				<li><a href=" ">BOOKING</a></li>
   				<li><a href=" ">TEAM</a></li>
