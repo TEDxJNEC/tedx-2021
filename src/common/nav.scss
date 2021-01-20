@@ -1,0 +1,57 @@
+@import "./colors.scss";
+@import './main.scss';
+
+header
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 90px;
+	width: 100%;
+	background: #121212;
+	transition: 1s;
+	padding: 0 80px;
+	box-sizing: border-box;
+}
+header img
+{
+	width: 221px;
+	height: 50px;
+	position: relative;
+	top: 10px;
+	left: 0;
+	transform: 1s;
+}
+nav
+{
+	position: relative;
+	float: right;
+}
+nav ul
+{
+	position: relative;
+	margin: 0;
+	padding: 35px 0;
+    display: flex; 
+}
+nav ul li
+{
+	list-style: none;
+}
+nav ul li a
+{
+	color: #f6c90e;
+	padding: 10px 20px;
+    text-decoration: none;
+    
+}
+
+nav ul li a:hover
+{
+	color: #ffffff;
+}
+
+nav ul li .active
+{
+    color: #FF4040;
+}        
