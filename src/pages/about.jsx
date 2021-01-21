@@ -4,6 +4,7 @@ import Content from '../components/Content';
 
 const About = () => {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     return (
         <div>
             
@@ -12,6 +13,9 @@ const About = () => {
 }
 =======
     const loadedContent = aboutPageContent.map((aboutContent) => {
+=======
+    const content = aboutPageContent.map((aboutContent) => {
+>>>>>>> Stashed changes
         return (
             <div>
                 <Content
@@ -24,7 +28,11 @@ const About = () => {
         );
     });
 
+<<<<<<< Updated upstream
     return <div>{loadedContent}</div>;
+=======
+    return <div>{content}</div>;
+>>>>>>> Stashed changes
 };
 >>>>>>> Stashed changes
 
