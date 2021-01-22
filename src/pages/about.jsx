@@ -1,22 +1,23 @@
 import React from 'react';
-import aboutPageContent from '../assets/about-content.json';
+import aboutPageData from '../assets/about-content.json';
 import Content from '../components/Content';
 
 const About = () => {
-    const content = aboutPageContent.map((aboutContent) => {
+    const renderContent = aboutPageData.map((aboutData) => {
         return (
-            <div>
+            <div key={aboutData.id}>
                 <Content
-                    headline={aboutContent.headline}
-                    content={aboutContent.content}
-                    iframeTitle={aboutContent.tedxIframeTitle}
-                    iframeLink={aboutContent.tedxIframeLink}
+                    headline={aboutData.headline}
+                    content={aboutData.content}
+                    iframeTitle={aboutData.tedxIframeTitle}
+                    iframeLink={aboutData.tedxIframeLink}
+                    reverseOrder={false}
                 />
             </div>
         );
     });
 
-    return <div>{content}</div>;
+    return <div>{renderContent}</div>;
 };
 
 export default About;
