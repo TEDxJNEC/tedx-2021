@@ -1,13 +1,11 @@
-import "../common/main.scss";
+import '../common/main.scss';
 
 const Footer = () => {
     return (
         <div>
-            <h1 className="footerClass">Footer</h1>
-
+            <h1 className='footerClass'>Footer</h1>
         </div>
-    )
-}
+    );
+};
 
-export default Footer
-
+export default Footer;
