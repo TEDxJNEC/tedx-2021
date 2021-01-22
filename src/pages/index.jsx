@@ -1,5 +1,6 @@
 import logo from "../logo.svg";
 import "../App.scss";
+import Footer from "../components/Footer"
 
 function Home() {
 	return (
@@ -8,6 +9,7 @@ function Home() {
 				<img src={logo} className='App-logo' alt='logo' />
 				<h1 className={"App-headline"}>KINTSUGI</h1>
 			</header>
+			<Footer />
 		</div>
 	);
 }
