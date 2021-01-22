@@ -1,6 +1,6 @@
 import React from 'react'
 
-function team() {
+function Team() {
     return (
         <div>
             
@@ -8,4 +8,4 @@ function team() {
     )
 }
 
-export default team
+export default Team
