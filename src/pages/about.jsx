@@ -1,10 +1,11 @@
 import React from 'react';
 import aboutPageData from '../assets/about-content.json';
 import Content from '../components/Content';
-
+import DefaultLayout from '../layouts'
 const About = () => {
     const renderContent = aboutPageData.map((aboutData) => {
         return (
+            <DefaultLayout>
             <div key={aboutData.id}>
                 <Content
                     headline={aboutData.headline}
@@ -14,6 +15,7 @@ const About = () => {
                     reverseOrder={false}
                 />
             </div>
+            </DefaultLayout>
         );
     });
 
