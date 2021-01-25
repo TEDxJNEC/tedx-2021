@@ -1,11 +1,12 @@
 import React from 'react';
 import Navbar from '../components/dashboard/Navbar';
+import '../common/admin.scss';
 
 const AdminPageLayout = ({ children }) => {
     return (
-        <div>
+        <div className='admin-page'>
             <Navbar />
-            <div>{children}</div>
+            <div className='wrapper'>{children}</div>
         </div>
     );
 };
