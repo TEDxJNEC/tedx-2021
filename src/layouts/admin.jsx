@@ -6,7 +6,7 @@ const AdminPageLayout = ({ children }) => {
     return (
         <div className='admin-page'>
             <Navbar />
-            <div className='wrapper'>{children}</div>
+            <div className='dashboard-wrapper'>{children}</div>
         </div>
     );
 };

@@ -7,10 +7,10 @@ import '../../common/admin.scss';
 const Dashboard = () => {
     return (
         <AdminPageLayout>
-            <div className='registrations'>
+            <div className='dashboard-item'>
                 <Registrations />
             </div>
-            <div className='users'>
+            <div className='dashboard-item'>
                 <ActiveUsers />
             </div>
         </AdminPageLayout>

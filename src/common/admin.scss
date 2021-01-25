@@ -5,15 +5,13 @@
     padding: 2.5%;
 }
 
-.wrapper {
+.dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
     margin-left: 20%;
 }
 
-.registrations {
-    margin: 10px;
-}
-
-.users {
+.dashboard-item {
     margin: 10px;
 }
 
