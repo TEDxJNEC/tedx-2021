@@ -1,7 +1,6 @@
 import logo from '../assets/logo.svg';
+import "../common/main.scss";
 import DefaultLayout from '../layouts'
-import Footer from '../components/Footer';
-
 function Home() {
     return (
         <DefaultLayout>
