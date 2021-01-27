@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import '../../common/admin-navbar.scss';
 
 const Navbar = () => {
@@ -9,32 +9,37 @@ const Navbar = () => {
 
             <div className='nav-links'>
                 <div>
-                    <i />
-                    <Link to='/admin/dashboard'>DASHBOARD</Link>
+                    <NavLink activeClassName='active' to='/admin/dashboard'>
+                        DASHBOARD
+                    </NavLink>
                 </div>
                 <div>
-                    <i />
-                    <Link to='/admin/dashboard'>CHAT</Link>
+                    <NavLink activeClassName='active' to='/admin/chat'>
+                        CHAT
+                    </NavLink>
                 </div>
                 <div>
-                    <i />
-                    <Link to='/admin/dashboard'>CONTACT</Link>
+                    <NavLink activeClassName='active' to='/admin/contact'>
+                        CONTACT
+                    </NavLink>
                 </div>
                 <div>
-                    <i />
-                    <Link to='/admin/dashboard'>NOTIFICATIONS</Link>
+                    <NavLink activeClassName='active' to='/admin/notifications'>
+                        NOTIFICATIONS
+                    </NavLink>
                 </div>
                 <div>
-                    <i />
-                    <Link to='/admin/dashboard'>CALENDAR</Link>
+                    <NavLink activeClassName='active' to='/admin/calendar'>
+                        CALENDAR
+                    </NavLink>
                 </div>
                 <div>
-                    <i />
-                    <Link to='/admin/dashboard'>SETTINGS</Link>
+                    <NavLink activeClassName='active' to='/admin/settings'>
+                        SETTINGS
+                    </NavLink>
                 </div>
             </div>
             <div className='logout'>
-                <i />
                 <Link to='/'>LOGOUT</Link>
             </div>
         </nav>

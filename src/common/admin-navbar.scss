@@ -20,6 +20,13 @@
     color: #707c97;
 }
 
+.sidenav a:hover {
+    margin: 40px auto;
+    text-decoration: none;
+    display: block;
+    color: #000;
+}
+
 .nav-links {
     justify-content: center;
     align-items: center;
@@ -34,4 +41,17 @@
 .logout {
     flex: 10%;
     margin: 0px auto 20px auto;
+}
+
+.sidenav .active {
+    color: #000;
+    margin: 40px auto;
+    text-decoration: none;
+    display: block;
+}
+
+@media only screen and (max-width: 800px) {
+    .sidenav {
+        display: none;
+    }
 }
