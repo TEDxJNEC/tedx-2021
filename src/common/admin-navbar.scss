@@ -1,0 +1,37 @@
+.sidenav {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    height: 100%;
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    box-shadow: 7px 0px 10px 4px #888888;
+}
+
+.sidenav a {
+    margin: 40px auto;
+    text-decoration: none;
+    display: block;
+    color: #707c97;
+}
+
+.nav-links {
+    justify-content: center;
+    align-items: center;
+    flex: 80%;
+}
+
+.name {
+    flex: 10%;
+    margin: 75px auto 50px auto;
+}
+
+.logout {
+    flex: 10%;
+    margin: 0px auto 20px auto;
+}
