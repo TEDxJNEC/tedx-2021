@@ -10,7 +10,7 @@
     left: 0;
     background-color: #fff;
     overflow-x: hidden;
-    box-shadow: 7px 0px 10px 4px #888888;
+    box-shadow: 7px 0px 10px 4px #eee;
 }
 
 .sidenav a {
@@ -18,6 +18,13 @@
     text-decoration: none;
     display: block;
     color: #707c97;
+}
+
+.sidenav a:hover {
+    margin: 40px auto;
+    text-decoration: none;
+    display: block;
+    color: #000;
 }
 
 .nav-links {
@@ -34,4 +41,17 @@
 .logout {
     flex: 10%;
     margin: 0px auto 20px auto;
+}
+
+.sidenav .active {
+    color: #000;
+    margin: 40px auto;
+    text-decoration: none;
+    display: block;
+}
+
+@media only screen and (max-width: 800px) {
+    .sidenav {
+        display: none;
+    }
 }
