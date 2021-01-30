@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/tedx-2021/static/css/main.a0507ea7.chunk.css",
+    "main.css": "/tedx-2021/static/css/main.fda24c63.chunk.css",
     "main.js": "/tedx-2021/static/js/main.1e8a97a0.chunk.js",
     "main.js.map": "/tedx-2021/static/js/main.1e8a97a0.chunk.js.map",
     "runtime-main.js": "/tedx-2021/static/js/runtime-main.682f69df.js",
@@ -8,14 +8,14 @@
     "static/js/2.02073b9e.chunk.js": "/tedx-2021/static/js/2.02073b9e.chunk.js",
     "static/js/2.02073b9e.chunk.js.map": "/tedx-2021/static/js/2.02073b9e.chunk.js.map",
     "index.html": "/tedx-2021/index.html",
-    "static/css/main.a0507ea7.chunk.css.map": "/tedx-2021/static/css/main.a0507ea7.chunk.css.map",
+    "static/css/main.fda24c63.chunk.css.map": "/tedx-2021/static/css/main.fda24c63.chunk.css.map",
     "static/js/2.02073b9e.chunk.js.LICENSE.txt": "/tedx-2021/static/js/2.02073b9e.chunk.js.LICENSE.txt",
     "static/media/logo.11aacf2d.svg": "/tedx-2021/static/media/logo.11aacf2d.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.682f69df.js",
     "static/js/2.02073b9e.chunk.js",
-    "static/css/main.a0507ea7.chunk.css",
+    "static/css/main.fda24c63.chunk.css",
     "static/js/main.1e8a97a0.chunk.js"
   ]
 }
