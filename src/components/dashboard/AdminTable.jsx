@@ -1,3 +1,4 @@
+import '../../common/admin-table.scss';
 const data = [
   {
     name: "Pruthvi Shetty",
@@ -40,7 +41,7 @@ const columns = [
 const AdminTable = () => {
   return (
     <div className="container">
-      <table>
+      <table className="styled-table">
         <thead>
           <tr>
             {columns.map((column) => (
