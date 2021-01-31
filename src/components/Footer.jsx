@@ -24,10 +24,10 @@ const Footer = () => {
                     <div class="sec quickLinks">
                         <h2>Quick Links</h2><br/>
                         <ul>
-                            <li><a>About</a></li>
-                            <li><a >Team</a></li>
-                            <li><a >Highlights</a></li>
-                            <li><a >Registrations</a></li>
+                            <li><a href="www.google.com">About</a></li>
+                            <li><a href="www.google.com">Team</a></li>
+                            <li><a href="www.google.com">Highlights</a></li>
+                            <li><a href="www.google.com">Registrations</a></li>
                         </ul>
                     </div>
                     <div class="sec contact">
