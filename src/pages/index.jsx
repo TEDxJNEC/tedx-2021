@@ -7,14 +7,14 @@ import Menu from "../components/Menu";
 function Home() {
     return (
         <>
-        <Menu />
-        <div className='App'>
+        <Navbar />
+        {/* <div className='App'>
  
                 <img src={logo} className='App-logo' alt='logo' />
                 <h1 className={'App-headline'}>KINTSUGI</h1>
            
             <Footer />
-        </div>
+        </div> */}
         </>
     );
 }
