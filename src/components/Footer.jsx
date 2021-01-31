@@ -14,11 +14,11 @@ const Footer = () => {
                             by TED.
                         </p>
                         <ul class="sci">
-                            <li><a><Facebook/></a></li>
-                            <li><a ><Twitter/></a></li>
-                            <li><a ><Youtube/></a></li>
-                            <li><a ><Insta/></a></li>
-                            <li><a ><Linkedin/></a></li>
+                            <li><a href="https://www.facebook.com/TEDx-JNEC-102123505190447/"><Facebook/></a></li>
+                            <li><a href=" https://twitter.com/tedxjnec?s=09"><Twitter/></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCsT0YIqwnpJCM-mx7-gSA4Q"><Youtube/></a></li>
+                            <li><a href="https://instagram.com/tedx_jnec?igshid=99m3ao9ndgdf" ><Insta/></a></li>
+                            <li><a href="https://www.linkedin.com/company/tedx-jnec"><Linkedin/></a></li>
                         </ul>
                     </div>
                     <div class="sec quickLinks">
