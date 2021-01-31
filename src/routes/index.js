@@ -4,6 +4,7 @@ import { ROUTES } from '../constants/routes';
 import Home from '../pages/index';
 import About from '../pages/about';
 import Dashboard from '../pages/admin/dashboard';
+import Error from '../pages/error';
 
 const Routes = () => {
     const { HOME, ABOUT } = ROUTES;
@@ -16,6 +17,11 @@ const Routes = () => {
                     exact
                     path={ROUTES.DASHBOARD}
                     component={Dashboard}
+                ></Route>
+                <Route
+                    exact
+                    path={ROUTES.ERROR}
+                    component={Error}
                 ></Route>
                 {/* <Route exact path={TEAM} component={}></Route> */}
                 {/* <Route exact path={BOOKINGS} component={}></Route> */}
