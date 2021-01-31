@@ -74,13 +74,16 @@
   .notfound button
   {
     background-color:  #FF4040;
-    color: $PRIMARY_VARIANT;
     font-size: 20px;
     padding: 20px;
     width: 200px;
     text-align: center;
     margin-top: 20px;
     border-radius: 40px;
+    color: black;
+    font-weight: bold;
+    border: 1px solid #fff;
+    letter-spacing: 3px;
   }
   
  
@@ -93,6 +96,7 @@
       font-size: 162px;
       height: 150px;
       line-height: 162px;
+      letter-spacing: -20px;
     }
     .notfound h1 {
       font-size: 26px;
@@ -106,7 +110,10 @@
       .notfound button {
         width: 100px;
         padding: 5px;
-        font-size: 10px;
+        font-size: 15px;
+        color: black;
+        font-weight: bold;
+        border: 1px solid #fff;
       }
   }
   

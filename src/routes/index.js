@@ -18,11 +18,6 @@ const Routes = () => {
                     path={ROUTES.DASHBOARD}
                     component={Dashboard}
                 ></Route>
-                <Route
-                    exact
-                    path={ROUTES.ERROR}
-                    component={Error}
-                ></Route>
                 {/* <Route exact path={TEAM} component={}></Route> */}
                 {/* <Route exact path={BOOKINGS} component={}></Route> */}
             </Switch>
