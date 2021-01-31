@@ -1,0 +1,132 @@
+@import "../colors.scss";
+@import "../fonts.scss";
+
+.loginPage{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    background-color: $CARD_BACKGROUND;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    width: 600px;
+    padding: 3rem;
+
+    .left{
+        flex: 0.6;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .right{
+        flex: 0.4 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    .heading{
+        font-family: $FONT_PRIMARY;
+    }
+    .textbox{
+        position: relative;
+        border-bottom: 2px solid #adadad;
+        margin: 30px 0;
+        font-family: $FONT_SECONDARY;
+    }
+    .textbox input{
+        width: 100%;
+        padding: 0 5px;
+        height: 40px;
+        font-size: 16px;
+        border: none;
+        background: none;
+        outline: none;
+        font-family: $FONT_SECONDARY;
+
+    }
+    .textbox label{
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        color: #ffffff;
+        transform: translateY(-50%);
+        font-size: 16px;
+        pointer-events: none;
+        // transition: .5s;
+        font-family: $FONT_SECONDARY;
+
+    }
+    .textbox p{
+        color: #121212;
+        font-weight: 600;
+    }
+    .textbox span::before{
+        content: '';
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #121212;
+        // transition: .5s;
+        font-family: $FONT_SECONDARY;
+
+    }
+    .textbox input:focus ~ label, .textbox input:valid ~ label{
+        top: 5px;
+        color: #ffffff;
+        background: transparent;
+    }
+    .textbox input:focus ~ span::before, .textbox input:valid ~ span::before{
+        width: 100%;
+    }
+    .pass{
+        margin: -5px 0 20px 5px;
+        color:#adadad ;
+        cursor: pointer;
+    }
+    .pass:hover{
+        text-decoration: underline;
+    }
+    .btn{
+        width: 80%;
+        height: 49px;
+        border: 2px solid #121212;
+        background: #121212;
+        border-radius: 50px;
+        font-size: 20px;
+        font-weight:lighter;
+        color: #ffffff;
+        cursor: pointer;
+        outline: none;
+        font-family: $FONT_SECONDARY;
+        letter-spacing: 2px;
+    }
+    .btn:hover{
+        border-color:#2A8BF2;
+        transition: .5s;
+    }
+    .button{
+        width:65% ;
+        height: 3rem;
+        background: $BACKGROUND;
+        border-radius: 50px;
+        font-size: 18px;
+        font-weight:lighter;
+        color: #ffffff;
+        outline: none;
+        border: 1px solid $BACKGROUND;
+        font-family: $FONT_SECONDARY;
+        padding: 15px;
+    }
+    
+    
+}
+

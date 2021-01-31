@@ -4,4 +4,5 @@ export const ROUTES = {
     TEAM: '/team',
     BOOKINGS: '/bookings',
     DASHBOARD: '/admin/dashboard',
+    LOGIN: '/admin/login',
 };
