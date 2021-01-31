@@ -1,52 +1,60 @@
 import "../common/main.scss";
 import "../common/footer.scss";
-import {Logo,Facebook,Insta,Twitter,Youtube,Linkedin,Home,Email,Phone} from "../components/icons";
+import { Logo, Facebook, Insta, Twitter, Youtube, Linkedin, Home, Email, Phone } from "../components/icons";
 const Footer = () => {
     return (
-        <div>
+        <div className="head">
             {/* <h1 className="footerClass">Footer</h1> */}
-            <footer className="footer">
-                <div className="main-content">
-                    <div className="left box">
-                        <h2> <Logo/></h2>
-                        <div className="content">
-                            <p>TEDx JNEC is independently<br/>
-                            organized TED event. Officially<br/>
-                            licensed by TED.</p><br/>
-                            <div className="social">
-                                <a> <span><Facebook/> </span></a>
-                                <a> <span><Twitter/> </span> </a>
-                                <a><span><Youtube/> </span></a>
-                                <a><span><Insta/> </span></a>
-                                <a><span><Linkedin/> </span></a>
-
-                            </div>
-                        </div>
+            <footer>
+                <div className="container">
+                    <div class="sec aboutus">
+                        <h1><Logo/></h1><br/>
+                        <p>TEDx JNEC is independently
+                            organized TED event. Officially<br /> licensed
+                            by TED.
+                        </p>
+                        <ul class="sci">
+                            <li><a><Facebook/></a></li>
+                            <li><a ><Twitter/></a></li>
+                            <li><a ><Youtube/></a></li>
+                            <li><a ><Insta/></a></li>
+                            <li><a ><Linkedin/></a></li>
+                        </ul>
                     </div>
-                    <div className="right box">
-                        <h2>CONTACT</h2>
-                        <div className="content">
-                            <div className="place">
-                                <a><span className="icon">< Home/> </span></a>
-                                <span className="text">MGM's Jawaharlal Nehru
-                                Engineering College, Aurangabad.</span>
-                            </div>
-                            <div className="email">
-                                <a> <span className="icon">< Email/> </span> </a>
-                                <span className="text">contact@tedxjnec.com </span>
-                            </div>
-                            <div className="phone">
-                                <a><span className="icon">< Phone/> </span> </a>
-                                <span className="text">7218078452   </span>
-                            </div>
-                        </div>
+                    <div class="sec quickLinks">
+                        <h2>Quick Links</h2><br/>
+                        <ul>
+                            <li><a>About</a></li>
+                            <li><a >Team</a></li>
+                            <li><a >Highlights</a></li>
+                            <li><a >Registrations</a></li>
+                        </ul>
                     </div>
-                </div>
-                <div className="foot">
-                    <p>Made By WebDevelopment Team : TEDxJNEC 2021</p>
+                    <div class="sec contact">
+                        <h2>Contact Info</h2><br/>
+                        <ul class="info">
+                            <li>
+                                <span><Home/></span>
+                                <span>
+                                    MGM's Jawaharlal Nehru
+                                    Engineering College, Aurangabad.
+                                </span>
+                            </li>
+                            <li>
+                                <span><Email/></span>
+                                <p><a target="_blank" rel="noreferrer" href="mailto:contact@tedxjnec.com ">contact@tedxjnec.com </a></p>
+                            </li>
+                            <li>
+                                <span><Phone/></span>
+                                <p><a target="_blank" rel="noreferrer" href="tel:7218078452">7218078452</a></p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </footer>
-
+            <div class="text">
+                <p>Made By WebDevelopment Team : TEDxJNEC 2021</p>
+            </div>
         </div>
     )
 }
