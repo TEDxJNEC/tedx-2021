@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap");
+$FONT_PRIMARY: "Poppins", sans-serif;
+$FONT_SECONDARY: "Montserrat", sans-serif;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $FONT_PRIMARY;
+}
+p,
+div {
+  font-family: $FONT_SECONDARY;
+}
