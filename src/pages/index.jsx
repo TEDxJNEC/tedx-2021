@@ -1,20 +1,14 @@
-import logo from '../logo.svg';
-import '../App.scss';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-
+import logo from '../assets/logo.svg';
+import "../common/main.scss";
+import DefaultLayout from '../layouts'
 function Home() {
     return (
-        <>
-        <Navbar />
+        <DefaultLayout>
         <div className='App'>
- 
                 <img src={logo} className='App-logo' alt='logo' />
-                <h1 className={'App-headline'}>KINTSUGI</h1>
-           
-            <Footer />
+                <h1 className='App-headline'>KINTSUGI</h1>
         </div>
-        </>
+        </DefaultLayout>
     );
 }
 
