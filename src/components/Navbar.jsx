@@ -33,16 +33,16 @@ const Navbar = () => {
           <NavLink to={HOME} exact activeClassName="active" className="title">
             HOME
           </NavLink>
-          <NavLink to="gy" exact activeClassName="active" className="title">
+          <NavLink to={"/speakrs"} exact activeClassName="active" className="title">
             SPEAKERS
           </NavLink>
           <NavLink to={ABOUT} exact activeClassName="active" className="title">
             ABOUT
           </NavLink>
-          <NavLink to="gfsdh" exact activeClassName="active" className="title">
+          <NavLink to={"/booking"} exact activeClassName="active" className="title">
             BOOKING
           </NavLink>
-          <NavLink to="xc" exact activeClassName="active" className="title">
+          <NavLink to={"/team"} exact activeClassName="active" className="title">
             TEAM
           </NavLink>
         </ul>
