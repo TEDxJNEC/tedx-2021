@@ -1,6 +1,9 @@
 import "../common/main.scss";
 import "../common/footer.scss";
 import { Logo, Facebook, Insta, Twitter, Youtube, Linkedin, Home, Email, Phone } from "../components/icons";
+import { ROUTES } from "../constants/routes";
+import { Link } from "react-router-dom";
+const { HOME, ABOUT } = ROUTES;
 const Footer = () => {
     return (
         <div className="head">
@@ -24,10 +27,11 @@ const Footer = () => {
                     <div class="sec quickLinks">
                         <h2>Quick Links</h2><br/>
                         <ul>
-                            <li><a href="www.google.com">About</a></li>
-                            <li><a href="www.google.com">Team</a></li>
-                            <li><a href="www.google.com">Highlights</a></li>
-                            <li><a href="www.google.com">Registrations</a></li>
+                            <li><Link to={HOME}>Home</Link></li>
+                            <li><Link to={ABOUT}>About</Link></li>
+                            <li><Link to="www.google.com">Team</Link></li>
+                            <li><Link to="www.google.com">Highlights</Link></li>
+                            <li><Link to="www.google.com">Registrations</Link></li>
                         </ul>
                     </div>
                     <div class="sec contact">
