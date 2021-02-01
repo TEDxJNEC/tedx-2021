@@ -41,9 +41,10 @@ const Mobile = () => {
     const [active,setActive] = useState(false)
     const [navClass,setNavClass]=useState("mobile_menu")
     const Toggle = () => {
-      setNavClass(active? "mobile_menu outanimation" :"mobile_menu inanimation")
+      setNavClass(active? "mobile_menu outanimation" :'mobile_menu inanimation')
+      !active?document.body.classList.add('roll'):document.body.classList.remove('roll')
       setActive(!active);
-      
+     
     };
 
       const addclass = () =>
@@ -52,9 +53,13 @@ const Mobile = () => {
           if (active)
           {
               eventasd += " inanimation"
+              document.body.classList.add("no-sroll")
+
           }
           else{
             eventasd += " outanimation"
+            document.body.classList.remove("no-sroll")
+
           }
           return eventasd;
       } 

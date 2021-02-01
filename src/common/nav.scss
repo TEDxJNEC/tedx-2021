@@ -48,6 +48,7 @@ nav {
   width: 100vw;
   background-color: rgb(134, 136, 138);
   opacity: 0;
+  z-index: 99999;
 }
 .inanimation {
   animation: mymove 0.5s forwards;
