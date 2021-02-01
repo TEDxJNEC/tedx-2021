@@ -4,6 +4,7 @@ import { ROUTES } from '../constants/routes';
 import Home from '../pages/index';
 import About from '../pages/about';
 import Dashboard from '../pages/admin/dashboard';
+import Error from '../pages/error';
 
 const Routes = () => {
     const { HOME, ABOUT } = ROUTES;
