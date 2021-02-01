@@ -19,7 +19,7 @@ nav {
       transition: 0.5s;
 
       &:hover {
-        color: aliceblue;
+        color: #fff;
       }
       &.active {
         color: $ACCENT_COLOR;
@@ -46,14 +46,14 @@ nav {
   left: 0;
   height: calc(100vh - 5rem);
   width: 100vw;
-  background-color: rgb(134, 136, 138);
+  background-color: rgb(62, 62, 62);
   opacity: 0;
   z-index: 99999;
 }
 .inanimation {
-  animation: mymove 0.5s forwards;
+  animation: inani 0.5s forwards;
 }
-@keyframes mymove {
+@keyframes inani{
   from {
     opacity: 0;
     display: none;
@@ -91,6 +91,8 @@ nav {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  font-size: 20px;
+  
 
   .mobi_title {
     text-decoration: none;
@@ -98,10 +100,9 @@ nav {
     position: relative;
     color: $PRIMARY_COLOR;
     animation-timing-function: ease;
-    //animation: mymove1 2s;
 
     &:hover {
-      color: black;
+      color: #fff;
     }
     &.active {
       color: $ACCENT_COLOR;
@@ -111,14 +112,7 @@ nav {
     }
   }
 }
-@keyframes mymove1 {
-  from {
-    left: -100px;
-  }
-  to {
-    left: 0px;
-  }
-}
+ 
 
 @media screen and (max-width: 759px) {
   .links {
