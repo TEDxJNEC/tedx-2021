@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { ROUTES } from "../constants/routes";
 import "../common/nav.scss";
 import img from "../assets/JNEC.svg";
-import { MenuIcon } from "./Icons/MenuIcon";
+import { MenuIcon } from "./icons/MenuIcon";
 const { HOME, ABOUT } = ROUTES;
 
 const OpenList = () => {

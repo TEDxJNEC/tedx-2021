@@ -1,19 +1,21 @@
 import "../common/main.scss";
 import "../common/footer.scss";
-import { Logo, Facebook, Insta, Twitter, Youtube, Linkedin, Home, Email, Phone } from "../components/Icons";
+import { Logo, Facebook, Insta, Twitter, Youtube, Linkedin, Home, Email, Phone } from "../components/icons";
+import { ROUTES } from "../constants/routes";
+import { Link } from "react-router-dom";
+const { HOME, ABOUT } = ROUTES;
 const Footer = () => {
     return (
         <div className="head">
-            {/* <h1 className="footerClass">Footer</h1> */}
             <footer>
                 <div className="container">
-                    <div class="sec aboutus">
+                    <div className="sec aboutus">
                         <h1><Logo/></h1><br/>
                         <p>TEDx JNEC is independently
                             organized TED event. Officially<br /> licensed
                             by TED.
                         </p>
-                        <ul class="sci">
+                        <ul className="sci">
                             <li><a href="https://www.facebook.com/TEDx-JNEC-102123505190447/"><Facebook/></a></li>
                             <li><a href=" https://twitter.com/tedxjnec?s=09"><Twitter/></a></li>
                             <li><a href="https://www.youtube.com/channel/UCsT0YIqwnpJCM-mx7-gSA4Q"><Youtube/></a></li>
@@ -21,18 +23,19 @@ const Footer = () => {
                             <li><a href="https://www.linkedin.com/company/tedx-jnec"><Linkedin/></a></li>
                         </ul>
                     </div>
-                    <div class="sec quickLinks">
+                    <div className="sec quickLinks">
                         <h2>Quick Links</h2><br/>
                         <ul>
-                            <li><a>About</a></li>
-                            <li><a >Team</a></li>
-                            <li><a >Highlights</a></li>
-                            <li><a >Registrations</a></li>
+                            <li><Link to={HOME}>Home</Link></li>
+                            <li><Link to={ABOUT}>About</Link></li>
+                            <li><Link to="www.google.com">Team</Link></li>
+                            <li><Link to="www.google.com">Highlights</Link></li>
+                            <li><Link to="www.google.com">Registrations</Link></li>
                         </ul>
                     </div>
-                    <div class="sec contact">
+                    <div className="sec contact">
                         <h2>Contact Info</h2><br/>
-                        <ul class="info">
+                        <ul className="info">
                             <li>
                                 <span><Home/></span>
                                 <span>
@@ -52,7 +55,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <div class="text">
+            <div className="text">
                 <p>Made By WebDevelopment Team : TEDxJNEC 2021</p>
             </div>
         </div>
