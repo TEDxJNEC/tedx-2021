@@ -7,16 +7,15 @@ const { HOME, ABOUT } = ROUTES;
 const Footer = () => {
     return (
         <div className="head">
-            {/* <h1 className="footerClass">Footer</h1> */}
             <footer>
                 <div className="container">
-                    <div class="sec aboutus">
+                    <div className="sec aboutus">
                         <h1><Logo/></h1><br/>
                         <p>TEDx JNEC is independently
                             organized TED event. Officially<br /> licensed
                             by TED.
                         </p>
-                        <ul class="sci">
+                        <ul className="sci">
                             <li><a href="https://www.facebook.com/TEDx-JNEC-102123505190447/"><Facebook/></a></li>
                             <li><a href=" https://twitter.com/tedxjnec?s=09"><Twitter/></a></li>
                             <li><a href="https://www.youtube.com/channel/UCsT0YIqwnpJCM-mx7-gSA4Q"><Youtube/></a></li>
@@ -24,7 +23,7 @@ const Footer = () => {
                             <li><a href="https://www.linkedin.com/company/tedx-jnec"><Linkedin/></a></li>
                         </ul>
                     </div>
-                    <div class="sec quickLinks">
+                    <div className="sec quickLinks">
                         <h2>Quick Links</h2><br/>
                         <ul>
                             <li><Link to={HOME}>Home</Link></li>
@@ -34,9 +33,9 @@ const Footer = () => {
                             <li><Link to="www.google.com">Registrations</Link></li>
                         </ul>
                     </div>
-                    <div class="sec contact">
+                    <div className="sec contact">
                         <h2>Contact Info</h2><br/>
-                        <ul class="info">
+                        <ul className="info">
                             <li>
                                 <span><Home/></span>
                                 <span>
@@ -56,7 +55,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <div class="text">
+            <div className="text">
                 <p>Made By WebDevelopment Team : TEDxJNEC 2021</p>
             </div>
         </div>
