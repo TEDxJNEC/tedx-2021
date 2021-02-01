@@ -1,6 +1,6 @@
 import "../common/main.scss";
 import "../common/footer.scss";
-import { Logo, Facebook, Insta, Twitter, Youtube, Linkedin, Home, Email, Phone } from "../components/icons";
+import { Logo, Facebook, Insta, Twitter, Youtube, Linkedin, Home, Email, Phone } from "../components/Icons";
 const Footer = () => {
     return (
         <div className="head">

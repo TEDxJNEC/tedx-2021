@@ -8,6 +8,7 @@ function Home() {
                 <img src={logo} className='App-logo' alt='logo' />
                 <h1 className='App-headline'>KINTSUGI</h1>
         </div>
+         
         </DefaultLayout>
     );
 }

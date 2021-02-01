@@ -20,6 +20,7 @@ nav {
  
       &:hover {
         color: aliceblue;
+
       }
      &.active{
       color: $ACCENT_COLOR;
@@ -42,53 +43,97 @@ nav {
   pointer-events: none;
   padding-right: 1rem;
 }
+.mobile_menu
+{
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  height: calc(100vh - 5rem);
+  width: 100vw;
+  background-color: rgb(134, 136, 138);
+}
+.mobile_menu1
+{
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  height: calc(100vh - 5rem);
+  width: 100vw;
+  background-color: rgb(134, 136, 138);
+}
+.inanimation
+{
+  animation: mymove 0.5s;
+}
+@keyframes mymove {
+  from {top: 100vh;}
+  to {top: 5rem;}
+}
+
+.outanimation
+{
+  animation: outani 0.5s;
+   
+}
+@keyframes outani {
+  from {top: 5rem;}
+  to {top: 100vh;}
+}
  
+
+.mobi_links
+{
+  top: 5rem;
+  left: 0;
+  height: calc(100vh - 5rem);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  .mobi_title
+  {
+    text-decoration: none;
+    list-style: none;
+    position: relative;
+    color: $PRIMARY_COLOR;
+    animation-timing-function: ease;
+    //animation: mymove1 2s;
+    
+
+    &:hover {
+      color:black;
+    }
+   &.active{
+    color: $ACCENT_COLOR;
+    border-left: 3px solid $ACCENT_COLOR;
+    padding-left: 1rem;
+    font-weight: bold;
+  }
+}
+}
+@keyframes mymove1 {
+  from {left: -100px;}
+  to {left: 0px;}
+}
+
+
 
 
 @media screen and (max-width: 759px) {
-  body
-  {
-    overflow-x: hidden;
+  .links {
+    display: none;
+    pointer-events: none;
   }
- 
   .menu_logo {
+    display: flex;
+    align-items: center;
     pointer-events: auto;
-    display: block;
   }
   .logo_tedx {
     width: 10rem !important;
     padding-left: 1rem;
+    
   }
-  nav
-  {
-    .links
-    {
-      .title
-      {
-        padding-right: 0rem;
-      }
-    }
-    }
-    .links
-    {
-      position: absolute;
-      right: 0px;
-      display: flex;
-      flex-direction: column;
-      height: 95vh;
-      justify-content: space-around;
-      align-items: center;
-      width: 100%;
-      top: 5rem;
-      background-color: rgb(65, 65, 65);
-      font-size: 22px;
-      transform: translateY(140%);
-      transition: transform 0.5s ease-in;
-    } 
-
-    .on
-    {
-      transform: translateY(0%);
-    }
-
 }
