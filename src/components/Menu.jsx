@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { ROUTES } from "../constants/routes";
 import "../common/nav.scss";
 import img from "../assets/JNEC.svg";
-import { MenuIcon } from "./Icons/MenuIcon";
+import { MenuIcon } from "./icons/MenuIcon";
 const { HOME, ABOUT } = ROUTES;
 
 
@@ -39,15 +39,13 @@ const Desktop = () => {
  
 const Mobile = () => {
     const [active,setActive] = useState(false)
-    const [cilcked,setClicked] = useState(false)
+    const [navClass,setNavClass]=useState("mobile_menu")
     const Toggle = () => {
+      setNavClass(active? "mobile_menu outanimation" :"mobile_menu inanimation")
       setActive(!active);
-  
+      
     };
-    const Toggle1 = () => {
-        setClicked(!cilcked);
-    
-      };
+
       const addclass = () =>
       {
           let eventasd = "mobile_menu ";
@@ -55,17 +53,12 @@ const Mobile = () => {
           {
               eventasd += " inanimation"
           }
-          return eventasd;
-      } 
-      const addclass1 = () =>
-      {
-          let eventasd = "mobile_menu";
-          if (cilcked)
-          {
-              eventasd += " outanimation"
+          else{
+            eventasd += " outanimation"
           }
           return eventasd;
-      }      
+      } 
+   
   
     return (
         <>
@@ -74,51 +67,33 @@ const Mobile = () => {
       <img src={img} className="logo_tedx" alt="TEDxJNEC_logo" />
     </div>
     
-    <div className="menu_logo" onClick={Toggle}>
-      <MenuIcon />
-    </div>
-    <div className="close_logo" onClick={Toggle1}>
+
+
+{active ? (<> 
+  <div className="close_logo" onClick={Toggle}>
      <h1>close</h1>
+    </div></>):    <div className="menu_logo" onClick={Toggle}>
+      <MenuIcon />
+    </div>}
+    <div className={navClass}>
+        <ul className="mobi_links">
+          <NavLink to={HOME} exact activeClassName="active" className="mobi_title">
+            HOME
+          </NavLink>
+          <NavLink to="gy" exact activeClassName="active" className="mobi_title">
+            SPEAKERS
+          </NavLink>
+          <NavLink to={ABOUT} exact activeClassName="active" className="mobi_title">
+            ABOUT
+          </NavLink>
+          <NavLink to="gfsdh" exact activeClassName="active" className="mobi_title">
+            BOOKING
+          </NavLink>
+          <NavLink to="xc" exact activeClassName="active" className="mobi_title">
+            TEAM
+          </NavLink>
+        </ul>
     </div>
-{active ? (<> <div className={addclass()}>
-        <ul className="mobi_links">
-          <NavLink to={HOME} exact activeClassName="active" className="mobi_title">
-            HOME
-          </NavLink>
-          <NavLink to="gy" exact activeClassName="active" className="mobi_title">
-            SPEAKERS
-          </NavLink>
-          <NavLink to={ABOUT} exact activeClassName="active" className="mobi_title">
-            ABOUT
-          </NavLink>
-          <NavLink to="gfsdh" exact activeClassName="active" className="mobi_title">
-            BOOKING
-          </NavLink>
-          <NavLink to="xc" exact activeClassName="active" className="mobi_title">
-            TEAM
-          </NavLink>
-        </ul>
-    </div></>):null}
-{cilcked ? (<> <div className= {addclass1()}>
-        <ul className="mobi_links">
-          <NavLink to={HOME} exact activeClassName="active" className="mobi_title">
-            HOME
-          </NavLink>
-          <NavLink to="gy" exact activeClassName="active" className="mobi_title">
-            SPEAKERS
-          </NavLink>
-          <NavLink to={ABOUT} exact activeClassName="active" className="mobi_title">
-            ABOUT
-          </NavLink>
-          <NavLink to="gfsdh" exact activeClassName="active" className="mobi_title">
-            BOOKING
-          </NavLink>
-          <NavLink to="xc" exact activeClassName="active" className="mobi_title">
-            TEAM
-          </NavLink>
-        </ul>
-    </div></>):null}
-  
     </nav>
     </>
     )
@@ -126,14 +101,8 @@ const Mobile = () => {
 
 const Menu = () => {
   
-  const [isMobile,setMobile] =  useState(
-      window.matchMedia("(max-width:759px)").matches
-  );
-  useEffect(() => { 
-      window.addEventListener("resize",() => {
-        setMobile(window.matchMedia("(max-width:759px)").matches);  
-      });
-  });
+  const [isMobile,setMobile] =  useState(window.screen.width<720);
+
   
    return (
     <> 
