@@ -11,6 +11,7 @@ const Highlights = () => {
             <div className="container">
                 <div>
                     <h1>{titles.label1}</h1>
+                    
                     <div className="photo-grid">
                         {data.images2019.map(src => (
                             <div className="card"
@@ -21,10 +22,9 @@ const Highlights = () => {
                             />
                             
                         ))}
-                        
-                    </div>
-                    <div className="video">
+                                            <div className="video">
                         {data.youtubeLinks19.map(ytLink => (
+                            <div className="single-video">
                             <iframe
                             className='tedx-iframe'
                             key={ytLink}
@@ -34,9 +34,12 @@ const Highlights = () => {
                             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
                             allowFullScreen
                         ></iframe>
+                        </div>
                         ))}
                         
                     </div>
+                    </div>
+
                 </div>
                 <div>
                     <h1>{titles.label2}</h1>
@@ -54,6 +57,7 @@ const Highlights = () => {
                     </div>
                     <div className="video">
                         {data.youtubeLinks18.map(ytLink => (
+                            <div className="single-video">
                             <iframe
                             className='tedx-iframe'
                             key={ytLink}
@@ -63,6 +67,7 @@ const Highlights = () => {
                             allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
                             allowFullScreen
                         ></iframe>
+                        </div>
                         ))}
                         
                     </div>
