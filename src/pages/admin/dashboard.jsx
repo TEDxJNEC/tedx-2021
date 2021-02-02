@@ -5,16 +5,16 @@ import AdminPageLayout from '../../layouts/admin';
 import '../../common/admin.scss';
 
 const Dashboard = () => {
-    return (
-        <AdminPageLayout>
-            <div className='dashboard-item'>
-                <Registrations />
-            </div>
-            <div className='dashboard-item'>
-                <ActiveUsers />
-            </div>
-        </AdminPageLayout>
-    );
+  return (
+    <AdminPageLayout>
+      <div className="dashboard-item">
+        <Registrations />
+      </div>
+      <div className="dashboard-item">
+        <ActiveUsers />
+      </div>
+    </AdminPageLayout>
+  );
 };
 
 export default Dashboard;

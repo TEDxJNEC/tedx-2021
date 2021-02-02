@@ -1,9 +1,7 @@
-const Partners = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+import React from 'react';
 
-export default Partners
+const Partners = () => {
+  return <div />;
+};
+
+export default Partners;
