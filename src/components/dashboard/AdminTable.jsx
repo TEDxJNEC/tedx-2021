@@ -1,40 +1,42 @@
+import React from 'react';
 import '../../common/admin-table.scss';
+
 const data = [
   {
-    name: "Pruthvi Shetty",
-    email: "email@email.com",
-    ticketId: "1234",
+    name: 'Pruthvi Shetty',
+    email: 'email@email.com',
+    ticketId: '1234',
   },
 
   {
-    name: "Riya",
-    email: "riya@email.com",
-    ticketId: "1234",
+    name: 'Riya',
+    email: 'riya@email.com',
+    ticketId: '1234',
   },
   {
-    name: "Soham",
-    email: "soham@email.com",
-    ticketId: "1234",
+    name: 'Soham',
+    email: 'soham@email.com',
+    ticketId: '1234',
   },
   {
-    name: "Ayush",
-    email: "ayush@email.com",
-    ticketId: "1234",
+    name: 'Ayush',
+    email: 'ayush@email.com',
+    ticketId: '1234',
   },
 ];
 
 const columns = [
   {
-    name: "Name",
-    acessor: "name",
+    name: 'Name',
+    acessor: 'name',
   },
   {
-    name: "email",
-    acessor: "email",
+    name: 'email',
+    acessor: 'email',
   },
   {
-    name: "Ticket ID",
-    acessor: "ticketId",
+    name: 'Ticket ID',
+    acessor: 'ticketId',
   },
 ];
 
