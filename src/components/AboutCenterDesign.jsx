@@ -1,5 +1,5 @@
 import React from 'react';
-import { AboutCenterDesign } from 'components/icons/index';
+import { AboutCenterDesign } from 'components/icons';
 
 const AboutDetails = () => {
   return (

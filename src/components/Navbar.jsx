@@ -54,7 +54,13 @@ const Navbar = () => {
             TEAM
           </NavLink>
         </ul>
-        <div className="menu_logo" onClick={Toggle}>
+        <div
+          role="button"
+          className="menu_logo"
+          onKeyDown={Toggle}
+          onClick={Toggle}
+          tabIndex={0}
+        >
           <MenuIcon />
         </div>
       </nav>

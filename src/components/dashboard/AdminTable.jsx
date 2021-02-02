@@ -52,11 +52,11 @@ const AdminTable = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((data) => (
+          {data.map((item) => (
             <tr>
-              <td> {data.name}</td>
-              <td> {data.email}</td>
-              <td> {data.ticketId}</td>
+              <td>{item.name}</td>
+              <td> {item.email}</td>
+              <td> {item.ticketId}</td>
             </tr>
           ))}
         </tbody>
