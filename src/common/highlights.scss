@@ -70,3 +70,26 @@ body {
  .card:nth-child(odd){
     grid-column: span 2 / auto; 
  }
+ .video {
+  
+  // position: relative;
+  // padding-bottom: 56.25%;
+  display: grid;
+  gap: 1rem;
+
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-rows: 240px;
+}
+
+.tedx-iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40%;
+  height: 40%;
+  display: flex;
+}
+// .tedx-iframe:nth-child(2){
+//   left: 50%;
+   
+// }
