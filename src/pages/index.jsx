@@ -1,21 +1,17 @@
-import logo from '../logo.svg';
-import '../App.scss';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import React from 'react';
+import logo from '../assets/logo.svg';
+import '../common/main.scss';
+import DefaultLayout from '../layouts';
 
 function Home() {
-    return (
-        <>
-        <Navbar />
-        <div className='App'>
- 
-                <img src={logo} className='App-logo' alt='logo' />
-                <h1 className={'App-headline'}>KINTSUGI</h1>
-           
-            <Footer />
-        </div>
-        </>
-    );
+  return (
+    <DefaultLayout>
+      <div className="App">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1 className="App-headline">KINTSUGI</h1>
+      </div>
+    </DefaultLayout>
+  );
 }
 
 export default Home;
