@@ -1,9 +1,5 @@
 const Partners = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return <div />;
+};
 
-export default Partners
+export default Partners;

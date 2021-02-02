@@ -1,30 +1,28 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { ROUTES } from "../constants/routes";
-import "../common/nav.scss";
-import img from "../assets/JNEC.svg";
-import { MenuIcon } from "./Icons/MenuIcon";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { ROUTES } from '../constants/routes';
+import '../common/nav.scss';
+import img from '../assets/JNEC.svg';
+import { MenuIcon } from './Icons/MenuIcon';
+
 const { HOME, ABOUT } = ROUTES;
 
 const Navbar = () => {
-  
-  const [active,setActive] = useState(false)
-     
+  const [active, setActive] = useState(false);
+
   const Toggle = () => {
     setActive(!active);
   };
-  
-  const addClass = () =>{
-    let classes = "links"
-    if (active)
-    {
-      classes += " on"
+
+  const addClass = () => {
+    let classes = 'links';
+    if (active) {
+      classes += ' on';
     }
-    return classes
-  }
-   return (
+    return classes;
+  };
+  return (
     <>
-    
       <nav>
         <div className="logo">
           <img src={img} className="logo_tedx" alt="TEDxJNEC_logo" />
@@ -33,16 +31,26 @@ const Navbar = () => {
           <NavLink to={HOME} exact activeClassName="active" className="title">
             HOME
           </NavLink>
-          <NavLink to={"/speakrs"} exact activeClassName="active" className="title">
+          <NavLink
+            to="/speakrs"
+            exact
+            activeClassName="active"
+            className="title"
+          >
             SPEAKERS
           </NavLink>
           <NavLink to={ABOUT} exact activeClassName="active" className="title">
             ABOUT
           </NavLink>
-          <NavLink to={"/booking"} exact activeClassName="active" className="title">
+          <NavLink
+            to="/booking"
+            exact
+            activeClassName="active"
+            className="title"
+          >
             BOOKING
           </NavLink>
-          <NavLink to={"/team"} exact activeClassName="active" className="title">
+          <NavLink to="/team" exact activeClassName="active" className="title">
             TEAM
           </NavLink>
         </ul>
