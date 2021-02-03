@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 function Team() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return <div />;
 }
 
-export default Team
+export default Team;
