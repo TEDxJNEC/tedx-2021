@@ -1,38 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import MenuIcon from 'components/icons/MenuIcon';
-import ROUTES from 'constants/routes';
+import CloseMenu from 'components/icons/CloseMenu';
+import ROUTES from '../constants/routes';
 import '../common/nav.scss';
 import img from '../assets/JNEC.svg';
+import MenuIcon from './icons/MenuIcon';
 
 const { HOME, ABOUT } = ROUTES;
 
-const Navbar = () => {
-  const [active, setActive] = useState(false);
-
-  const Toggle = () => {
-    setActive(!active);
-  };
-
-  const addClass = () => {
-    let classes = 'links';
-    if (active) {
-      classes += ' on';
-    }
-    return classes;
-  };
+const Desktop = () => {
   return (
     <>
       <nav>
         <div className="logo">
           <img src={img} className="logo_tedx" alt="TEDxJNEC_logo" />
         </div>
-        <ul className={addClass()}>
+        <ul className="links">
           <NavLink to={HOME} exact activeClassName="active" className="title">
             HOME
           </NavLink>
           <NavLink
-            to="/speakrs"
+            to="/speakers"
             exact
             activeClassName="active"
             className="title"
@@ -54,18 +42,113 @@ const Navbar = () => {
             TEAM
           </NavLink>
         </ul>
-        <div
-          role="button"
-          className="menu_logo"
-          onKeyDown={Toggle}
-          onClick={Toggle}
-          tabIndex={0}
-        >
-          <MenuIcon />
+      </nav>
+    </>
+  );
+};
+
+const Mobile = () => {
+  const [active, setActive] = useState(false);
+  const [navClass, setNavClass] = useState('mobile_menu');
+  useEffect(() => {
+    return () => {
+      document.body.classList.remove('roll');
+    };
+  }, []);
+  const Toggle = () => {
+    setNavClass(
+      active ? 'mobile_menu outanimation' : 'mobile_menu inanimation'
+    );
+    if (!active) {
+      document.body.classList.add('roll');
+    } else {
+      document.body.classList.remove('roll');
+    }
+    setActive(!active);
+  };
+
+  return (
+    <>
+      <nav>
+        <div className="logo">
+          <img src={img} className="logo_tedx" alt="TEDxJNEC_logo" />
+        </div>
+
+        {active ? (
+          <>
+            <div
+              role="button"
+              onKeyDown={Toggle}
+              className="menu_logo"
+              onClick={Toggle}
+              tabIndex={0}
+            >
+              <CloseMenu />
+            </div>
+          </>
+        ) : (
+          <div
+            role="button"
+            onKeyDown={Toggle}
+            className="menu_logo"
+            onClick={Toggle}
+            tabIndex={0}
+          >
+            <MenuIcon />
+          </div>
+        )}
+        <div className={navClass}>
+          <ul className="mobi_links">
+            <NavLink
+              to={HOME}
+              exact
+              activeClassName="active"
+              className="mobi_title"
+            >
+              HOME
+            </NavLink>
+            <NavLink
+              to="/speakers"
+              exact
+              activeClassName="active"
+              className="mobi_title"
+            >
+              SPEAKERS
+            </NavLink>
+            <NavLink
+              to={ABOUT}
+              exact
+              activeClassName="active"
+              className="mobi_title"
+            >
+              ABOUT
+            </NavLink>
+            <NavLink
+              to="/booking"
+              exact
+              activeClassName="active"
+              className="mobi_title"
+            >
+              BOOKING
+            </NavLink>
+            <NavLink
+              to="/team"
+              exact
+              activeClassName="active"
+              className="mobi_title"
+            >
+              TEAM
+            </NavLink>
+          </ul>
         </div>
       </nav>
     </>
   );
+};
+
+const Navbar = () => {
+  const isMobile = window.screen.width < 720;
+  return <>{isMobile ? <Mobile /> : <Desktop />}</>;
 };
 
 export default Navbar;
