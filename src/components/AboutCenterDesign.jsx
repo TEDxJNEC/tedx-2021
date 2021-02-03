@@ -1,14 +1,14 @@
 import React from 'react';
-import { AboutCenterDesign } from './icons/index';
+import { AboutCenterDesign } from 'components/icons';
 
 const AboutDetails = () => {
-    return (
-        <React.Fragment>
-            <div className='center-design'>
-                <AboutCenterDesign />
-            </div>
-        </React.Fragment>
-    );
+  return (
+    <>
+      <div className="center-design">
+        <AboutCenterDesign />
+      </div>
+    </>
+  );
 };
 
 export default AboutDetails;
