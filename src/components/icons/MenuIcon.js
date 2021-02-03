@@ -1,8 +1,8 @@
-import React from "react";
-import "../../common/colors.scss";
+import React from 'react';
+import '../../common/colors.scss';
 
-export const MenuIcon = () => {
-  const styleIcon = { width: "3rem", height: "3rem" };
+const MenuIcon = () => {
+  const styleIcon = { width: '3rem', height: '3rem' };
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,3 +18,4 @@ export const MenuIcon = () => {
     </svg>
   );
 };
+export default MenuIcon;
