@@ -54,8 +54,11 @@ const Mobile = () => {
     setNavClass(
       active ? 'mobile_menu outanimation' : 'mobile_menu inanimation'
     );
-    if (active) document.body.classList.add('roll');
-    else document.body.classList.remove('roll');
+    if (!active) {
+      document.body.classList.add('roll');
+    } else {
+      document.body.classList.remove('roll');
+    }
     setActive(!active);
   };
 
@@ -139,8 +142,7 @@ const Mobile = () => {
 };
 
 const Navbar = () => {
-  const [isMobile, setMobile] = useState(window.screen.width < 720);
-  setMobile(isMobile);
+  const isMobile = window.screen.width < 720;
   return <>{isMobile ? <Mobile /> : <Desktop />}</>;
 };
 
