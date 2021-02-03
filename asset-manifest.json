@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/tedx-2021/static/css/main.401a0f22.chunk.css",
-    "main.js": "/tedx-2021/static/js/main.f57fea98.chunk.js",
-    "main.js.map": "/tedx-2021/static/js/main.f57fea98.chunk.js.map",
+    "main.css": "/tedx-2021/static/css/main.124a4a55.chunk.css",
+    "main.js": "/tedx-2021/static/js/main.35433523.chunk.js",
+    "main.js.map": "/tedx-2021/static/js/main.35433523.chunk.js.map",
     "runtime-main.js": "/tedx-2021/static/js/runtime-main.682f69df.js",
     "runtime-main.js.map": "/tedx-2021/static/js/runtime-main.682f69df.js.map",
-    "static/js/2.2833511f.chunk.js": "/tedx-2021/static/js/2.2833511f.chunk.js",
-    "static/js/2.2833511f.chunk.js.map": "/tedx-2021/static/js/2.2833511f.chunk.js.map",
+    "static/js/2.09f02da9.chunk.js": "/tedx-2021/static/js/2.09f02da9.chunk.js",
+    "static/js/2.09f02da9.chunk.js.map": "/tedx-2021/static/js/2.09f02da9.chunk.js.map",
     "index.html": "/tedx-2021/index.html",
-    "static/css/main.401a0f22.chunk.css.map": "/tedx-2021/static/css/main.401a0f22.chunk.css.map",
-    "static/js/2.2833511f.chunk.js.LICENSE.txt": "/tedx-2021/static/js/2.2833511f.chunk.js.LICENSE.txt",
-    "static/media/JNEC.47d8fb3b.svg": "/tedx-2021/static/media/JNEC.47d8fb3b.svg",
+    "static/css/main.124a4a55.chunk.css.map": "/tedx-2021/static/css/main.124a4a55.chunk.css.map",
+    "static/js/2.09f02da9.chunk.js.LICENSE.txt": "/tedx-2021/static/js/2.09f02da9.chunk.js.LICENSE.txt",
+    "static/media/JNEC.780c5888.svg": "/tedx-2021/static/media/JNEC.780c5888.svg",
     "static/media/logo.11aacf2d.svg": "/tedx-2021/static/media/logo.11aacf2d.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.682f69df.js",
-    "static/js/2.2833511f.chunk.js",
-    "static/css/main.401a0f22.chunk.css",
-    "static/js/main.f57fea98.chunk.js"
+    "static/js/2.09f02da9.chunk.js",
+    "static/css/main.124a4a55.chunk.css",
+    "static/js/main.35433523.chunk.js"
   ]
 }
