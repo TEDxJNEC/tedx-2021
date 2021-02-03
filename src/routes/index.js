@@ -4,16 +4,16 @@ import { ROUTES } from '../constants/routes';
 import Home from '../pages/index';
 import About from '../pages/about';
 import Dashboard from '../pages/admin/dashboard';
-import Highlights from 'components/Highlights';
+import Highlight from '../pages/Highlight';
 
 const Routes = () => {
-    const { HOME, ABOUT, HIGHLIGHTS } = ROUTES;
+    const { HOME, ABOUT, HIGHLIGHT } = ROUTES;
     return (
         <Router basename='/tedx-2021'>
             <Switch>
                 <Route exact path={HOME} component={Home}></Route>
                 <Route exact path={ABOUT} component={About}></Route>
-                <Route exact path={HIGHLIGHTS} component={Highlights}></Route>
+                <Route exact path={HIGHLIGHT} component={Highlight}></Route>
 
                 <Route
                     exact
