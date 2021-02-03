@@ -7,23 +7,19 @@ import Dashboard from '../pages/admin/dashboard';
 import Highlight from '../pages/Highlight';
 
 const Routes = () => {
-    const { HOME, ABOUT, HIGHLIGHT } = ROUTES;
-    return (
-        <Router basename='/tedx-2021'>
-            <Switch>
-                <Route exact path={HOME} component={Home}></Route>
-                <Route exact path={ABOUT} component={About}></Route>
-                <Route exact path={HIGHLIGHT} component={Highlight}></Route>
+  const { HOME, ABOUT, HIGHLIGHT } = ROUTES;
+  return (
+    <Router basename="/tedx-2021">
+      <Switch>
+        <Route exact path={HOME} component={Home} />
+        <Route exact path={ABOUT} component={About} />
+        <Route exact path={HIGHLIGHT} component={Highlight} />
 
-                <Route
-                    exact
-                    path={ROUTES.DASHBOARD}
-                    component={Dashboard}
-                ></Route>
-                {/* <Route exact path={TEAM} component={}></Route> */}
-                {/* <Route exact path={BOOKINGS} component={}></Route> */}
-            </Switch>
-        </Router>
-    );
+        <Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
+        {/* <Route exact path={TEAM} component={}></Route> */}
+        {/* <Route exact path={BOOKINGS} component={}></Route> */}
+      </Switch>
+    </Router>
+  );
 };
 export default Routes;

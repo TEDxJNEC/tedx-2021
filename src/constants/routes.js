@@ -4,7 +4,7 @@ const ROUTES = {
   TEAM: '/team',
   BOOKINGS: '/bookings',
   DASHBOARD: '/admin/dashboard',
-   HIGHLIGHT: '/highlight',
+  HIGHLIGHT: '/highlight',
 };
 
 export default ROUTES;
