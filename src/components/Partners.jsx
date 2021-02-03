@@ -1,14 +1,13 @@
 import React from 'react';
-import '../common/partners.scss';
 import { animated, useSpring } from 'react-spring';
 import { useScroll } from 'react-use-gesture';
+import '../common/partners.scss';
 
-const clamp = (value: number, clampAt: number = 30) => {
+const clamp = (value, clampAt = 30) => {
   if (value > 0) {
     return value > clampAt ? clampAt : value;
-  } else {
-    return value < -clampAt ? -clampAt : value;
   }
+  return value < -clampAt ? -clampAt : value;
 };
 
 const partners = [
