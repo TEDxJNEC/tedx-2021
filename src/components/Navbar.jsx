@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import CloseMenu from 'components/icons/CloseMenu';
 import ROUTES from '../constants/routes';
@@ -50,6 +50,11 @@ const Desktop = () => {
 const Mobile = () => {
   const [active, setActive] = useState(false);
   const [navClass, setNavClass] = useState('mobile_menu');
+  useEffect(() => {
+    return () => {
+      document.body.classList.remove('roll');
+    };
+  }, []);
   const Toggle = () => {
     setNavClass(
       active ? 'mobile_menu outanimation' : 'mobile_menu inanimation'
