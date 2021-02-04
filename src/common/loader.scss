@@ -1,0 +1,17 @@
+.show-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  background: #000;
+  z-index: 99;
+  overflow: hidden;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+.hide-loader {
+  display: none;
+  opacity: 0;
+}
