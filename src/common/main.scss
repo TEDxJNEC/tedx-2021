@@ -10,6 +10,7 @@
 }
 body {
   background-color: $BACKGROUND;
+  overflow-x: hidden;
 }
 
 // Content
@@ -101,6 +102,30 @@ body {
   height: 200px;
 }
 
+// Side Designs
+
+.left-container {
+  overflow-x: hidden;
+  -webkit-transform: translateX(-5px);
+  -ms-transform: translateX(-5px);
+  transform: translateX(-5px);
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 105px;
+}
+
+.right-container {
+  overflow-x: hidden;
+  -webkit-transform: scaleX(-1) translateX(-5px);
+  -ms-transform: scaleX(-1) translateX(-5px);
+  transform: scaleX(-1) translateX(-5px);
+  position: absolute;
+  right: 0;
+  display: block;
+  width: 105px;
+}
+
 // contents from app.scss
 .App {
   text-align: center;
@@ -164,6 +189,16 @@ body {
     width: 100px;
     height: 100px;
     top: 53px;
+  }
+
+  .left-container {
+    top: 55px;
+    width: 50px;
+  }
+
+  .right-container {
+    top: 55px;
+    width: 50px;
   }
 
   .column {

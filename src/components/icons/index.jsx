@@ -408,3 +408,42 @@ export const CenterDesign = () => {
     </svg>
   );
 };
+
+export const LeftDesign = () => {
+  return (
+    <svg viewBox="0 0 147 281" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line
+        x1="3.65165"
+        y1="73.3483"
+        x2="73.6516"
+        y2="143.348"
+        stroke="#F6C90E"
+        strokeWidth="7.5"
+      />
+      <line
+        x1="3.34835"
+        y1="208.348"
+        x2="73.3484"
+        y2="138.348"
+        stroke="black"
+        strokeWidth="7.5"
+      />
+      <line
+        x1="3.65165"
+        y1="3.34835"
+        x2="143.652"
+        y2="143.348"
+        stroke="#F6C90E"
+        strokeWidth="7.5"
+      />
+      <line
+        x1="3.34835"
+        y1="278.348"
+        x2="143.348"
+        y2="138.348"
+        stroke="black"
+        strokeWidth="7.5"
+      />
+    </svg>
+  );
+};
