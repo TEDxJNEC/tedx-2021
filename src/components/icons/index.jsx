@@ -309,7 +309,7 @@ export const TEDx = () => {
   );
 };
 
-export const AboutCenterDesign = () => {
+export const CenterDesign = () => {
   return (
     <svg viewBox="0 0 329 329" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle
