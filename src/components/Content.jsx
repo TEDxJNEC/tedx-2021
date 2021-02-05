@@ -11,7 +11,7 @@ const Content = ({
   const contentColumn = (
     <div className="column">
       <h1 className="content-headline">{headline}</h1>
-      <p>{content}</p>
+      <p className="content">{content}</p>
     </div>
   );
 

@@ -1,5 +1,5 @@
-@import "./colors.scss";
-@import "./fonts.scss";
+@import './colors.scss';
+@import './fonts.scss';
 * {
   margin: 0;
   padding: 0;
@@ -10,38 +10,54 @@
 }
 body {
   background-color: $BACKGROUND;
+  overflow-x: hidden;
 }
 
 // Content
 
 .row {
-  margin: 0 10% 0 10%;
+  margin: 0 10%;
   display: flex;
   color: $SECONDARY_COLOR;
-  text-align: justify;
 }
 
 .column {
+  margin: auto;
   padding: 1%;
   flex: 50%;
   justify-content: center;
   align-items: center;
 }
 
+.content {
+  text-align: justify;
+}
+
 .content-headline {
-  font-size: 80px;
+  font-size: 5rem;
   font-weight: 400;
+  text-align: justify;
 }
 
 .content-wrapper {
+  // position: relative;
+  // padding-bottom: 56.25%;
   position: relative;
-  padding-bottom: 56.25%;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
 }
 
 .tedx-iframe {
+  // width: 35rem;
+  // height: 19.688rem;
+  // display: block;
+  margin: auto;
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
   height: 100%;
 }
@@ -59,7 +75,7 @@ body {
 
 .details-headline {
   margin: 20px 0;
-  width: 10%;
+  width: 8rem;
 }
 
 .details-content {
@@ -84,6 +100,30 @@ body {
   margin: 0 auto;
   width: 200px;
   height: 200px;
+}
+
+// Side Designs
+
+.left-container {
+  overflow-x: hidden;
+  -webkit-transform: translateX(-5px);
+  -ms-transform: translateX(-5px);
+  transform: translateX(-5px);
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 105px;
+}
+
+.right-container {
+  overflow-x: hidden;
+  -webkit-transform: scaleX(-1) translateX(-5px);
+  -ms-transform: scaleX(-1) translateX(-5px);
+  transform: scaleX(-1) translateX(-5px);
+  position: absolute;
+  right: 0;
+  display: block;
+  width: 105px;
 }
 
 // contents from app.scss
@@ -130,4 +170,60 @@ body {
 .page-wrapper {
   padding-top: 90px;
   min-height: 100vh;
+}
+
+@media screen and (max-width: 1100px) {
+  .row {
+    margin: 0 7.5%;
+  }
+
+  .center-design {
+    width: 150px;
+    height: 150px;
+    top: 25px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .center-design {
+    width: 100px;
+    height: 100px;
+    top: 53px;
+  }
+
+  .left-container {
+    top: 55px;
+    width: 50px;
+  }
+
+  .right-container {
+    top: 55px;
+    width: 50px;
+  }
+
+  .column {
+    margin: 0;
+    flex: 100%;
+  }
+
+  .content-headline {
+    text-align: center;
+    line-height: 5.5rem;
+    margin-bottom: 20px;
+  }
+
+  .tedx-iframe {
+    margin: 30px 0;
+  }
+
+  .row {
+    margin: 0 5%;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .row {
+    margin: 0 2.5%;
+  }
 }
