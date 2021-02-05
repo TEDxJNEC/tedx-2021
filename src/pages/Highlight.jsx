@@ -2,6 +2,7 @@ import React from 'react';
 import Highlights from 'components/Highlights';
 import highlightData from 'assets/highlights';
 import DefaultLayout from '../layouts';
+import '../common/highlights.scss';
 
 const Highlight = () => {
   const renderHighlightData = () => {
@@ -19,7 +20,10 @@ const Highlight = () => {
 
   return (
     <div>
-      <DefaultLayout>{renderHighlightData()}</DefaultLayout>
+      <DefaultLayout>
+        <h1>HIGHLIGHTS</h1>
+        {renderHighlightData()}
+      </DefaultLayout>
     </div>
   );
 };
