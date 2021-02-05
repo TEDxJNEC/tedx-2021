@@ -20,6 +20,7 @@ const Routes = () => {
                 ></Route>
                 {/* <Route exact path={TEAM} component={}></Route> */}
                 {/* <Route exact path={BOOKINGS} component={}></Route> */}
+                <Route component={Error} />
             </Switch>
         </Router>
     );
