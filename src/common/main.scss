@@ -176,7 +176,12 @@ body {
   // border: 5px solid $SECONDARY_COLOR;
 }
 
+.highlights-box a {
+  text-decoration: none;
+}
+
 .highlights-heading {
+  letter-spacing: 10px;
   color: $SECONDARY_COLOR;
   flex: 100%;
   text-align: center;
@@ -184,6 +189,13 @@ body {
   font-size: 3rem;
   padding: 5px;
   margin: 20px 0;
+}
+
+.highlights-heading-underline {
+  margin: 0 auto;
+  width: 30px;
+  margin-bottom: 50px;
+  color: $ACCENT_COLOR;
 }
 
 .highlights-image {
@@ -195,6 +207,7 @@ body {
   font-size: 1.25rem;
   font-weight: 800;
   margin: 20px auto 10px auto;
+  color: $BACKGROUND;
 }
 
 .flex-column-highlights {
