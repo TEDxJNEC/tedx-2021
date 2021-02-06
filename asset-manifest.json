@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/tedx-2021/static/css/main.6c0c26fe.chunk.css",
+    "main.css": "/tedx-2021/static/css/main.a62f25c5.chunk.css",
     "main.js": "/tedx-2021/static/js/main.0383f2e7.chunk.js",
     "main.js.map": "/tedx-2021/static/js/main.0383f2e7.chunk.js.map",
     "runtime-main.js": "/tedx-2021/static/js/runtime-main.682f69df.js",
@@ -8,7 +8,7 @@
     "static/js/2.09f02da9.chunk.js": "/tedx-2021/static/js/2.09f02da9.chunk.js",
     "static/js/2.09f02da9.chunk.js.map": "/tedx-2021/static/js/2.09f02da9.chunk.js.map",
     "index.html": "/tedx-2021/index.html",
-    "static/css/main.6c0c26fe.chunk.css.map": "/tedx-2021/static/css/main.6c0c26fe.chunk.css.map",
+    "static/css/main.a62f25c5.chunk.css.map": "/tedx-2021/static/css/main.a62f25c5.chunk.css.map",
     "static/js/2.09f02da9.chunk.js.LICENSE.txt": "/tedx-2021/static/js/2.09f02da9.chunk.js.LICENSE.txt",
     "static/media/JNEC.780c5888.svg": "/tedx-2021/static/media/JNEC.780c5888.svg",
     "static/media/logo.11aacf2d.svg": "/tedx-2021/static/media/logo.11aacf2d.svg"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.682f69df.js",
     "static/js/2.09f02da9.chunk.js",
-    "static/css/main.6c0c26fe.chunk.css",
+    "static/css/main.a62f25c5.chunk.css",
     "static/js/main.0383f2e7.chunk.js"
   ]
 }
