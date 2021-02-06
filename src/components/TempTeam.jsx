@@ -21,9 +21,9 @@ const teamName = [
 const TempTeam = () => {
   return (
     <>
-      <div className="container">
+      <div className="container-team-list">
         {teamName.map((txt) => (
-          <animated.div key={txt} className="card">
+          <animated.div key={txt} className="card-team-list">
             <Link to={`/team/${txt}`} className="tempteamlinks">
               {txt}
             </Link>
