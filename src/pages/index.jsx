@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from '../assets/logo.svg';
+import logo from 'assets/logo.svg';
+import Card from 'components/Card';
 import '../common/main.scss';
 import DefaultLayout from '../layouts';
 import HighlightsLink from '../components/HighlightsLink';
-import Card from '../components/Card';
 
 function Home() {
   return (
