@@ -9,7 +9,7 @@ import Error from '../pages/error';
 const Routes = () => {
   const { HOME, ABOUT, DASHBOARD } = ROUTES;
   return (
-    <Router basename="/tedx-2021">
+    <Router>
       <Switch>
         <Route exact path={HOME} component={Home} />
         <Route exact path={ABOUT} component={About} />
