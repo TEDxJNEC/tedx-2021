@@ -6,8 +6,6 @@
   display: flex;
   overflow-x: scroll;
   width: 100%;
-  padding: 20px 0;
-  margin-top: 120px;
 }
 
 .card {
@@ -19,4 +17,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+.tempteamlinks {
+  color: white;
+  font-size: 26px;
 }
