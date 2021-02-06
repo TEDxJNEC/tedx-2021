@@ -40,7 +40,7 @@
   justify-content: center;
   align-items: center;
 }
-.card {
+.card-comingsoon {
   position: relative;
   justify-content: center;
   align-items: center;
@@ -53,8 +53,8 @@
   box-sizing: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.card:before,
-.card:after {
+.card-comingsoon:before,
+.card-comingsoon:after {
   content: '';
   position: absolute;
   top: 0;
@@ -68,18 +68,18 @@
   border: 1px solid black;
 }
 
-.card:hover:before {
+.card-comingsoon:hover:before {
   transform: rotate(10deg);
   border: 1px solid black;
   box-sizing: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
-.card:hover:after {
+.card-comingsoon:hover:after {
   transform: rotate(5deg);
   box-sizing: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
-.card .imgbx {
+.card-comingsoon .imgbx {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -93,11 +93,11 @@
 // .card:hover .imgbx {
 //   //   bottom: 80px;
 // }
-.card:hover .imgbx img {
+.card-comingsoon:hover .imgbx img {
   filter: blur(0);
 }
 
-.card .imgbx img {
+.card-comingsoon .imgbx img {
   position: absolute;
   top: 0;
   left: 0;

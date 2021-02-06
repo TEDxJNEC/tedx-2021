@@ -3,7 +3,7 @@ import '../common/card.scss';
 
 function List() {
   return (
-    <div className="card">
+    <div className="card-comingsoon">
       <div className="imgbx">
         <img
           src="https://yada.org/wp-content/uploads/2016/11/coming-soon-1.png"
