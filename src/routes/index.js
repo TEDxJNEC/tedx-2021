@@ -5,15 +5,13 @@ import About from 'pages/about';
 import Dashboard from 'pages/admin/dashboard';
 import Team from 'pages/team';
 import Committee from 'pages/committee';
-import ROUTES from '../constants/routes';
-import Error from '../pages/error';
-
-// import Error from '../pages/error';
+import ROUTES from 'constants/routes';
+import Error from 'pages/error';
 
 const Routes = () => {
   const { HOME, ABOUT, TEAM, DASHBOARD } = ROUTES;
   return (
-    <Router basename="/tedx-2021">
+    <Router>
       <Switch>
         <Route exact path={HOME} component={Home} />
         <Route exact path={ABOUT} component={About} />
