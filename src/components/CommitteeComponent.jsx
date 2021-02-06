@@ -16,7 +16,9 @@ const Item1 = ({ img, quirk1, quirk2, quote }) => {
           <span className="box__text-inner">{quirk2}</span>
         </h4>
         {/* <div className="box__deco">{symbol}</div> */}
-        <p className="box__content">{quote}</p>
+        <p className="box__content">
+          <b>{quote}</b>
+        </p>
       </div>
     </span>
   );
@@ -25,7 +27,9 @@ const Item2 = ({ img, quirk1, quirk2, quote }) => {
   return (
     <span className="grid__item">
       <div className="box">
-        <p className="box__content quote__top">{quote}</p>
+        <p className="box__content quote__top">
+          <b>{quote}</b>
+        </p>
         <img className="box__img" src={img} alt="Some image" />
         <h3 className="box__title box__title--straight box__title--bottom">
           <span className="box__title-inner" data-hover={quirk1}>
