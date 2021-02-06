@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../assets/logo.svg';
 import '../common/main.scss';
 import DefaultLayout from '../layouts';
+import Sponsors from '../components/Sponsors';
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-headline">KINTSUGI</h1>
       </div>
+      <Sponsors />
     </DefaultLayout>
   );
 }
