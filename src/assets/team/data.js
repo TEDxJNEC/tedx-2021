@@ -75,10 +75,11 @@ const teamData = {
     },
     {
       name: 'Shrikant Pandhekar',
-      quirk1: 'Innocent',
+      quirk1: 'Grit',
       quirk2: 'Diligent',
       img: webShrikant,
-      quote: 'Watashi ga Kitta!',
+      quote:
+        'A life accumulates a collection: of people, work and perplexities. We are all our own curators',
     },
     {
       name: 'Huzaif Quazi',
