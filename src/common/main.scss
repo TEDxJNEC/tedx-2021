@@ -172,14 +172,18 @@ body {
 .highlights-box {
   padding-bottom: 10px;
   margin: 0 10%;
-  background-color: $PRIMARY_COLOR;
-  border: 5px solid $SECONDARY_COLOR;
+  // background-color: $PRIMARY_COLOR;
+  // border: 5px solid $SECONDARY_COLOR;
 }
 
 .highlights-heading {
+  color: $SECONDARY_COLOR;
+  flex: 100%;
+  text-align: center;
   font-weight: 800;
   font-size: 3rem;
-  padding: 20px;
+  padding: 5px;
+  margin: 20px 0;
 }
 
 .highlights-image {
@@ -197,7 +201,7 @@ body {
   background-color: $SECONDARY_COLOR;
   display: flex;
   padding: 5px;
-  margin: 10px 20px;
+  margin: 10px;
   flex-direction: column;
   flex: 50%;
   transition: transform 0.2s;
