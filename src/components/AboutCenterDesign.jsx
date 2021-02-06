@@ -1,14 +1,14 @@
 import React from 'react';
-import { AboutCenterDesign } from 'components/icons';
+import { CenterDesign } from 'components/icons';
 
-const AboutDetails = () => {
+const AboutCenterDesign = () => {
   return (
     <>
       <div className="center-design">
-        <AboutCenterDesign />
+        <CenterDesign />
       </div>
     </>
   );
 };
 
-export default AboutDetails;
+export default AboutCenterDesign;

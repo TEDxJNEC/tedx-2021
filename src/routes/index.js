@@ -8,12 +8,12 @@ import Team from 'pages/team';
 import Committee from 'pages/committee';
 import ROUTES from '../constants/routes';
 
-// import Error from '../pages/error';
+import Error from '../pages/error';
 
 const Routes = () => {
   const { HOME, ABOUT, TEAM, DASHBOARD } = ROUTES;
   return (
-    <Router basename="/tedx-2021">
+    <Router>
       <Switch>
         <Route exact path={HOME} component={Home} />
         <Route exact path={ABOUT} component={About} />
@@ -26,6 +26,7 @@ const Routes = () => {
         />
         {/* <Route exact path={TEAM} component={}></Route> */}
         {/* <Route exact path={BOOKINGS} component={}></Route> */}
+        <Route component={Error} />
       </Switch>
     </Router>
   );
