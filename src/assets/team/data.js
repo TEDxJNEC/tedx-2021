@@ -29,6 +29,26 @@ import sponsorshipSiddhant from 'assets/team/sponsorship/sponsorshipSiddhant.web
 import sponsorshipVishalakshi from 'assets/team/sponsorship/sponsorshipVishalakshi.webp';
 import marketingOmkar from 'assets/team/marketing/marketingOmkar.webp';
 import marketingPranav from 'assets/team/marketing/marketingPranav.webp';
+import marketingChinmay from 'assets/team/marketing/marketingChinmay.webp';
+import marketingIshaan from 'assets/team/marketing/marketingIshaan.webp';
+import marketingNikita from 'assets/team/marketing/marketingNikita.webp';
+import marketingRushab from 'assets/team/marketing/marketingRushab.webp';
+import marketingSayali from 'assets/team/marketing/marketingSayali.webp';
+import creativeSarang from 'assets/team/creative/creativeSarang.webp';
+import creativeDivya from 'assets/team/creative/creativeDivya.webp';
+import creativeShivprasad from 'assets/team/creative/creativeShivprasad.webp';
+import creativeJuwariya from 'assets/team/creative/creativeJuwariya.webp';
+import technicalShubham from 'assets/team/technical/technicalShubham.webp';
+import technicalAnant from 'assets/team/technical/technicalAnant.webp';
+import technicalPurnendu from 'assets/team/technical/technicalPurnendu.webp';
+import technicalMukta from 'assets/team/technical/technicalMukta.webp';
+import documentationSiddhi from 'assets/team/documentation/documentationSiddhi.webp';
+import documentationGayatri from 'assets/team/documentation/documentationGayatri.webp';
+import budgetRaj from 'assets/team/budget/budgetRaj.webp';
+import budgetJaved from 'assets/team/budget/budgetJaved.webp';
+import logisticsAnay from 'assets/team/logistics/logisticsAnay.webp';
+import logisticsSumit from 'assets/team/logistics/logisticsSumit.webp';
+import logisticsRushikesh from 'assets/team/logistics/logisticsRushikesh.webp';
 
 const teamData = {
   web: [
@@ -51,7 +71,7 @@ const teamData = {
       quirk1: 'Creative',
       quirk2: 'Elegant',
       img: webRiya,
-      quote: 'The best thing to hold on to in life is each other',
+      quote: 'Whoever is happy will make others happy too',
     },
     {
       name: 'Shrikant Pandhekar',
@@ -62,26 +82,26 @@ const teamData = {
     },
     {
       name: 'Huzaif Quazi',
-      quirk1: 'Calm',
-      quirk2: 'Smart',
+      quirk1: 'Passionate',
+      quirk2: 'Learner',
       img: webHuzaif,
-      quote: 'Izzat se baat kar',
+      quote: 'If I Could meet anybody, Its you ! ',
     },
     {
       name: 'Ayush Nayar',
-      quirk1: 'Knowlegable',
-      quirk2: 'Expert',
+      quirk1: 'Trustworthy',
+      quirk2: 'Passionate',
       img: webAyush,
-      quote: 'Born to Overwhelm',
+      quote: `Born to OverwhelWhat doesn't kill me, only makes me stronger.`,
     },
   ],
   graphic: [
     {
       name: 'Krishna Zolpatil',
-      quirk1: 'Deep',
-      quirk2: 'fffss',
+      quirk1: 'Drowsy',
+      quirk2: 'Lethargic',
       img: webSoham,
-      quote: 'Some deep shit',
+      quote: `I'm not on a power saving mode, I am just lazy.`,
     },
     {
       name: 'Mitanshu Salvi',
@@ -93,10 +113,10 @@ const teamData = {
 
     {
       name: 'Neha Karbal',
-      quirk1: 'Calm',
-      quirk2: 'Smart',
+      quirk1: 'Creative',
+      quirk2: 'Passionate',
       img: graphicNeha,
-      quote: 'Izzat se baat kar',
+      quote: 'Everything you can imagine is real.',
     },
     {
       name: 'Rucha Kannawar',
@@ -107,10 +127,10 @@ const teamData = {
     },
     {
       name: 'Dhruv Jain',
-      quirk1: 'Cool',
-      quirk2: 'Dank',
+      quirk1: 'Lethargic',
+      quirk2: 'Drowsy',
       img: graphicDhruv,
-      quote: 'Comfortably Numb',
+      quote: `I'm not on a power saving mode, I am just lazy.`,
     },
     {
       name: 'Riddhi Shelokar',
@@ -133,7 +153,7 @@ const teamData = {
       name: 'Chinmay Jape',
       quirk1: 'Colossus',
       quirk2: 'Hustler',
-      img: webSoham,
+      img: marketingChinmay,
       quote: 'Grant us all that is Now and Forever',
     },
     {
@@ -147,28 +167,28 @@ const teamData = {
       name: 'Sayali Patil',
       quirk1: 'Leadership',
       quirk2: 'Confident',
-      img: webAyush,
+      img: marketingSayali,
       quote: 'Be quick, strategic and strong',
     },
     {
       name: 'Rushabh Kunturkar',
-      quirk1: 'Innocent',
-      quirk2: 'Diligent',
-      img: webShrikant,
-      quote: 'Watashi ga Kitta!',
+      quirk1: 'Dancer',
+      quirk2: 'Photographer',
+      img: marketingRushab,
+      quote: 'Photographer',
     },
     {
       name: 'Nikita Khirsagar',
-      quirk1: 'Creative',
-      quirk2: 'Elegant',
-      img: webRiya,
-      quote: 'The best thing to hold on to in life is each other',
+      quirk1: 'Drowsy',
+      quirk2: 'Lethargic',
+      img: marketingNikita,
+      quote: `I’m not lazy, I’m on power saving mode.`,
     },
     {
       name: 'Ishaan Rathi',
       quirk1: 'Trustworthy',
       quirk2: 'Enthusiastic',
-      img: webRiya,
+      img: marketingIshaan,
       quote: `Don’t believe you have to be like anybody to be somebody.`,
     },
   ],
@@ -206,41 +226,42 @@ const teamData = {
     },
     {
       name: 'Akriti Raina',
-      quirk1: 'Leadership',
-      quirk2: 'Confident',
+      quirk1: 'Enthusiastic ',
+      quirk2: 'Flexible ',
       img: curationAkriti,
-      quote: 'Be quick, strategic and strong',
+      quote:
+        'There are no limits to what you can accomplish, except the limits you place on your own thinking.',
     },
 
     {
       name: 'Jithin Suresh',
-      quirk1: 'Creative',
-      quirk2: 'Elegant',
+      quirk1: 'Clarity',
+      quirk2: 'Consistency',
       img: curationJithin,
-      quote: 'The best thing to hold on to in life is each other',
+      quote: 'Luck favours only those who try. Just Do It.',
     },
     {
       name: 'Syeda Zaidi',
-      quirk1: 'Creative',
-      quirk2: 'Elegant',
+      quirk1: 'Perceptive',
+      quirk2: 'Courteous',
       img: curationSyeda,
-      quote: 'The best thing to hold on to in life is each other',
+      quote: 'Brave in subtle ways, A Flower blooming anyways.',
     },
   ],
   sponsorship: [
     {
       name: 'Esha Dagadkhair',
-      quirk1: 'Sarcastic',
-      quirk2: 'Adaptive',
+      quirk1: 'Blunt',
+      quirk2: 'Proficient',
       img: sponsorshipEsha,
-      quote: 'Could I be anymore serious?',
+      quote: `Storms make trees take deeper roots.`,
     },
     {
       name: 'Kaiwalya Dadbhale',
-      quirk1: 'Colossus',
-      quirk2: 'Hustler',
+      quirk1: 'Patient',
+      quirk2: 'Communication',
       img: sponsorshipKaiwalya,
-      quote: '',
+      quote: 'No one can cheat you out of ultimate success but yourself',
     },
     {
       name: 'Siddhant More',
@@ -268,10 +289,10 @@ const teamData = {
   management: [
     {
       name: 'Gayatri Ghanekar',
-      quirk1: 'Sarcastic',
-      quirk2: 'Adaptive',
+      quirk1: 'Drowsy',
+      quirk2: 'Lethargic',
       img: managementGayatri,
-      quote: 'Could I be anymore serious?',
+      quote: `I'm not on a power saving mode, I am just lazy.`,
     },
     {
       name: 'Suyash Kulkarni',
@@ -314,28 +335,28 @@ const teamData = {
       name: 'Sarang Patil',
       quirk1: 'Accountable',
       quirk2: 'Self Motivated',
-      img: webPruthvi,
+      img: creativeSarang,
       quote: `I don't like to manage people, I like to manage events`,
     },
     {
       name: 'Divya Khedkar',
-      quirk1: 'Colossus',
-      quirk2: 'Hustler',
-      img: webSoham,
-      quote: '',
+      quirk1: 'Innovative',
+      quirk2: 'Confident',
+      img: creativeDivya,
+      quote: `Start where you are, use what you have ,do what you can`,
     },
     {
       name: 'Shivprasad Nikam',
       quirk1: 'Ambitious',
       quirk2: 'Optimistic',
-      img: webHuzaif,
+      img: creativeShivprasad,
       quote: `I don't take photographs I make them`,
     },
     {
       name: 'Juwairiya Siddique',
       quirk1: 'Hard Working',
       quirk2: 'Patient',
-      img: webAyush,
+      img: creativeJuwariya,
       quote: 'Your only limit is your mind',
     },
   ],
@@ -344,52 +365,53 @@ const teamData = {
       name: 'Shubham Jadhao',
       quirk1: 'Smart',
       quirk2: 'Technical',
-      img: webPruthvi,
+      img: technicalShubham,
       quote: 'Grant us the knowledge that we desire',
-    },
-    {
-      name: 'Anant Mundankar',
-      quirk1: 'Progressive',
-      quirk2: 'Motivated',
-      img: webSoham,
-      quote: 'Stay hungry stay foolish',
     },
     {
       name: 'Mukta Zalte',
       quirk1: 'Equanimity',
       quirk2: 'Integrity',
-      img: webHuzaif,
+      img: technicalMukta,
       quote: `You are ENOUGH`,
     },
+    {
+      name: 'Anant Mundankar',
+      quirk1: 'Progressive',
+      quirk2: 'Motivated',
+      img: technicalAnant,
+      quote: 'Stay hungry stay foolish',
+    },
+
     {
       name: 'Purnendu Gokhale',
       quirk1: 'Decisive',
       quirk2: 'Passionate',
-      img: webAyush,
+      img: technicalPurnendu,
       quote: 'You are never wrong to do the right thing',
     },
   ],
   event: [
     {
       name: 'Anay Deshpande',
-      quirk1: 'Accountable',
-      quirk2: 'Self Motivated',
-      img: webPruthvi,
-      quote: 'Your attitude and aptitude will decide your success in future',
+      quirk1: 'Hardworking',
+      quirk2: 'Bilingual ',
+      img: logisticsAnay,
+      quote: 'Willingness is the first step towards success.',
     },
     {
       name: 'Rushikesh Lavhale',
       quirk1: 'logical',
       quirk2: 'Creative',
-      img: webSoham,
+      img: logisticsRushikesh,
       quote: `Opportunities don't happen. You create them`,
     },
     {
       name: 'Sumit Wadhwani',
-      quirk1: 'Ambitious',
-      quirk2: 'Optimistic',
-      img: webHuzaif,
-      quote: `I don't take photographs I make them`,
+      quirk1: 'Drowsy',
+      quirk2: 'Lethargic',
+      img: logisticsSumit,
+      quote: `I’m not lazy, I’m on power saving mode.`,
     },
   ],
   budget: [
@@ -397,38 +419,38 @@ const teamData = {
       name: 'Raj Patwari',
       quirk1: 'Resilience',
       quirk2: 'Tranquillity',
-      img: webPruthvi,
+      img: budgetRaj,
       quote: 'Seek respect not attention, it lasts longer',
     },
     {
       name: 'Javed Khan',
       quirk1: 'Optimism',
       quirk2: 'Flexibile',
-      img: webSoham,
+      img: budgetJaved,
       quote: `What I'm today is just because the decisions I took & the hardwork I did yesterday`,
     },
   ],
   documentation: [
     {
       name: 'Siddhi Katariya',
-      quirk1: 'Resilience',
-      quirk2: 'Charming',
-      img: webPruthvi,
-      quote: 'Your attitude and aptitude will decide your success in future',
+      quirk1: 'Lethargic',
+      quirk2: 'Drowsy',
+      img: documentationSiddhi,
+      quote: `I’m not lazy, I’m on power saving mode.`,
     },
     {
       name: 'Gayatri Modani',
-      quirk1: 'Optimism',
-      quirk2: 'Flexibile',
-      img: webSoham,
-      quote: `What I'm today is just because the decisions I took & the hardwork I did yesterday`,
+      quirk1: 'Meticulous ',
+      quirk2: 'Diligent',
+      img: documentationGayatri,
+      quote: `I believe ,if you see it in your MIND,  you are going to hold it in your Hands.`,
     },
   ],
   dop: [
     {
       name: 'Anuj Jangle',
       quirk1: 'Resilience',
-      quirk2: 'Charming',
+      quirk2: 'Photographer',
       img: webPruthvi,
       quote: 'Your attitude and aptitude will decide your success in future',
     },
