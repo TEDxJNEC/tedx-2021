@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 const { HOME, ABOUT } = ROUTES;
 const Footer = () => {
   return (
-    <div className="head">
+    <div>
       <footer>
         <div className="container">
           <div className="sec aboutus">

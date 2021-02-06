@@ -1,4 +1,5 @@
 {
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "es6": true
@@ -15,11 +16,12 @@
     "SharedArrayBuffer": "readonly"
   },
   "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
   },
   "plugins": ["react"],
   "rules": {
