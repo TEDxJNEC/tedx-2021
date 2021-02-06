@@ -211,19 +211,19 @@ const teamData = {
     },
 
     {
+      name: 'Rutu Shukla',
+      quirk1: 'Straight-Forward',
+      quirk2: 'Exuberant',
+      img: curationRutu,
+      quote: `Slay in life's Rhythmic way !`,
+    },
+    {
       name: 'Salem Bin Amer',
       quirk1: 'Charismatic',
       quirk2: 'Optimistic',
       img: curationSalem,
       quote:
         'I am not a traitor to my class. I am just an extreme example of what a working man can achieve ',
-    },
-    {
-      name: 'Rutu Shukla',
-      quirk1: 'Straight-Forward',
-      quirk2: 'Exuberant',
-      img: curationRutu,
-      quote: `Slay in life's Rhythmic way !`,
     },
     {
       name: 'Akriti Raina',
