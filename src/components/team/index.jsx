@@ -1,65 +1,56 @@
 import React from 'react';
 import 'common/team.scss';
+import { Link } from 'react-router-dom';
+import webPruthvi from 'assets/team/core/webPruthvi.webp';
+import dopAnuj from 'assets/team/core/dopAnuj.webp';
+import budgetRaj from 'assets/team/core/budgetRaj.webp';
+import documentationSiddhi from 'assets/team/core/documentationSiddhi.webp';
+import managementGayatri from 'assets/team/core/managementGayatri.webp';
+import marketingOmkar from 'assets/team/core/marketingOmkar.webp';
+import officialAbhishek from 'assets/team/core/officalAbhishek.webp';
+import officialManik from 'assets/team/core/officalManik.webp';
+import sponsorshipEsha from 'assets/team/core/sponsorshipEsha.webp';
+import officialPriyanka from 'assets/team/official/officialPriyanka.webp';
 
 const TeamComponent = () => {
   return (
     <>
       <div className="carousel_wrapper">
         <div className="carousel">
-          <div className="slide one">
+          <Link to="/team/official" className="slide one">
+            <img className="carousel-image" src={officialAbhishek} alt="dd" />
+          </Link>
+          <Link to="/team/official" className="slide two">
+            <img className="carousel-image" src={officialPriyanka} alt="dd" />
+          </Link>
+          <Link to="/team/official" className="slide three">
+            <img className="carousel-image" src={officialManik} alt="dd" />
+          </Link>
+          <Link to="/team/budget" className="slide four">
+            <img className="carousel-image" src={budgetRaj} alt="dd" />
+          </Link>
+          <Link to="/team/documentation" className="slide five">
             <img
-              src="http://nasa-images.com/wp-content/uploads/2011/05/392.jpg"
+              className="carousel-image"
+              src={documentationSiddhi}
               alt="dd"
             />
-          </div>
-          <div className="slide two">
-            <img
-              src="https://images.unsplash.com/photo-1487235829740-e0ac5a286e1c"
-              alt="dd"
-            />
-          </div>
-          <div className="slide three">
-            <img
-              src="https://images.unsplash.com/photo-1473813585561-ec87eac91e39"
-              alt="dd"
-            />
-          </div>
-          <div className="slide four">
-            <img
-              src="http://nasa-images.com/wp-content/uploads/2011/05/261.jpg"
-              alt="dd"
-            />
-          </div>
-          <div className="slide five">
-            <img
-              src="http://hdwallpaperfun.com/wp-content/uploads/2014/08/Outer-Space-Wallpaper-Background-HQ.jpg"
-              alt="dd"
-            />
-          </div>
-          <div className="slide six">
-            <img
-              src="https://images.unsplash.com/photo-1479409286066-c0b2f4f4a332"
-              alt="dd"
-            />
-          </div>
-          <div className="slide seven">
-            <img
-              src="http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/space-wallpaper-4.jpg"
-              alt="dd"
-            />
-          </div>
-          <div className="slide eight">
-            <img
-              src="http://shareyourwallpapers.com/upload/wallpaper/3d-and-digital-art/3d-space/3d-space_f48db6ca.jpg"
-              alt="dd"
-            />
-          </div>
-          <div className="slide nine">
-            <img
-              src="https://images.unsplash.com/photo-1446776709462-d6b525c57bd3"
-              alt="dd"
-            />
-          </div>
+          </Link>
+          <Link to="/team/dop" className="slide six">
+            <img className="carousel-image" src={dopAnuj} alt="dd" />
+          </Link>
+          <Link to="/team/management" className="slide seven">
+            <img className="carousel-image" src={managementGayatri} alt="dd" />
+          </Link>
+          <Link to="/team/marketing" className="slide eight">
+            <img className="carousel-image" src={marketingOmkar} alt="dd" />
+          </Link>
+          <Link to="/team/sponsorship" className="slide nine">
+            <img className="carousel-image" src={sponsorshipEsha} alt="dd" />
+          </Link>
+          <Link to="/team/web" className="slide ten">
+            <img className="carousel-image" src={webPruthvi} alt="dd" />
+          </Link>
         </div>
       </div>
     </>
