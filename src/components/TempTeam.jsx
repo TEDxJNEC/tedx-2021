@@ -2,6 +2,7 @@ import React from 'react';
 import { animated } from 'react-spring';
 import '../common/tempteam.scss';
 import { Link } from 'react-router-dom';
+import teamHeading from 'assets/team/teamHeadings';
 
 const teamName = [
   'web',
@@ -24,8 +25,11 @@ const TempTeam = () => {
       <div className="container-team-list">
         {teamName.map((txt) => (
           <animated.div key={txt} className="card-team-list">
-            <Link to={`/team/${txt}`} className="tempteamlinks">
-              {txt}
+            <Link
+              to={`/team/${txt}`}
+              className="tempteamlinks card-team-list-team-heading"
+            >
+              <span className=""> {teamHeading[txt]}</span>
             </Link>
           </animated.div>
         ))}
