@@ -10,7 +10,9 @@ const Committee = ({ match }) => {
   return (
     <DefaultLayout>
       <TempTeam />
-      <h1 className="committee__header-name">{TeamHeadings[committee]}</h1>
+      <h1 className="committee__header-name fancy">
+        {TeamHeadings[committee]}
+      </h1>
       <div className="committee-wrapper">
         <CommitteeComponent Committee={committee} />
       </div>

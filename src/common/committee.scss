@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Anton|Buenard:400,700');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
 @import './colors.scss';
 
 body {
@@ -17,11 +16,8 @@ body {
   font-size: 3rem;
   margin-top: 1rem;
   padding: 0 0 2rem 3.5rem;
-  font-family: 'Roboto Slab', serif;
   text-transform: uppercase;
   font-weight: bold;
-  text-decoration: underline;
-  text-decoration-color: $PRIMARY_COLOR;
   text-align: left;
   @media screen and (max-width: 720px) {
     font-size: 1.2rem;

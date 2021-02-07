@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap");
-$FONT_PRIMARY: "Poppins", sans-serif;
-$FONT_SECONDARY: "Montserrat", sans-serif;
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&display=swap');
+$FONT_PRIMARY: 'Poppins', sans-serif;
+$FONT_SECONDARY: 'Montserrat', sans-serif;
+$FONT_FANCY: 'BEYNO', sans-serif;
 h1,
 h2,
 h3,
@@ -13,4 +13,7 @@ h6 {
 p,
 div {
   font-family: $FONT_SECONDARY;
+}
+.fancy {
+  font-family: $FONT_FANCY;
 }
