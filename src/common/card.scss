@@ -28,7 +28,7 @@
   justify-content: center;
   align-items: center;
 }
-.box {
+.box-card {
   //   width: 1200px;
   //   display: grid;
   //   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -116,7 +116,7 @@
       margin: 0 5rem;
     }
   }
-  .box {
+  .box-card {
     display: flex;
     flex-direction: column;
   }

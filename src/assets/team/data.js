@@ -49,6 +49,9 @@ import budgetJaved from 'assets/team/budget/budgetJaved.webp';
 import logisticsAnay from 'assets/team/logistics/logisticsAnay.webp';
 import logisticsSumit from 'assets/team/logistics/logisticsSumit.webp';
 import logisticsRushikesh from 'assets/team/logistics/logisticsRushikesh.webp';
+import officialAbhishek from 'assets/team/official/officialAbhishek.webp';
+import officialManik from 'assets/team/official/officialManik.webp';
+import officialPriyanka from 'assets/team/official/officialPriyanka.webp';
 
 const teamData = {
   web: [
@@ -461,21 +464,21 @@ const teamData = {
       name: 'Abhishek Sonwane',
       quirk1: 'Leadership',
       quirk2: 'Actor',
-      img: webPruthvi,
+      img: officialAbhishek,
       quote: 'Ya tufanala koni ghar det ka ghar',
     },
     {
       name: 'Priyanka Jain',
       quirk1: 'Fortitude',
       quirk2: 'Magnanimity',
-      img: webPruthvi,
+      img: officialPriyanka,
       quote: 'Follow your inner moonlight, set yourself free',
     },
     {
       name: 'Manik Sardeshpande',
       quirk1: 'Resilience',
       quirk2: 'Charming',
-      img: webPruthvi,
+      img: officialManik,
       quote: 'Your attitude and aptitude will decide your success in future',
     },
   ],

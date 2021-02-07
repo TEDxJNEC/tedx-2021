@@ -21,7 +21,7 @@ const Card = () => {
         <h1>SPEAKERS</h1>
         <hr />
         <div className="container">
-          <div className="box">
+          <div className="box-card">
             <List />
             <List />
             <List />
