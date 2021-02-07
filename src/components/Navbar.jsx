@@ -6,7 +6,7 @@ import '../common/nav.scss';
 import img from '../assets/JNEC.svg';
 import MenuIcon from './icons/MenuIcon';
 
-const { HOME, ABOUT } = ROUTES;
+const { HOME, ABOUT, TEAM } = ROUTES;
 
 const Desktop = () => {
   return (
@@ -19,26 +19,26 @@ const Desktop = () => {
           <NavLink to={HOME} exact activeClassName="active" className="title">
             HOME
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/speakers"
             exact
             activeClassName="active"
             className="title"
           >
             SPEAKERS
-          </NavLink>
+          </NavLink> */}
           <NavLink to={ABOUT} exact activeClassName="active" className="title">
             ABOUT
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/booking"
             exact
             activeClassName="active"
             className="title"
           >
             BOOKING
-          </NavLink>
-          <NavLink to="/team" exact activeClassName="active" className="title">
+          </NavLink> */}
+          <NavLink to={TEAM} exact activeClassName="active" className="title">
             TEAM
           </NavLink>
         </ul>
@@ -107,14 +107,14 @@ const Mobile = () => {
             >
               HOME
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/speakers"
               exact
               activeClassName="active"
               className="mobi_title"
             >
               SPEAKERS
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to={ABOUT}
               exact
@@ -123,16 +123,16 @@ const Mobile = () => {
             >
               ABOUT
             </NavLink>
-            <NavLink
+            {/* <NavLink
               to="/booking"
               exact
               activeClassName="active"
               className="mobi_title"
             >
               BOOKING
-            </NavLink>
+            </NavLink> */}
             <NavLink
-              to="/team"
+              to={TEAM}
               exact
               activeClassName="active"
               className="mobi_title"

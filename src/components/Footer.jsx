@@ -15,7 +15,7 @@ import {
 import ROUTES from 'constants/routes';
 import { Link } from 'react-router-dom';
 
-const { HOME, ABOUT } = ROUTES;
+const { HOME, ABOUT, TEAM, HIGHLIGHT } = ROUTES;
 const Footer = () => {
   return (
     <div>
@@ -87,10 +87,10 @@ const Footer = () => {
                 <Link to={ABOUT}>About</Link>
               </li>
               <li>
-                <Link to="www.google.com">Team</Link>
+                <Link to={TEAM}>Team</Link>
               </li>
               <li>
-                <Link to="www.google.com">Highlights</Link>
+                <Link to={HIGHLIGHT}>Highlights</Link>
               </li>
               <li>
                 <Link to="www.google.com">Registrations</Link>
