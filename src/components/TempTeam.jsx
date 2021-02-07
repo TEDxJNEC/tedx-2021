@@ -5,19 +5,19 @@ import { Link } from 'react-router-dom';
 import teamHeading from 'assets/team/teamHeadings';
 
 const teamName = [
-  // 'web',
-  // 'graphic',
-  // 'marketing',
-  // 'curation',
-  // 'sponsorship',
-  // 'management',
-  // 'creative',
-  // 'technical',
-  // 'event',
-  // 'budget',
-  // 'documentation',
-  // 'dop',
-  // 'official',
+  'web',
+  'graphic',
+  'marketing',
+  'curation',
+  'sponsorship',
+  'management',
+  'creative',
+  'technical',
+  'event',
+  'budget',
+  'documentation',
+  'dop',
+  'official',
 ];
 const TempTeam = () => {
   return (
