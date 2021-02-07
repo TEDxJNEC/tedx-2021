@@ -18,11 +18,11 @@
 .tedx-logo-video {
   position: absolute;
   left: 24px;
-  bottom: 12px;
+  bottom: 80px;
   width: 140px;
   @media only screen and (min-width: 768px) {
     width: 420px;
-    bottom: 32px;
+    bottom: 100px;
   }
 }
 .theme-two-logo-video {
@@ -32,14 +32,14 @@
     width: 420px;
     bottom: 32px;
     right: 24px;
-    bottom: 12px;
+    bottom: 100px;
   }
   @media only screen and (max-width: 768px) {
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
-    top: 20px;
+    top: 80px;
     text-align: center;
     width: 240px;
   }

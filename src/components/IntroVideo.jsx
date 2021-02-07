@@ -8,7 +8,7 @@ import 'common/introvideo.scss';
 import VideoFull from 'assets/videos/videoFull.webm';
 import VideoFullMobile from 'assets/videos/videoFullmobile.webm';
 import logo from 'assets/JNEC-black.svg';
-import logowhite from 'assets/JNEC.svg';
+import logowhite from 'assets/JNEC-black.svg';
 import ThemeLogo from 'assets/theme-logo.svg';
 
 const buildThresholdArray = () => Array.from(Array(100).keys(), (i) => i / 100);
