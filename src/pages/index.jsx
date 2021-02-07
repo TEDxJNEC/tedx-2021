@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../assets/logo.svg';
 import '../common/main.scss';
 import DefaultLayout from '../layouts';
-import Card from '../components/Card';
+import Card from '../components/ComingsoonCard';
 
 function Home() {
   return (
