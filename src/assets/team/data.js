@@ -53,6 +53,7 @@ import logisticsRushikesh from 'assets/team/logistics/logisticsRushikesh.webp';
 import officialAbhishek from 'assets/team/official/officialAbhishek.webp';
 import officialManik from 'assets/team/official/officialManik.webp';
 import officialPriyanka from 'assets/team/official/officialPriyanka.webp';
+import dopAnuj from 'assets/team/official/dopAnuj.webp';
 
 const teamData = {
   web: [
@@ -216,7 +217,7 @@ const teamData = {
 
     {
       name: 'Rutu Shukla',
-      quirk1: 'Straight-Forward',
+      quirk1: 'Upfront',
       quirk2: 'Exuberant',
       img: curationRutu,
       quote: `Slay in life's Rhythmic way !`,
@@ -456,7 +457,7 @@ const teamData = {
       name: 'Anuj Jangle',
       quirk1: 'Resilience',
       quirk2: 'Photographer',
-      img: webPruthvi,
+      img: dopAnuj,
       quote: 'Your attitude and aptitude will decide your success in future',
     },
   ],
