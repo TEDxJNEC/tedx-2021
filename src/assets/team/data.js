@@ -4,6 +4,7 @@ import webHuzaif from 'assets/team/web/webHuzaif.webp';
 import webAyush from 'assets/team/web/webAyush.webp';
 import webShrikant from 'assets/team/web/webShrikant.webp';
 import webRiya from 'assets/team/web/webRiya.webp';
+import graphicKrishna from 'assets/team/graphic/graphicKrishna.webp';
 import graphicDhruv from 'assets/team/graphic/graphicDhruv.webp';
 import graphicMitanshu from 'assets/team/graphic/graphicMitanshu.webp';
 import graphicNeha from 'assets/team/graphic/graphicNeha.webp';
@@ -52,6 +53,7 @@ import logisticsRushikesh from 'assets/team/logistics/logisticsRushikesh.webp';
 import officialAbhishek from 'assets/team/official/officialAbhishek.webp';
 import officialManik from 'assets/team/official/officialManik.webp';
 import officialPriyanka from 'assets/team/official/officialPriyanka.webp';
+import dopAnuj from 'assets/team/official/dopAnuj.webp';
 
 const teamData = {
   web: [
@@ -86,10 +88,10 @@ const teamData = {
     },
     {
       name: 'Huzaif Quazi',
-      quirk1: 'Passionate',
-      quirk2: 'Learner',
+      quirk1: 'mysterious',
+      quirk2: 'Vibrant',
       img: webHuzaif,
-      quote: 'If I Could meet anybody, Its you ! ',
+      quote: 'If I Could meet anybody, Its you !',
     },
     {
       name: 'Ayush Nayar',
@@ -104,7 +106,7 @@ const teamData = {
       name: 'Krishna Zolpatil',
       quirk1: 'Drowsy',
       quirk2: 'Lethargic',
-      img: webSoham,
+      img: graphicKrishna,
       quote: `I'm not on a power saving mode, I am just lazy.`,
     },
     {
@@ -215,7 +217,7 @@ const teamData = {
 
     {
       name: 'Rutu Shukla',
-      quirk1: 'Straight-Forward',
+      quirk1: 'Upfront',
       quirk2: 'Exuberant',
       img: curationRutu,
       quote: `Slay in life's Rhythmic way !`,
@@ -455,7 +457,7 @@ const teamData = {
       name: 'Anuj Jangle',
       quirk1: 'Resilience',
       quirk2: 'Photographer',
-      img: webPruthvi,
+      img: dopAnuj,
       quote: 'Your attitude and aptitude will decide your success in future',
     },
   ],

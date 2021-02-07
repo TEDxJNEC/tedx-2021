@@ -6,7 +6,7 @@ import '../common/nav.scss';
 import img from '../assets/JNEC.svg';
 import MenuIcon from './icons/MenuIcon';
 
-const { HOME, ABOUT, REGISTRATION } = ROUTES;
+const { HOME, ABOUT, REGISTRATION, TEAM } = ROUTES;
 
 const Desktop = () => {
   return (
@@ -23,7 +23,7 @@ const Desktop = () => {
             ABOUT
           </NavLink>
 
-          <NavLink to="/team" exact activeClassName="active" className="title">
+          <NavLink to={TEAM} exact activeClassName="active" className="title">
             TEAM
           </NavLink>
           <NavLink
@@ -100,7 +100,6 @@ const Mobile = () => {
             >
               HOME
             </NavLink>
-
             <NavLink
               to={ABOUT}
               exact
@@ -111,7 +110,7 @@ const Mobile = () => {
             </NavLink>
 
             <NavLink
-              to="/team"
+              to={TEAM}
               exact
               activeClassName="active"
               className="mobi_title"
