@@ -21,7 +21,9 @@
   border-bottom: 2px solid #f6c90e;
   width: 20%;
   margin: 10px 0 20px;
-
+  @media screen and (max-width: 720px) {
+    margin: 10px 5px;
+  }
   // background: #fff;
   // :before {
   //   content: 'LOL';
@@ -37,4 +39,7 @@
 .tempteamlinks {
   color: white;
   font-size: 26px;
+  @media screen and (max-width: 720px) {
+    font-size: 14px;
+  }
 }

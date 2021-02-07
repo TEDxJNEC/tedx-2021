@@ -1,7 +1,7 @@
 import React from 'react';
 import 'common/team.scss';
 import { Link } from 'react-router-dom';
-import webPruthvi from 'assets/team/core/webPruthvi.webp';
+import webPruthvi from 'assets/team/web/webPruthvi.webp';
 import dopAnuj from 'assets/team/core/dopAnuj.webp';
 import budgetRaj from 'assets/team/core/budgetRaj.webp';
 import documentationSiddhi from 'assets/team/core/documentationSiddhi.webp';
