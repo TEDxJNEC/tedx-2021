@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import teamHeading from 'assets/team/teamHeadings';
 
 const teamName = [
+  'official',
   'web',
   'graphic',
   'marketing',
@@ -17,7 +18,6 @@ const teamName = [
   'budget',
   'documentation',
   'dop',
-  'official',
 ];
 const TempTeam = () => {
   return (
