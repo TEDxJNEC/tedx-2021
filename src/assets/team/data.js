@@ -4,6 +4,7 @@ import webHuzaif from 'assets/team/web/webHuzaif.webp';
 import webAyush from 'assets/team/web/webAyush.webp';
 import webShrikant from 'assets/team/web/webShrikant.webp';
 import webRiya from 'assets/team/web/webRiya.webp';
+import graphicKrishna from 'assets/team/graphic/graphicKrishna.webp';
 import graphicDhruv from 'assets/team/graphic/graphicDhruv.webp';
 import graphicMitanshu from 'assets/team/graphic/graphicMitanshu.webp';
 import graphicNeha from 'assets/team/graphic/graphicNeha.webp';
@@ -104,7 +105,7 @@ const teamData = {
       name: 'Krishna Zolpatil',
       quirk1: 'Drowsy',
       quirk2: 'Lethargic',
-      img: webSoham,
+      img: graphicKrishna,
       quote: `I'm not on a power saving mode, I am just lazy.`,
     },
     {
