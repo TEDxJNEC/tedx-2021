@@ -15,16 +15,14 @@ import {
 import ROUTES from 'constants/routes';
 import { Link } from 'react-router-dom';
 
-const { HOME, ABOUT } = ROUTES;
+const { HOME, ABOUT, TEAM, HIGHLIGHT } = ROUTES;
 const Footer = () => {
   return (
-    <div className="head">
+    <div>
       <footer>
         <div className="container">
           <div className="sec aboutus">
-            <h1>
-              <Logo />
-            </h1>
+            <Logo />
             <br />
             <p>
               TEDx JNEC is independently organized TED event. Officially
@@ -32,27 +30,47 @@ const Footer = () => {
             </p>
             <ul className="sci">
               <li>
-                <a href="https://www.facebook.com/TEDx-JNEC-102123505190447/">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.facebook.com/TEDx-JNEC-102123505190447/"
+                >
                   <Facebook />
                 </a>
               </li>
               <li>
-                <a href=" https://twitter.com/tedxjnec?s=09">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href=" https://twitter.com/tedxjnec?s=09"
+                >
                   <Twitter />
                 </a>
               </li>
               <li>
-                <a href="https://www.youtube.com/channel/UCsT0YIqwnpJCM-mx7-gSA4Q">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.youtube.com/channel/UCsT0YIqwnpJCM-mx7-gSA4Q"
+                >
                   <Youtube />
                 </a>
               </li>
               <li>
-                <a href="https://instagram.com/tedx_jnec?igshid=99m3ao9ndgdf">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://instagram.com/tedx_jnec?igshid=99m3ao9ndgdf"
+                >
                   <Insta />
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/company/tedx-jnec">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://www.linkedin.com/company/tedx-jnec"
+                >
                   <Linkedin />
                 </a>
               </li>
@@ -69,10 +87,10 @@ const Footer = () => {
                 <Link to={ABOUT}>About</Link>
               </li>
               <li>
-                <Link to="www.google.com">Team</Link>
+                <Link to={TEAM}>Team</Link>
               </li>
               <li>
-                <Link to="www.google.com">Highlights</Link>
+                <Link to={HIGHLIGHT}>Highlights</Link>
               </li>
               <li>
                 <Link to="www.google.com">Registrations</Link>

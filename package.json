@@ -2,7 +2,6 @@
   "name": "tedx-2021",
   "version": "0.1.0",
   "private": true,
-  "homepage": "tedx-2021",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -12,6 +11,8 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-spring": "^8.0.27",
+    "react-use-gesture": "^9.0.0",
     "sass-loader": "^10.1.1",
     "web-vitals": "^0.2.4"
   },
@@ -21,7 +22,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint '*/**/*.{js,jsx}' --quiet --fix"
+    "lint": "eslint src/**/*.jsx --quiet --fix",
+    "prettier": "prettier src/**/*.js --write"
   },
   "eslintConfig": {
     "extends": [

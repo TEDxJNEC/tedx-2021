@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import ROUTES from 'constants/routes';
 import '../common/error.scss';
 
 const Error = () => {
+  const { HOME } = ROUTES;
   return (
     <>
       <div id="notfound">
@@ -16,7 +19,9 @@ const Error = () => {
           <h1>Oops!!!</h1>
           <h2> Page not found</h2>
           <h3>Click Here To Go Back</h3>
-          <button type="button">HOME</button>
+          <Link to={HOME}>
+            <button type="button">HOME</button>
+          </Link>
         </div>
       </div>
     </>

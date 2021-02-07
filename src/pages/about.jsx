@@ -3,6 +3,7 @@ import aboutPageData from '../assets/about-content.json';
 import Content from '../components/Content';
 import AboutDetails from '../components/AboutDetails';
 import AboutCenterDesign from '../components/AboutCenterDesign';
+import { LeftDesign } from '../components/icons/index';
 import '../common/main.scss';
 
 import DefaultLayout from '../layouts';
@@ -21,7 +22,13 @@ const About = () => {
           />
         </div>
         <div className="center-design-wrapper">
+          <div className="left-container">
+            <LeftDesign />
+          </div>
           <AboutCenterDesign />
+          <div className="right-container">
+            <LeftDesign />
+          </div>
         </div>
         <div className="details-section">
           <div>
