@@ -100,14 +100,7 @@ const Mobile = () => {
             >
               HOME
             </NavLink>
-            <NavLink
-              to="/speakers"
-              exact
-              activeClassName="active"
-              className="mobi_title"
-            >
-              SPEAKERS
-            </NavLink>
+
             <NavLink
               to={ABOUT}
               exact
@@ -116,14 +109,7 @@ const Mobile = () => {
             >
               ABOUT
             </NavLink>
-            <NavLink
-              to="/booking"
-              exact
-              activeClassName="active"
-              className="mobi_title"
-            >
-              BOOKING
-            </NavLink>
+
             <NavLink
               to="/team"
               exact
@@ -131,6 +117,14 @@ const Mobile = () => {
               className="mobi_title"
             >
               TEAM
+            </NavLink>
+            <NavLink
+              to={REGISTRATION}
+              exact
+              activeClassName="active"
+              className="mobi_title"
+            >
+              REGISTRATION
             </NavLink>
           </ul>
         </div>
