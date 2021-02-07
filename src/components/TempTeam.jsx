@@ -4,19 +4,19 @@ import '../common/tempteam.scss';
 import { Link } from 'react-router-dom';
 
 const teamName = [
-  'web',
-  'graphic',
-  'marketing',
-  'curation',
-  'sponsorship',
-  'management',
-  'creative',
-  'technical',
-  'event',
-  'budget',
-  'documentation',
-  'dop',
-  'official',
+  // 'web',
+  // 'graphic',
+  // 'marketing',
+  // 'curation',
+  // 'sponsorship',
+  // 'management',
+  // 'creative',
+  // 'technical',
+  // 'event',
+  // 'budget',
+  // 'documentation',
+  // 'dop',
+  // 'official',
 ];
 const TempTeam = () => {
   return (
