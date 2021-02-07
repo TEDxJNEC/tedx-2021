@@ -6,11 +6,12 @@ import Dashboard from 'pages/admin/dashboard';
 import Team from 'pages/team';
 import Committee from 'pages/committee';
 import Highlights from 'pages/highlights';
+import Registration from 'pages/registration';
 import ROUTES from 'constants/routes';
 import Error from 'pages/error';
 
 const Routes = () => {
-  const { HOME, ABOUT, TEAM, DASHBOARD, HIGHLIGHT } = ROUTES;
+  const { HOME, ABOUT, TEAM, DASHBOARD, HIGHLIGHT, REGISTRATION } = ROUTES;
   return (
     <Router>
       <Switch>
@@ -25,6 +26,7 @@ const Routes = () => {
           render={(props) => <Committee {...props} />}
         />
         {/* <Route exact path={TEAM} component={}></Route> */}
+        <Route exact path={REGISTRATION} component={Registration} />
         {/* <Route exact path={BOOKINGS} component={}></Route> */}
         <Route component={Error} />
       </Switch>

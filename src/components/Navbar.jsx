@@ -6,7 +6,7 @@ import '../common/nav.scss';
 import img from '../assets/JNEC.svg';
 import MenuIcon from './icons/MenuIcon';
 
-const { HOME, ABOUT, TEAM } = ROUTES;
+const { HOME, ABOUT, REGISTRATION, TEAM } = ROUTES;
 
 const Desktop = () => {
   return (
@@ -19,27 +19,20 @@ const Desktop = () => {
           <NavLink to={HOME} exact activeClassName="active" className="title">
             HOME
           </NavLink>
-          {/* <NavLink
-            to="/speakers"
-            exact
-            activeClassName="active"
-            className="title"
-          >
-            SPEAKERS
-          </NavLink> */}
           <NavLink to={ABOUT} exact activeClassName="active" className="title">
             ABOUT
           </NavLink>
-          {/* <NavLink
-            to="/booking"
+
+          <NavLink to={TEAM} exact activeClassName="active" className="title">
+            TEAM
+          </NavLink>
+          <NavLink
+            to={REGISTRATION}
             exact
             activeClassName="active"
             className="title"
           >
-            BOOKING
-          </NavLink> */}
-          <NavLink to={TEAM} exact activeClassName="active" className="title">
-            TEAM
+            REGISTRATION
           </NavLink>
         </ul>
       </nav>
@@ -107,14 +100,6 @@ const Mobile = () => {
             >
               HOME
             </NavLink>
-            {/* <NavLink
-              to="/speakers"
-              exact
-              activeClassName="active"
-              className="mobi_title"
-            >
-              SPEAKERS
-            </NavLink> */}
             <NavLink
               to={ABOUT}
               exact
@@ -123,14 +108,7 @@ const Mobile = () => {
             >
               ABOUT
             </NavLink>
-            {/* <NavLink
-              to="/booking"
-              exact
-              activeClassName="active"
-              className="mobi_title"
-            >
-              BOOKING
-            </NavLink> */}
+
             <NavLink
               to={TEAM}
               exact
@@ -138,6 +116,14 @@ const Mobile = () => {
               className="mobi_title"
             >
               TEAM
+            </NavLink>
+            <NavLink
+              to={REGISTRATION}
+              exact
+              activeClassName="active"
+              className="mobi_title"
+            >
+              REGISTRATION
             </NavLink>
           </ul>
         </div>

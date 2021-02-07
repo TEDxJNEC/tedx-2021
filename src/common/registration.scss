@@ -1,0 +1,38 @@
+@import './colors.scss';
+@import './main.scss';
+@import './fonts.scss';
+
+.background {
+  background-color: black;
+  overflow: hidden;
+
+  img {
+    height: 100vh;
+    opacity: 0.6;
+  }
+  h1 {
+    position: absolute;
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    text-transform: uppercase;
+    font-family: $FONT_SECONDARY;
+    color: $PRIMARY_VARIANT;
+    letter-spacing: 15px;
+    z-index: 999;
+    text-shadow: -8px 0px 0px rgb(49, 47, 47);
+  }
+}
+
+@media screen and (max-width: 759px) {
+  .background {
+    img {
+      height: 100vh;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
