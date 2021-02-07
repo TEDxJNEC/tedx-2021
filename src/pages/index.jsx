@@ -1,17 +1,18 @@
 import React from 'react';
-import logo from '../assets/logo.svg';
+import IntroVideo from 'components/IntroVideo';
+import AboutTheme from 'components/AboutTheme';
 import '../common/main.scss';
 import DefaultLayout from '../layouts';
 import Card from '../components/ComingsoonCard';
+import HighlightsLink from '../components/HighlightsLink';
 
 function Home() {
   return (
     <DefaultLayout>
-      <div className="App">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-headline">KINTSUGI</h1>
-      </div>
+      <IntroVideo />
+      <AboutTheme />
       <Card />
+      <HighlightsLink />
     </DefaultLayout>
   );
 }
