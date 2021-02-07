@@ -5,11 +5,12 @@ import About from 'pages/about';
 import Dashboard from 'pages/admin/dashboard';
 import Team from 'pages/team';
 import Committee from 'pages/committee';
+import Highlights from 'pages/highlights';
 import ROUTES from 'constants/routes';
 import Error from 'pages/error';
 
 const Routes = () => {
-  const { HOME, ABOUT, TEAM, DASHBOARD } = ROUTES;
+  const { HOME, ABOUT, TEAM, DASHBOARD, HIGHLIGHT } = ROUTES;
   return (
     <Router>
       <Switch>
@@ -17,6 +18,7 @@ const Routes = () => {
         <Route exact path={ABOUT} component={About} />
         <Route exact path={DASHBOARD} component={Dashboard} />
         <Route exact path={TEAM} component={Team} />
+        <Route exact path={HIGHLIGHT} component={Highlights} />
         <Route
           exact
           path={`${TEAM}/:committee`}
