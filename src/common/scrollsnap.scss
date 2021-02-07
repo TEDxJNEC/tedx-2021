@@ -1,0 +1,16 @@
+// body {
+//   scroll-snap-type: y;
+// }
+.video-section {
+  height: 100vh;
+  scroll-snap-align: start;
+  text-align: center;
+  position: relative;
+}
+
+div {
+  scroll-snap-align: start;
+}
+nav {
+  scroll-snap-align: start;
+}

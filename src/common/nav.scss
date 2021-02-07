@@ -1,5 +1,5 @@
-@import "./colors.scss";
-@import "./main.scss";
+@import './colors.scss';
+@import './main.scss';
 
 nav {
   width: 100%;
@@ -42,7 +42,7 @@ nav {
 }
 .mobile_menu {
   position: absolute;
-  top: 100rem;
+  top: -100rem;
   left: 0;
   height: calc(100vh - 5rem);
   width: 100vw;
@@ -53,7 +53,7 @@ nav {
 .inanimation {
   animation: inani 0.5s forwards;
 }
-@keyframes inani{
+@keyframes inani {
   from {
     opacity: 0;
     display: none;
@@ -92,7 +92,6 @@ nav {
   justify-content: space-around;
   align-items: center;
   font-size: 20px;
-  
 
   .mobi_title {
     text-decoration: none;
@@ -112,7 +111,6 @@ nav {
     }
   }
 }
- 
 
 @media screen and (max-width: 759px) {
   .links {

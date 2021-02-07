@@ -1,0 +1,40 @@
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.container-team-list {
+  display: flex;
+  overflow-x: scroll;
+  gap: 32px;
+  margin: 0 64px;
+  @media screen and (max-width: 720px) {
+    margin: 0 24px;
+  }
+}
+
+.card-team-list {
+  flex-shrink: 0;
+  text-align: center;
+  border-radius: 10px;
+  margin-left: 10px;
+  line-height: 0.1em;
+  border-bottom: 2px solid #f6c90e;
+  width: 20%;
+  margin: 10px 0 20px;
+
+  // background: #fff;
+  // :before {
+  //   content: 'LOL';
+  // }
+  // :after {
+  //   content: 'LOL';
+  // }
+}
+.card-team-list-team-heading {
+  background: #121212;
+  padding: 0 10px;
+}
+.tempteamlinks {
+  color: white;
+  font-size: 26px;
+}

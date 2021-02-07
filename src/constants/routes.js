@@ -4,6 +4,7 @@ const ROUTES = {
   TEAM: '/team',
   REGISTRATION: '/registration',
   DASHBOARD: '/admin/dashboard',
+  HIGHLIGHT: '/highlight',
 };
 
 export default ROUTES;
