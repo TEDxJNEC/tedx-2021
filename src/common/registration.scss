@@ -25,3 +25,14 @@
     text-shadow: -8px 0px 0px rgb(49, 47, 47);
   }
 }
+
+@media screen and (max-width: 759px) {
+  .background {
+    img {
+      height: 100vh;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
