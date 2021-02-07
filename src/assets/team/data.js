@@ -87,10 +87,10 @@ const teamData = {
     },
     {
       name: 'Huzaif Quazi',
-      quirk1: 'Passionate',
-      quirk2: 'Learner',
+      quirk1: 'mysterious',
+      quirk2: 'Vibrant',
       img: webHuzaif,
-      quote: 'If I Could meet anybody, Its you ! ',
+      quote: 'If I Could meet anybody, Its you !',
     },
     {
       name: 'Ayush Nayar',

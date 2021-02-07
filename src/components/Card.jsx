@@ -17,19 +17,34 @@ function List() {
 const Card = () => {
   return (
     <>
-      <div className="main_container">
-        <h1>SPEAKERS</h1>
-        <hr />
-        <div className="container">
-          <div className="box-card">
-            <List />
-            <List />
-            <List />
-            <List />
-            {/* <List /> */}
+      {window.screen.width >= 720 ? (
+        <div className="main_container">
+          <h1>SPEAKERS</h1>
+          <hr />
+          <div className="container">
+            <div className="box-card">
+              <List />
+              <List />
+              <List />
+              <List />
+              {/* <List /> */}
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="main_container">
+          <h1>SPEAKERS</h1>
+          <hr />
+          <div className="container">
+            <div className="box-card">
+              <List />
+              <List />
+
+              {/* <List /> */}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

@@ -8,6 +8,7 @@ import 'common/introvideo.scss';
 import VideoFull from 'assets/videos/videoFull.webm';
 import VideoFullMobile from 'assets/videos/videoFullmobile.webm';
 import logo from 'assets/JNEC-black.svg';
+import logowhite from 'assets/JNEC.svg';
 import ThemeLogo from 'assets/theme-logo.svg';
 
 const buildThresholdArray = () => Array.from(Array(100).keys(), (i) => i / 100);
@@ -49,7 +50,15 @@ const VideoSection = ({
       </video>
       {showMask ? (
         <div className="video-mask">
-          <img src={logo} alt="TEDx JNEC Logo" className="tedx-logo-video" />
+          {window.screen.width >= 720 ? (
+            <img src={logo} alt="TEDx JNEC Logo" className="tedx-logo-video" />
+          ) : (
+            <img
+              src={logowhite}
+              alt="TEDx JNEC Logo"
+              className="tedx-logo-video"
+            />
+          )}
 
           <img
             src={ThemeLogo}
