@@ -8,7 +8,7 @@ const DefaultLayout = ({ children }) => {
   useEffect(() => {
     setTimeout(() => {
       setIsMounted(true);
-    }, 1000);
+    }, 7000);
   }, []);
   return (
     <>

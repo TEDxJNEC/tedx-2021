@@ -1,15 +1,22 @@
 import React from 'react';
+import vid from 'assets/loader.webm';
 import '../common/loader.scss';
 
 const Loader = () => {
   return (
     <>
       <div className="show-loader">
-        <img
-          src="https://miro.medium.com/max/1600/1*e_Loq49BI4WmN7o9ItTADg.gif"
-          width="500"
-          alt=""
-        />
+        <video
+          className="loading-video"
+          muted
+          loop
+          width="200"
+          height="500"
+          kind="captions"
+          autoPlay
+        >
+          <source src={vid} type="video/webm" />
+        </video>
       </div>
     </>
   );
