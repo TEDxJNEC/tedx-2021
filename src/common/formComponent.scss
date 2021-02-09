@@ -1,15 +1,16 @@
 .form__component {
-	color: white;
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	align-items: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
 }
 .form__elements {
-	display: flex;
-	flex-direction: column;
-	width: 300px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
 }
 .form__error {
-	color: red;
+  color: red;
 }

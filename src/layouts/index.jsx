@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Loader from 'components/Loader';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
 const DefaultLayout = ({ children }) => {
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setIsMounted(true);
-    }, 7000);
-  }, []);
+  // const [isMounted, setIsMounted] = useState(false);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsMounted(true);
+  //   }, 7000);
+  // }, []);
   return (
     <>
-      {isMounted ? (
+      {/* // eslint-disable-next-line no-constant-condition */}
+      {true ? (
         <div>
           <Navbar />
           <div className="page-wrapper">{children}</div>
