@@ -1,0 +1,15 @@
+.form__component {
+	color: white;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	align-items: center;
+}
+.form__elements {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+}
+.form__error {
+	color: red;
+}

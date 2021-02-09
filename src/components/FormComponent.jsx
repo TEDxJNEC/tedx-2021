@@ -1,15 +1,19 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
+import "common/formComponent.scss";
 
 const FormComponent = () => {
-	const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+	const phoneRegExp = `/^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/`;
+	const emailRegExp = `/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/`;
 	return (
 		<>
 			<Formik
 				initialValues={{
 					name: "",
 					phone: "",
+					email: "",
+					address: "",
 					age: "",
 					who: "",
 					clgName: "",
@@ -28,6 +32,11 @@ const FormComponent = () => {
 						.string()
 						.matches(phoneRegExp, "Phone number is not valid")
 						.required("Phone number is required"),
+					email: yup
+						.string()
+						.matches(emailRegExp, "Email is not valid")
+						.required("Email address is required"),
+					address: yup.string().required("Address is required"),
 					age: yup
 						.number()
 						.min(8, "You must be older than 8 years")
@@ -54,25 +63,38 @@ const FormComponent = () => {
 					}, 3000);
 				}}>
 				{(props) => (
-					<Form>
-						<label htmlFor='name'>
+					<Form className='form__component'>
+						<label className='form__elements' htmlFor='name'>
 							Name:
 							<Field name='name' type='text' placeholder='Your Name' />
-							<ErrorMessage name='name' />
+							<span className='form__error'>
+								<ErrorMessage name='name' />
+							</span>
 						</label>
-						<label htmlFor='phone'>
+						<label className='form__elements' htmlFor='phone'>
 							Mobile Number:
 							<Field
 								name='phone'
 								type='text'
 								placeholder='Your Mobile Number'
 							/>
-							<ErrorMessage name='phone' />
+							<span className='form__error'>
+								<ErrorMessage name='phone' />
+							</span>
 						</label>
-						<label htmlFor='age'>
+						<label className='form__elements' htmlFor='email'>
+							Age:
+							<Field name='email' type='email' placeholder='Your Email' />
+							<span className='form__error'>
+								<ErrorMessage name='email' />
+							</span>
+						</label>
+						<label className='form__elements' htmlFor='age'>
 							Age:
 							<Field name='age' type='text' placeholder='Your Age' />
-							<ErrorMessage name='age' />
+							<span className='form__error'>
+								<ErrorMessage className='form__error' name='age' />
+							</span>
 						</label>
 					</Form>
 				)}
