@@ -1,44 +1,49 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import '../../common/admin-navbar.scss';
 
 const Navbar = () => {
-    return (
-        <nav className='sidenav'>
-            <div className='name'>Full Name</div>
+  return (
+    <nav className="sidenav">
+      <div className="name">Full Name</div>
 
-            <div className='nav-links'>
-                <div>
-                    <i />
-                    <Link to='/admin/dashboard'>DASHBOARD</Link>
-                </div>
-                <div>
-                    <i />
-                    <Link to='/admin/dashboard'>CHAT</Link>
-                </div>
-                <div>
-                    <i />
-                    <Link to='/admin/dashboard'>CONTACT</Link>
-                </div>
-                <div>
-                    <i />
-                    <Link to='/admin/dashboard'>NOTIFICATIONS</Link>
-                </div>
-                <div>
-                    <i />
-                    <Link to='/admin/dashboard'>CALENDAR</Link>
-                </div>
-                <div>
-                    <i />
-                    <Link to='/admin/dashboard'>SETTINGS</Link>
-                </div>
-            </div>
-            <div className='logout'>
-                <i />
-                <Link to='/'>LOGOUT</Link>
-            </div>
-        </nav>
-    );
+      <div className="nav-links">
+        <div>
+          <NavLink activeClassName="active" to="/admin/dashboard">
+            DASHBOARD
+          </NavLink>
+        </div>
+        <div>
+          <NavLink activeClassName="active" to="/admin/chat">
+            CHAT
+          </NavLink>
+        </div>
+        <div>
+          <NavLink activeClassName="active" to="/admin/contact">
+            CONTACT
+          </NavLink>
+        </div>
+        <div>
+          <NavLink activeClassName="active" to="/admin/notifications">
+            NOTIFICATIONS
+          </NavLink>
+        </div>
+        <div>
+          <NavLink activeClassName="active" to="/admin/calendar">
+            CALENDAR
+          </NavLink>
+        </div>
+        <div>
+          <NavLink activeClassName="active" to="/admin/settings">
+            SETTINGS
+          </NavLink>
+        </div>
+      </div>
+      <div className="logout">
+        <Link to="/">LOGOUT</Link>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;

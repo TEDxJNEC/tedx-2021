@@ -1,18 +1,22 @@
-import FormComponent from "components/FormComponent";
-import logo from "../assets/logo.svg";
-import "../common/main.scss";
-import DefaultLayout from "../layouts";
+import React from 'react';
+import IntroVideo from 'components/IntroVideo';
+import AboutTheme from 'components/AboutTheme';
+import '../common/main.scss';
+import FormComponent from 'components/FormComponent';
+import DefaultLayout from '../layouts';
+import Card from '../components/ComingsoonCard';
+import HighlightsLink from '../components/HighlightsLink';
 
 function Home() {
-	return (
-		<DefaultLayout>
-			<div className='App'>
-				<img src={logo} className='App-logo' alt='logo' />
-				<h1 className='App-headline'>KINTSUGI</h1>
-				<FormComponent />
-			</div>
-		</DefaultLayout>
-	);
+  return (
+    <DefaultLayout>
+      <IntroVideo />
+      <AboutTheme />
+      <Card />
+      <HighlightsLink />
+      <FormComponent />
+    </DefaultLayout>
+  );
 }
 
 export default Home;

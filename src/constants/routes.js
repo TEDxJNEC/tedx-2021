@@ -1,7 +1,10 @@
-export const ROUTES = {
-    HOME: '/',
-    ABOUT: '/about',
-    TEAM: '/team',
-    BOOKINGS: '/bookings',
-    DASHBOARD: '/admin/dashboard',
+const ROUTES = {
+  HOME: '/',
+  ABOUT: '/about',
+  TEAM: '/team',
+  REGISTRATION: '/registration',
+  DASHBOARD: '/admin/dashboard',
+  HIGHLIGHT: '/highlight',
 };
+
+export default ROUTES;

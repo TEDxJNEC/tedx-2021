@@ -1,57 +1,129 @@
-@import "./colors.scss";
+@import './colors.scss';
 @import './main.scss';
 
-header
-{
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 90px;
-	width: 100%;
-	background: #121212;
-	transition: 1s;
-	padding: 0 80px;
-	box-sizing: border-box;
+nav {
+  width: 100%;
+  height: 5rem;
+  background-color: $BACKGROUND;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $PRIMARY_COLOR;
+  position: relative;
+
+  .links {
+    .title {
+      color: $PRIMARY_COLOR;
+      padding-right: 3rem;
+      text-decoration: none;
+      transition: 0.5s;
+
+      &:hover {
+        color: #fff;
+      }
+      &.active {
+        color: $ACCENT_COLOR;
+        border-left: 3px solid $ACCENT_COLOR;
+        padding-left: 1rem;
+        font-weight: bold;
+      }
+    }
+  }
+  .logo_tedx {
+    width: 15rem;
+    padding-left: 2rem;
+  }
 }
-header img
-{
-	width: 221px;
-	height: 50px;
-	position: relative;
-	top: 10px;
-	left: 0;
-	transform: 1s;
+
+.menu_logo {
+  display: none;
+  pointer-events: none;
+  padding-right: 1rem;
 }
-nav
-{
-	position: relative;
-	float: right;
+.mobile_menu {
+  position: absolute;
+  top: -100rem;
+  left: 0;
+  height: calc(100vh - 5rem);
+  width: 100vw;
+  background-color: rgb(62, 62, 62);
+  opacity: 0;
+  z-index: 99999;
 }
-nav ul
-{
-	position: relative;
-	margin: 0;
-	padding: 35px 0;
-    display: flex; 
+.inanimation {
+  animation: inani 0.5s forwards;
 }
-nav ul li
-{
-	list-style: none;
+@keyframes inani {
+  from {
+    opacity: 0;
+    display: none;
+    top: 100vh;
+  }
+  to {
+    display: flex;
+    opacity: 1;
+    top: 5rem;
+  }
 }
-nav ul li a
-{
-	color: #f6c90e;
-	padding: 10px 20px;
+
+.outanimation {
+  animation: outani 0.5s forwards;
+}
+@keyframes outani {
+  from {
+    top: 5rem;
+    opacity: 100;
+    display: flex;
+  }
+  to {
+    top: 100vh;
+    opacity: 0;
+    display: none;
+  }
+}
+
+.mobi_links {
+  top: 5rem;
+  left: 0;
+  height: calc(100vh - 5rem);
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+
+  .mobi_title {
     text-decoration: none;
-    
+    list-style: none;
+    position: relative;
+    color: $PRIMARY_COLOR;
+    animation-timing-function: ease;
+
+    &:hover {
+      color: #fff;
+    }
+    &.active {
+      color: $ACCENT_COLOR;
+      border-left: 3px solid $ACCENT_COLOR;
+      padding-left: 1rem;
+      font-weight: bold;
+    }
+  }
 }
 
-nav ul li a:hover
-{
-	color: #ffffff;
+@media screen and (max-width: 759px) {
+  .links {
+    display: none;
+    pointer-events: none;
+  }
+  .menu_logo {
+    display: flex;
+    align-items: center;
+    pointer-events: auto;
+  }
+  .logo_tedx {
+    width: 10rem !important;
+    padding-left: 1rem;
+  }
 }
-
-nav ul li .active
-{
-    color: #FF4040;
-}        

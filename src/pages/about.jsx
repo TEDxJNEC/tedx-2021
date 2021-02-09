@@ -1,25 +1,54 @@
 import React from 'react';
 import aboutPageData from '../assets/about-content.json';
 import Content from '../components/Content';
-import DefaultLayout from '../layouts'
-const About = () => {
-    const renderContent = aboutPageData.map((aboutData) => {
-        return (
-            <DefaultLayout>
-            <div key={aboutData.id}>
-                <Content
-                    headline={aboutData.headline}
-                    content={aboutData.content}
-                    iframeTitle={aboutData.tedxIframeTitle}
-                    iframeLink={aboutData.tedxIframeLink}
-                    reverseOrder={false}
-                />
-            </div>
-            </DefaultLayout>
-        );
-    });
+import AboutDetails from '../components/AboutDetails';
+import AboutCenterDesign from '../components/AboutCenterDesign';
+import { LeftDesign } from '../components/icons/index';
+import '../common/main.scss';
 
-    return <div>{renderContent}</div>;
+import DefaultLayout from '../layouts';
+
+const About = () => {
+  const renderContent = aboutPageData.map((aboutData) => {
+    return (
+      <DefaultLayout>
+        <div key={aboutData.id}>
+          <Content
+            headline={aboutData.headline}
+            content={aboutData.content}
+            iframeTitle={aboutData.tedxIframeTitle}
+            iframeLink={aboutData.tedxIframeLink}
+            reverseOrder={false}
+          />
+        </div>
+        <div className="center-design-wrapper">
+          <div className="left-container">
+            <LeftDesign />
+          </div>
+          <AboutCenterDesign />
+          <div className="right-container">
+            <LeftDesign />
+          </div>
+        </div>
+        <div className="details-section">
+          <div>
+            <AboutDetails
+              logo={aboutData.tedHeading}
+              content={aboutData.tedxContent}
+            />
+          </div>
+          <div>
+            <AboutDetails
+              logo={aboutData.tedxHeading}
+              content={aboutData.tedContent}
+            />
+          </div>
+        </div>
+      </DefaultLayout>
+    );
+  });
+
+  return <div>{renderContent}</div>;
 };
 
 export default About;

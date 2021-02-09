@@ -1,0 +1,114 @@
+@import './colors.scss';
+@import './main.scss';
+#notfound {
+  position: relative;
+  height: 100vh;
+}
+
+#notfound .notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.notfound {
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.notfound .notfound-404 {
+  position: relative;
+  height: 240px;
+}
+
+.notfound .notfound-404 h1 {
+  font-family: $FONT_PRIMARY;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 300px;
+  font-weight: 900;
+  margin: 0px;
+  color: $PRIMARY_VARIANT;
+  text-transform: uppercase;
+  letter-spacing: -40px;
+  margin-left: -20px;
+}
+
+.notfound .notfound-404 h1 > span {
+  text-shadow: -8px 0px 0px #473f3f;
+}
+
+.notfound h1 {
+  font-family: $FONT_SECONDARY;
+  position: relative;
+  font-size: 60px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $PRIMARY_VARIANT;
+  letter-spacing: 10px;
+  padding-left: 6px;
+}
+
+.notfound h2 {
+  font-family: $FONT_SECONDARY;
+  font-size: 40px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $PRIMARY_VARIANT;
+  letter-spacing: 10px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+.notfound h3 {
+  font-family: $FONT_SECONDARY;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $PRIMARY_VARIANT;
+}
+.notfound button {
+  background-color: #ff4040;
+  font-size: 20px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  margin-top: 20px;
+  border-radius: 40px;
+  color: black;
+  font-weight: bold;
+  border: 1px solid #fff;
+  letter-spacing: 3px;
+}
+
+@media only screen and (max-width: 786px) {
+  .notfound .notfound-404 {
+    height: 162px;
+  }
+  .notfound .notfound-404 h1 {
+    font-size: 162px;
+    height: 150px;
+    line-height: 162px;
+    letter-spacing: -20px;
+  }
+  .notfound h1 {
+    font-size: 26px;
+  }
+  .notfound h2 {
+    font-size: 16px;
+  }
+  .notfound h3 {
+    font-size: 10px;
+  }
+  .notfound button {
+    width: 100px;
+    padding: 5px;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    border: 1px solid #fff;
+  }
+}
