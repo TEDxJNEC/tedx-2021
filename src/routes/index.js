@@ -10,6 +10,7 @@ import Registration from 'pages/registration';
 import ROUTES from 'constants/routes';
 import Error from 'pages/error';
 import UserCallback from 'pages/google/callback';
+import Login from 'pages/login';
 
 const Routes = () => {
   const {
@@ -20,6 +21,7 @@ const Routes = () => {
     HIGHLIGHT,
     REGISTRATION,
     GOOGLE_AUTH_CALLBACK_USER,
+    LOGIN,
   } = ROUTES;
   return (
     <Router>
@@ -29,6 +31,7 @@ const Routes = () => {
         <Route exact path={DASHBOARD} component={Dashboard} />
         <Route exact path={TEAM} component={Team} />
         <Route exact path={HIGHLIGHT} component={Highlights} />
+        <Route exact path={LOGIN} component={Login} />
         <Route
           exact
           path={GOOGLE_AUTH_CALLBACK_USER}
