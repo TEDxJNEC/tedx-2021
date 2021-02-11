@@ -1,11 +1,14 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import 'common/formComponent.scss';
 
+import CutstomTextInput from 'components/form-fields/textInput';
+import CutstomSelectInput from 'components/form-fields/selectInput';
+
 const FormComponent = () => {
-  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-  const emailRegExp = /^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$/;
+  const phoneRegExp = /^[6789]\d{9}$/;
+  const emailRegExp = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
   return (
     <>
       <Formik
@@ -70,49 +73,36 @@ const FormComponent = () => {
       >
         {(props) => (
           <Form className="form__component">
-            <label className="form__elements" htmlFor="name">
-              Name:
-              <Field name="name" type="text" placeholder="Your Name" />
-              <span className="form__error">
-                <ErrorMessage name="name" />
-              </span>
-            </label>
-            <label className="form__elements" htmlFor="phone">
-              Mobile Number:
-              <Field
-                name="phone"
-                type="text"
-                placeholder="Your Mobile Number"
-              />
-              <span className="form__error">
-                <ErrorMessage name="phone" />
-              </span>
-            </label>
-            <label className="form__elements" htmlFor="email">
-              E-mail:
-              <Field name="email" type="email" placeholder="Your Email" />
-              <span className="form__error">
-                <ErrorMessage name="email" />
-              </span>
-            </label>
-            <label className="form__elements" htmlFor="age">
-              Age:
-              <Field name="age" type="text" placeholder="Your Age" />
-              <span className="form__error">
-                <ErrorMessage name="age" />
-              </span>
-            </label>
-            <label className="form__elements" htmlFor="who">
-              Who are you:
-              <Field as="select" name="who">
-                <option value="">Select</option>
-                <option value="student">Student</option>
-                <option value="notStudent">Other</option>
-              </Field>
-              <span className="form__error">
-                <ErrorMessage name="who" />
-              </span>
-            </label>
+            <Field
+              name="name"
+              label="Name"
+              component={CutstomTextInput}
+              placeholder="Your Name"
+            />
+            <Field
+              name="phone"
+              label="Mobile No."
+              component={CutstomTextInput}
+              placeholder="Your Mobile Number"
+            />
+            <Field
+              name="email"
+              label="E-mail"
+              component={CutstomTextInput}
+              placeholder="Your E-mail"
+            />
+            <Field
+              name="age"
+              label="Age"
+              component={CutstomTextInput}
+              placeholder="Your Age"
+            />
+            <Field
+              name="who"
+              label="Who are you"
+              component={CutstomSelectInput}
+              placeholder="Enter Profession"
+            />
             {props.values.who === 'student' ? (
               <p>This is rendered if you pick student</p>
             ) : null}

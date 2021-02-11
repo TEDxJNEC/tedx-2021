@@ -2,9 +2,12 @@
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  align-items: center;
   justify-content: center;
+  width: 90%;
+  padding: 24px 32px;
+  @media only screen and (min-width: 768px) {
+    width: 65%;
+  }
 }
 .form__elements {
   display: flex;

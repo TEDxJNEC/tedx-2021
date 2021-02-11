@@ -6,7 +6,9 @@ const Registration = () => {
   return (
     <>
       <DefaultLayout>
-        <Register />
+        <div className="register-page-wrapper">
+          <Register />
+        </div>
       </DefaultLayout>
     </>
   );
