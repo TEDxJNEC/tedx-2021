@@ -19,6 +19,7 @@ const FormComponent = () => {
           clgName: '',
           profession: '',
           exp: '',
+          know: '',
           judgingParameters: '',
           bestSkill: '',
         }}
@@ -54,6 +55,9 @@ const FormComponent = () => {
           bestSkill: yup
             .string()
             .required('Please provide your one best skill'),
+          know: yup
+            .string()
+            .required('Please tell how did you learn about TEDxJNEC'),
         })}
         onSubmit={(values, { setSubmitting, resetForm }) => {
           setTimeout(() => {
@@ -64,7 +68,7 @@ const FormComponent = () => {
           }, 3000);
         }}
       >
-        {() => (
+        {(props) => (
           <Form className="form__component">
             <label className="form__elements" htmlFor="name">
               Name:
@@ -85,7 +89,7 @@ const FormComponent = () => {
               </span>
             </label>
             <label className="form__elements" htmlFor="email">
-              Age:
+              E-mail:
               <Field name="email" type="email" placeholder="Your Email" />
               <span className="form__error">
                 <ErrorMessage name="email" />
@@ -109,6 +113,12 @@ const FormComponent = () => {
                 <ErrorMessage name="who" />
               </span>
             </label>
+            {props.values.who === 'student' ? (
+              <p>This is rendered if you pick student</p>
+            ) : null}
+            {props.values.who === 'notStudent' ? (
+              <p>This is rendered if you pick other</p>
+            ) : null}
           </Form>
         )}
       </Formik>
