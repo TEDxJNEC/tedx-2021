@@ -9,9 +9,18 @@ import Highlights from 'pages/highlights';
 import Registration from 'pages/registration';
 import ROUTES from 'constants/routes';
 import Error from 'pages/error';
+import UserCallback from 'pages/google/callback';
 
 const Routes = () => {
-  const { HOME, ABOUT, TEAM, DASHBOARD, HIGHLIGHT, REGISTRATION } = ROUTES;
+  const {
+    HOME,
+    ABOUT,
+    TEAM,
+    DASHBOARD,
+    HIGHLIGHT,
+    REGISTRATION,
+    GOOGLE_AUTH_CALLBACK_USER,
+  } = ROUTES;
   return (
     <Router>
       <Switch>
@@ -20,6 +29,11 @@ const Routes = () => {
         <Route exact path={DASHBOARD} component={Dashboard} />
         <Route exact path={TEAM} component={Team} />
         <Route exact path={HIGHLIGHT} component={Highlights} />
+        <Route
+          exact
+          path={GOOGLE_AUTH_CALLBACK_USER}
+          component={UserCallback}
+        />
         <Route
           exact
           path={`${TEAM}/:committee`}

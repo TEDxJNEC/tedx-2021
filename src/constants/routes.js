@@ -5,6 +5,7 @@ const ROUTES = {
   REGISTRATION: '/registration',
   DASHBOARD: '/admin/dashboard',
   HIGHLIGHT: '/highlight',
+  GOOGLE_AUTH_CALLBACK_USER: '/callback/google',
 };
 
 export default ROUTES;
