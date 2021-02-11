@@ -5,6 +5,7 @@ const ROUTES = {
   REGISTRATION: '/registration',
   DASHBOARD: '/admin/dashboard',
   HIGHLIGHT: '/highlight',
+  LOGIN: '/login',
 };
 
 export default ROUTES;
