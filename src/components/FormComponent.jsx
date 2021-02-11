@@ -6,16 +6,17 @@ import 'common/formComponent.scss';
 import CutstomTextInput from 'components/form-fields/textInput';
 import CutstomSelectInput from 'components/form-fields/selectInput';
 
-const FormComponent = () => {
+const FormComponent = ({ name, email }) => {
   const phoneRegExp = /^[6789]\d{9}$/;
   const emailRegExp = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
+
   return (
     <>
       <Formik
         initialValues={{
-          name: '',
+          name: name || '',
           phone: '',
-          email: '',
+          email: email || '',
           address: '',
           age: '',
           who: '',
@@ -70,14 +71,23 @@ const FormComponent = () => {
             setSubmitting(false);
           }, 3000);
         }}
+        enableReinitialize
       >
         {(props) => (
           <Form className="form__component">
             <Field
               name="name"
               label="Name"
+              disabled
               component={CutstomTextInput}
               placeholder="Your Name"
+            />
+            <Field
+              name="email"
+              label="E-mail"
+              disabled
+              component={CutstomTextInput}
+              placeholder="Your E-mail"
             />
             <Field
               name="phone"
@@ -85,12 +95,7 @@ const FormComponent = () => {
               component={CutstomTextInput}
               placeholder="Your Mobile Number"
             />
-            <Field
-              name="email"
-              label="E-mail"
-              component={CutstomTextInput}
-              placeholder="Your E-mail"
-            />
+
             <Field
               name="age"
               label="Age"

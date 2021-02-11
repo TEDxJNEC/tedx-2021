@@ -22,7 +22,7 @@ const CutstomTextInput = styled.input`
 `;
 
 const InputWrapper = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   position: relative;
   width: 100%;
 `;
@@ -30,9 +30,7 @@ const ErrorMessage = styled.span`
   color: red;
   position: absolute;
 `;
-const CustomLabel = styled.label`
-  margin-bottom: 5px;
-`;
+const CustomLabel = styled.label``;
 const TickIcon = styled.img`
   width: 20px;
   position: absolute;
@@ -53,7 +51,7 @@ const TextInput = ({
       <CutstomTextInput
         disabled={disabled}
         error={touched[field.name] && errors[field.name]}
-        accepted={touched[field.name] && !errors[field.name]}
+        accepted={(touched[field.name] && !errors[field.name]) || disabled}
         {...field}
         {...props}
       />
@@ -63,6 +61,8 @@ const TextInput = ({
       {touched[field.name] && !errors[field.name] && (
         <TickIcon src={tickIconSrc} />
       )}
+      {(touched[field.name] && !errors[field.name]) ||
+        (disabled && <TickIcon src={tickIconSrc} />)}
     </InputWrapper>
   );
 };
