@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Loader from 'components/Loader';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
 const DefaultLayout = ({ children }) => {
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(true);
   useEffect(() => {
     setTimeout(() => {
       setIsMounted(true);
@@ -13,7 +13,7 @@ const DefaultLayout = ({ children }) => {
   return (
     <>
       {/* // eslint-disable-next-line no-constant-condition */}
-      {true ? (
+      {isMounted ? (
         <div>
           <Navbar />
           <div className="page-wrapper">{children}</div>
