@@ -1,26 +1,60 @@
 import React, { useReducer, createContext } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from 'pages/index';
-import About from 'pages/about';
-import Dashboard from 'pages/admin/dashboard';
-import Team from 'pages/team';
-import Committee from 'pages/committee';
-import Highlights from 'pages/highlights';
-// eslint-disable-next-line import/no-cycle
-import Registration from 'pages/registration';
+import Loadable from 'react-loadable';
+
 import ROUTES from 'constants/routes';
 import Error from 'pages/error';
 // eslint-disable-next-line import/no-cycle
 import UserCallback from 'pages/google/callback';
-import Login from 'pages/login';
-import AdminLogin from 'pages/admin/login';
-import AmbassdorLogin from 'components/AmbassdorLogin';
+import Loader from 'components/Loader';
 import { initialState, reducer } from 'store/reducers/auth';
-// eslint-disable-next-line import/no-cycle
-import TestPage from 'pages/test';
 
 export const AuthContext = createContext();
+const Home = Loadable({
+  loader: () => import('pages'),
+  loading: Loader,
+});
 
+const About = Loadable({
+  loader: () => import('pages/about'),
+  loading: Loader,
+});
+const Dashboard = Loadable({
+  loader: () => import('pages/admin/dashboard'),
+  loading: Loader,
+});
+const Team = Loadable({
+  loader: () => import('pages/team'),
+  loading: Loader,
+});
+const Committee = Loadable({
+  loader: () => import('pages/committee'),
+  loading: Loader,
+});
+const Highlights = Loadable({
+  loader: () => import('pages/highlights'),
+  loading: Loader,
+});
+const Registration = Loadable({
+  loader: () => import('pages/registration'),
+  loading: Loader,
+});
+const Login = Loadable({
+  loader: () => import('pages/login'),
+  loading: Loader,
+});
+const AdminLogin = Loadable({
+  loader: () => import('pages/admin/login'),
+  loading: Loader,
+});
+const AmbassdorLogin = Loadable({
+  loader: () => import('components/AmbassdorLogin'),
+  loading: Loader,
+});
+const TestPage = Loadable({
+  loader: () => import('pages/test'),
+  loading: Loader,
+});
 const Routes = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const {
