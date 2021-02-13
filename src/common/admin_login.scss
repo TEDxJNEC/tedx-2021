@@ -1,0 +1,131 @@
+@import './colors.scss';
+@import './main.scss';
+@import './fonts.scss';
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 100;
+}
+.design {
+  img {
+    width: 700px;
+    margin-right: 50px;
+  }
+}
+form {
+  width: 500px;
+  height: 400px;
+  background: #353535;
+  padding: 40px;
+
+  h2 {
+    margin: 0 0 20px;
+    text-align: center;
+    letter-spacing: 3px;
+    color: $PRIMARY_COLOR;
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+  .input-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  .input-group input {
+    height: 50px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    outline: none;
+    background-color: #222;
+    color: #fff;
+    border: 1px solid #000;
+  }
+  .input-group span {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    padding: 0;
+    transition: 0.5s;
+    pointer-events: none;
+    color: #fff;
+
+    text-transform: uppercase;
+  }
+  .input-group input:focus ~ span,
+  .input-group input:valid ~ span {
+    top: -12px;
+    left: 12px;
+    font-size: 12px;
+    padding: 2px 4px;
+    color: #000;
+    border: 1px solid #000;
+    background: $PRIMARY_COLOR;
+  }
+
+  button {
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    background: $PRIMARY_COLOR;
+    align-items: center;
+    font-weight: 600;
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid #000;
+  }
+  button:after {
+    content: '';
+    background: #353535;
+
+    position: absolute;
+    padding-top: 60px;
+    padding-left: 400px;
+    opacity: 0;
+    transition: all 0.8s;
+  }
+
+  button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0.5s;
+    animation: gradient 1000ms;
+  }
+}
+@keyframes gradient {
+  from {
+    background: radial-gradient(
+      circle at center,
+      rgb(247, 238, 238) 0%,
+      rgb(233, 177, 22) 100%
+    );
+  }
+  to {
+    background: radial-gradient(
+      circle at center,
+      rgb(238, 204, 15) 0%,
+      rgb(231, 191, 12) 100%
+    );
+  }
+}
+@media screen and (max-width: 759px) {
+  .login {
+    padding: 0 10;
+  }
+  form {
+    width: auto;
+  }
+  .design {
+    display: none;
+  }
+}

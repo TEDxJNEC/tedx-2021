@@ -6,12 +6,15 @@ import Dashboard from 'pages/admin/dashboard';
 import Team from 'pages/team';
 import Committee from 'pages/committee';
 import Highlights from 'pages/highlights';
+// eslint-disable-next-line import/no-cycle
 import Registration from 'pages/registration';
 import ROUTES from 'constants/routes';
 import Error from 'pages/error';
 // eslint-disable-next-line import/no-cycle
 import UserCallback from 'pages/google/callback';
 import Login from 'pages/login';
+import AdminLogin from 'pages/admin/login';
+import AmbassdorLogin from 'components/AmbassdorLogin';
 import { initialState, reducer } from 'store/reducers/auth';
 // eslint-disable-next-line import/no-cycle
 import TestPage from 'pages/test';
@@ -29,6 +32,8 @@ const Routes = () => {
     REGISTRATION,
     GOOGLE_AUTH_CALLBACK_USER,
     LOGIN,
+    ADMIN_LOGIN,
+    AMBASSADOR_LOGIN,
   } = ROUTES;
   return (
     <AuthContext.Provider
@@ -45,6 +50,8 @@ const Routes = () => {
           <Route exact path={TEAM} component={Team} />
           <Route exact path={HIGHLIGHT} component={Highlights} />
           <Route exact path={LOGIN} component={Login} />
+          <Route exact path={ADMIN_LOGIN} component={AdminLogin} />
+          <Route exact path={AMBASSADOR_LOGIN} component={AmbassdorLogin} />
           <Route
             exact
             path={GOOGLE_AUTH_CALLBACK_USER}
