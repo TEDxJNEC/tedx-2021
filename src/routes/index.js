@@ -9,9 +9,19 @@ import Highlights from 'pages/highlights';
 import Registration from 'pages/registration';
 import ROUTES from 'constants/routes';
 import Error from 'pages/error';
+import Login from 'pages/admin/login';
+import AmbassdorLogin from 'components/AmbassdorLogin';
 
 const Routes = () => {
-  const { HOME, ABOUT, TEAM, DASHBOARD, HIGHLIGHT, REGISTRATION } = ROUTES;
+  const {
+    HOME,
+    ABOUT,
+    TEAM,
+    DASHBOARD,
+    HIGHLIGHT,
+    REGISTRATION,
+    LOGIN,
+  } = ROUTES;
   return (
     <Router>
       <Switch>
@@ -27,6 +37,8 @@ const Routes = () => {
         />
         {/* <Route exact path={TEAM} component={}></Route> */}
         <Route exact path={REGISTRATION} component={Registration} />
+        <Route exact path={LOGIN} component={Login} />
+        <Route exact path="/AmbassdorLogin" component={AmbassdorLogin} />
         {/* <Route exact path={BOOKINGS} component={}></Route> */}
         <Route component={Error} />
       </Switch>
