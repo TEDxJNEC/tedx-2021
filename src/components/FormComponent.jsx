@@ -15,7 +15,7 @@ from{
   }
 to{
   transform: translateX(0px);
-opacity:1;
+  opacity:1;
 }
 
 `;
@@ -63,34 +63,61 @@ const FormComponent = () => {
   const phoneRegExp = /^[6789]\d{9}$/;
   const emailRegExp = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
   const [step, setStep] = useState(1);
-  const [stepError, setStpError] = useState({ 1: false, 2: false });
+  const [stepError, setStpError] = useState({ 1: true, 2: true });
 
   const [animateRight, toggleRight] = useState(true);
   const incrementStep = () => {
     toggleRight(true);
     setStep(step + 1);
-    setStpError({ 1: false, 2: false });
   };
   const decrementStep = () => {
     toggleRight(false);
     setStep(step - 1);
   };
 
-  const validateStep = (e, props) => {
+  const validateStep = (props) => {
     const {
       address,
       age,
       bestSkill,
-      email,
       judgingParameters,
       know,
-      name,
       occupationDescription,
       phone,
     } = props.errors;
+
     if (step === 1) {
-    }
-    if (step === 2) {
+      if (
+        !address &&
+        props.touched.address &&
+        !phone &&
+        props.touched.phone &&
+        !occupationDescription &&
+        props.touched.occupationDescription
+      ) {
+        if (stepError[1]) {
+          setStpError({ ...step, 1: false });
+        }
+      } else if (!stepError[1]) {
+        setStpError({ ...step, 1: true });
+      }
+    } else if (step === 2) {
+      if (
+        !age &&
+        props.touched.age &&
+        !judgingParameters &&
+        props.touched.judgingParameters &&
+        !bestSkill &&
+        props.touched.bestSkill &&
+        !know &&
+        props.touched.know
+      ) {
+        if (stepError[2]) {
+          setStpError({ ...step, 2: false });
+        }
+      } else if (!stepError[2]) {
+        setStpError({ ...step, 2: true });
+      }
     }
   };
 
@@ -162,10 +189,7 @@ const FormComponent = () => {
         }}
       >
         {(props) => (
-          <StyledForm
-            onChange={(e) => validateStep(e, props)}
-            className="form__component"
-          >
+          <StyledForm className="form__component">
             {step === 1 ? (
               <StepWrapper key="step1" visible={animateRight}>
                 <Field
@@ -246,10 +270,11 @@ const FormComponent = () => {
                 />
               </StepWrapper>
             )}
+            {validateStep(props)}
             <ButtonWrapper>
               <Button
                 type="button"
-                disabled={step && stepError[step]}
+                disabled={stepError[step]}
                 onClick={() => incrementStep()}
               >
                 Next
