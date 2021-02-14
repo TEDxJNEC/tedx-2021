@@ -231,10 +231,9 @@ body {
 .footerClass {
   color: white;
 }
-.page-wrapper {
-  min-height: 100vh;
+.team-page-wrapper {
+  min-height: 80vh;
 }
-
 @media screen and (max-width: 1100px) {
   .row {
     margin: 0 7.5%;
