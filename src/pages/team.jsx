@@ -6,8 +6,10 @@ import React from 'react';
 function Team() {
   return (
     <DefaultLayout>
-      <TempTeam />
-      <TeamComponent />
+      <div className="team-page-wrapper">
+        <TempTeam />
+        <TeamComponent />
+      </div>
     </DefaultLayout>
   );
 }

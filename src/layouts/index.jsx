@@ -16,7 +16,7 @@ const DefaultLayout = ({ children }) => {
       {isMounted ? (
         <div>
           <Navbar />
-          <div className="page-wrapper">{children}</div>
+          <div>{children}</div>
           <Footer />
         </div>
       ) : (
