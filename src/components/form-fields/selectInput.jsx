@@ -26,7 +26,9 @@ const CutstomSelectInput = styled.select`
   }
 `;
 
-const InputWrapper = styled.div``;
+const InputWrapper = styled.div`
+  margin-bottom: 20px;
+`;
 const ErrorMessage = styled.span`
   color: red;
 `;
