@@ -29,9 +29,12 @@ const FormComponent = () => {
   const phoneRegExp = /^[6789]\d{9}$/;
   const emailRegExp = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
   const [step, setStep] = useState(1);
+  const [stepError, setStpError] = useState({ 1: true, 2: true });
 
-  const incrementStep = () => {
+  const incrementStep = (p) => {
     setStep(step + 1);
+    setStpError(true);
+    console.log(p);
   };
   const decrementStep = () => {
     setStep(step - 1);
@@ -46,10 +49,8 @@ const FormComponent = () => {
           email: '',
           address: '',
           age: '',
-          who: 'student',
-          clgName: '',
-          profession: '',
-          exp: '',
+          occupation: 'student',
+          occupationDescription: '',
           know: '',
           judgingParameters: '',
           bestSkill: '',
@@ -74,15 +75,16 @@ const FormComponent = () => {
             .min(8, 'You must be older than 8 years')
             .max(100, 'You must be younger than 100 years')
             .required('Please provide your age'),
-          who: yup
+          occupation: yup
             .string()
             .oneOf(
               ['student', 'notStudent'],
               'Please select one of the options'
             )
             .required('Selection is required'),
-          clgName: yup.string().required('Please provide your college name'),
-          profession: yup.string().required('Please provide your profession'),
+          // clgName: yup.string().required('Please provide your college name'),
+          // profession: yup.string().required('Please provide your profession'),
+          occupationDescription: yup.string().required('Please provide your '),
           judgingParameters: yup
             .string()
             .required('Required')
@@ -134,22 +136,24 @@ const FormComponent = () => {
                   placeholder="Your Address"
                 />
                 <Field
-                  name="who"
+                  name="occupation"
                   label="Occupation"
                   component={CutstomSelectInput}
                   placeholder="Enter Profession"
                 />
-                {props.values.who === 'student' ? (
+                {props.values.occupation === 'student' ? (
                   <Field
-                    name="clgName"
+                    name="occupationDescription"
                     label="College Name"
+                    errorSuffix="College Name"
                     component={CutstomTextInput}
                     placeholder="Your College Name"
                   />
                 ) : (
                   <Field
-                    name="profession"
+                    name="occupationDescription"
                     label="Profession"
+                    errorSuffix="Profession"
                     component={CutstomTextInput}
                     placeholder="Your Profession"
                   />
@@ -186,7 +190,11 @@ const FormComponent = () => {
               </StepWrapper>
             )}
             <ButtonWrapper>
-              <Button type="button" onClick={incrementStep}>
+              <Button
+                type="button"
+                disabled={stepError[1]}
+                onClick={() => incrementStep()}
+              >
                 Next
               </Button>
               <Button
