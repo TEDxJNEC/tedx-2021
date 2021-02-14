@@ -58,7 +58,7 @@ const Button = styled.button`
   ${(props) => (props.backBtn ? `display:none` : null)}
 `;
 const StyledForm = styled(Form)``;
-const FormComponent = () => {
+const FormComponent = ({ name, email }) => {
   // const phoneRegExp = /^((+*)((0[ -]+)*|(91 )*)(d{10}+))|d{5}([- ]*)d{6}$/;
   const phoneRegExp = /^[6789]\d{9}$/;
   const emailRegExp = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
