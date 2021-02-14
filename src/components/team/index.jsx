@@ -10,6 +10,9 @@ import marketingOmkar from 'assets/team/core/marketingOmkar.webp';
 import officialAbhishek from 'assets/team/core/officalAbhishek.webp';
 import officialManik from 'assets/team/core/officalManik.webp';
 import sponsorshipEsha from 'assets/team/core/sponsorshipEsha.webp';
+import graphicKrishna from 'assets/team/core/graphicKrishna.webp';
+import technicalShubham from 'assets/team/core/technicalShubham.webp';
+import curationSaumitra from 'assets/team/curation/curationSaumitra.webp';
 import officialPriyanka from 'assets/team/official/officialPriyanka.webp';
 
 const TeamComponent = () => {
@@ -50,6 +53,15 @@ const TeamComponent = () => {
           </Link>
           <Link to="/team/web" className="slide ten">
             <img className="carousel-image" src={webPruthvi} alt="dd" />
+          </Link>
+          <Link to="/team/web" className="slide eleven">
+            <img className="carousel-image" src={graphicKrishna} alt="dd" />
+          </Link>
+          <Link to="/team/web" className="slide twelve">
+            <img className="carousel-image" src={technicalShubham} alt="dd" />
+          </Link>
+          <Link to="/team/web" className="slide thirteen">
+            <img className="carousel-image" src={curationSaumitra} alt="dd" />
           </Link>
         </div>
       </div>
