@@ -77,7 +77,21 @@ const FormComponent = () => {
   };
 
   const validateStep = (e, props) => {
-    console.log(props);
+    const {
+      address,
+      age,
+      bestSkill,
+      email,
+      judgingParameters,
+      know,
+      name,
+      occupationDescription,
+      phone,
+    } = props.errors;
+    if (step === 1) {
+    }
+    if (step === 2) {
+    }
   };
 
   return (
@@ -235,7 +249,7 @@ const FormComponent = () => {
             <ButtonWrapper>
               <Button
                 type="button"
-                disabled={stepError[1]}
+                disabled={step && stepError[step]}
                 onClick={() => incrementStep()}
               >
                 Next

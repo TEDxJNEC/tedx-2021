@@ -67,7 +67,9 @@ const TextInput = ({
         {...props}
       />
       {touched[field.name] && errors[field.name] && (
-        <ErrorMessage>{`${errors[field.name]} ${errorSuffix}`}</ErrorMessage>
+        <ErrorMessage>{`${errors[field.name]} ${
+          errorSuffix || ''
+        }`}</ErrorMessage>
       )}
       {touched[field.name] && !errors[field.name] && (
         <TickIcon src={tickIconSrc} />
