@@ -2,13 +2,46 @@ import React, { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import 'common/formComponent.scss';
-import styled from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 
 import CutstomTextInput from 'components/form-fields/textInput';
 import CutstomTextAreaInput from 'components/form-fields/textareaInput';
 import CutstomSelectInput from 'components/form-fields/selectInput';
 
-const StepWrapper = styled.div``;
+const slideIn = keyframes`
+from{
+  transform: translateX(200px);
+  opacity:0;
+  }
+to{
+  transform: translateX(0px);
+opacity:1;
+}
+
+`;
+const slideOut = keyframes`
+from{
+  transform: translateX(-200px);
+  opacity:0;
+  }
+to{
+  transform: translateX(0px);
+opacity:1;
+}
+
+`;
+const StepWrapper = styled.div`
+  animation-name: ${(props) =>
+    props.visible
+      ? css`
+          ${slideIn}
+        `
+      : css`
+          ${slideOut}
+        `};
+  animation-duration: 750ms;
+  animation-fill-mode: forwards;
+`;
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -21,23 +54,30 @@ const Button = styled.button`
   border: none;
   color: #fff;
   cursor: pointer;
+  transition: 1000ms;
   ${(props) => (props.backBtn ? `display:none` : null)}
 `;
-
+const StyledForm = styled(Form)``;
 const FormComponent = () => {
   // const phoneRegExp = /^((+*)((0[ -]+)*|(91 )*)(d{10}+))|d{5}([- ]*)d{6}$/;
   const phoneRegExp = /^[6789]\d{9}$/;
   const emailRegExp = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
   const [step, setStep] = useState(1);
-  const [stepError, setStpError] = useState({ 1: true, 2: true });
+  const [stepError, setStpError] = useState({ 1: false, 2: false });
 
-  const incrementStep = (p) => {
+  const [animateRight, toggleRight] = useState(true);
+  const incrementStep = () => {
+    toggleRight(true);
     setStep(step + 1);
-    setStpError(true);
-    console.log(p);
+    setStpError({ 1: false, 2: false });
   };
   const decrementStep = () => {
+    toggleRight(false);
     setStep(step - 1);
+  };
+
+  const validateStep = (e, props) => {
+    console.log(props);
   };
 
   return (
@@ -108,9 +148,12 @@ const FormComponent = () => {
         }}
       >
         {(props) => (
-          <Form className="form__component">
+          <StyledForm
+            onChange={(e) => validateStep(e, props)}
+            className="form__component"
+          >
             {step === 1 ? (
-              <StepWrapper>
+              <StepWrapper key="step1" visible={animateRight}>
                 <Field
                   name="name"
                   label="Name"
@@ -132,7 +175,7 @@ const FormComponent = () => {
                 <Field
                   name="address"
                   label="Address"
-                  component={CutstomTextInput}
+                  component={CutstomTextAreaInput}
                   placeholder="Your Address"
                 />
                 <Field
@@ -160,7 +203,7 @@ const FormComponent = () => {
                 )}
               </StepWrapper>
             ) : (
-              <StepWrapper>
+              <StepWrapper key="step2" visible={animateRight}>
                 <Field
                   name="age"
                   label="DOB"
@@ -205,7 +248,7 @@ const FormComponent = () => {
                 Back
               </Button>
             </ButtonWrapper>
-          </Form>
+          </StyledForm>
         )}
       </Formik>
     </>
