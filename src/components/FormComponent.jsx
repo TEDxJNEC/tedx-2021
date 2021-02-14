@@ -5,6 +5,7 @@ import 'common/formComponent.scss';
 import styled from 'styled-components';
 
 import CutstomTextInput from 'components/form-fields/textInput';
+import CutstomTextAreaInput from 'components/form-fields/textareaInput';
 import CutstomSelectInput from 'components/form-fields/selectInput';
 
 const StepWrapper = styled.div``;
@@ -45,7 +46,7 @@ const FormComponent = () => {
           email: '',
           address: '',
           age: '',
-          who: '',
+          who: 'student',
           clgName: '',
           profession: '',
           exp: '',
@@ -82,12 +83,18 @@ const FormComponent = () => {
             .required('Selection is required'),
           clgName: yup.string().required('Please provide your college name'),
           profession: yup.string().required('Please provide your profession'),
+          judgingParameters: yup
+            .string()
+            .required('Required')
+            .min(10, 'Please enter at least 10 letters'),
           bestSkill: yup
             .string()
-            .required('Please provide your one best skill'),
+            .required('Required')
+            .min(10, 'Please enter at least 10 letters'),
           know: yup
             .string()
-            .required('Please tell how did you learn about TEDxJNEC'),
+            .required('Required')
+            .min(10, 'Please enter at least 10 letters'),
         })}
         onSubmit={(values, { setSubmitting, resetForm }) => {
           setTimeout(() => {
@@ -128,7 +135,7 @@ const FormComponent = () => {
                 />
                 <Field
                   name="who"
-                  label="Are you a Student/Working Professional?"
+                  label="Occupation"
                   component={CutstomSelectInput}
                   placeholder="Enter Profession"
                 />
@@ -139,15 +146,14 @@ const FormComponent = () => {
                     component={CutstomTextInput}
                     placeholder="Your College Name"
                   />
-                ) : null}
-                {props.values.who === 'notStudent' ? (
+                ) : (
                   <Field
                     name="profession"
                     label="Profession"
                     component={CutstomTextInput}
                     placeholder="Your Profession"
                   />
-                ) : null}
+                )}
               </StepWrapper>
             ) : (
               <StepWrapper>
@@ -162,19 +168,19 @@ const FormComponent = () => {
                 <Field
                   name="judgingParameters"
                   label="What are your parameters to judge a good TED Talk?"
-                  component={CutstomTextInput}
+                  component={CutstomTextAreaInput}
                   placeholder="Your views"
                 />
                 <Field
                   name="know"
                   label="How did you come to learn about TEDxJNEC"
-                  component={CutstomTextInput}
+                  component={CutstomTextAreaInput}
                   placeholder="Your answer"
                 />
                 <Field
                   name="bestSkill"
                   label="What is your one best skill"
-                  component={CutstomTextInput}
+                  component={CutstomTextAreaInput}
                   placeholder="Your answer"
                 />
               </StepWrapper>

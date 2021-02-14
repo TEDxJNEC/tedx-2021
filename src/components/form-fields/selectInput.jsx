@@ -51,7 +51,6 @@ const SelectInput = ({
         {...field}
         {...props}
       >
-        <option value="">Select</option>
         <option value="student">Student</option>
         <option value="notStudent">Other</option>
       </CutstomSelectInput>
