@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React from 'react';
-import 'common/committee.scss';
 import TeamData from 'assets/team/data.js';
 const Item1 = ({ img, quirk1, quirk2, quote }) => {
   return (
