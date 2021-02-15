@@ -1,59 +1,57 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CutstomSelectInput = styled.select`
+const CutstomTextAreaInput = styled.textarea`
   padding: 0.8em;
   font-size: 1em;
   border-radius: 8px;
   outline: none;
   display: flex;
-  flex-direction: column;
-  background: #404040;
+  border-style: solid;
   color: white;
+  background: #404040;
   border: none;
+  resize: none;
   width: 100%;
-  margin-top: 5px;
   transition: 0.5s;
-  position: relative;
+  margin-top: 5px;
   ${(props) => (props.error ? `border:1px solid red` : null)}
-  option {
-    color: white;
-    background: #454545;
-    display: flex;
-    white-space: pre;
-    min-height: 20px;
-    padding: 0px 2px 1px;
-  }
+  ${(props) => (props.accepted ? `border:0.5px solid #27d760` : null)}
 `;
 
 const InputWrapper = styled.div`
   margin-bottom: 20px;
+
+  width: 100%;
 `;
 const ErrorMessage = styled.span`
   color: red;
+  position: absolute;
 `;
 const CustomLabel = styled.label`
   margin-bottom: 5px;
-  font-weight: 500;
 `;
-const SelectInput = ({
+
+const textareaInput = ({
   name,
   field,
   form: { touched, errors },
   label,
+  disabled,
   ...props
 }) => {
   return (
     <InputWrapper>
       <CustomLabel htmlFor={name}>{label}</CustomLabel>
-      <CutstomSelectInput
+      <CutstomTextAreaInput
+        disabled={disabled}
+        rows="3"
+        maxLength="200"
         error={touched[field.name] && errors[field.name]}
+        accepted={touched[field.name] && !errors[field.name]}
         {...field}
         {...props}
-      >
-        <option value="student">Student</option>
-        <option value="notStudent">Other</option>
-      </CutstomSelectInput>
+      />
       {touched[field.name] && errors[field.name] && (
         <ErrorMessage>{errors[field.name]}</ErrorMessage>
       )}
@@ -61,4 +59,4 @@ const SelectInput = ({
   );
 };
 
-export default SelectInput;
+export default textareaInput;

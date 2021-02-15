@@ -13,10 +13,14 @@ const CutstomTextInput = styled.input`
   color: white;
   background: #404040;
   border: none;
-  flex-direction: column;
   width: 100%;
   transition: 0.5s;
   margin-top: 5px;
+  ::-webkit-inner-spin-button,
+  ::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+  }
   ${(props) => (props.error ? `border:1px solid red` : null)}
   ${(props) => (props.accepted ? `border:0.5px solid #27d760` : null)}
 `;
@@ -42,7 +46,10 @@ const TextInput = ({
   field,
   form: { touched, errors },
   label,
+  errorSuffix,
   disabled,
+  dob,
+  isDob,
   ...props
 }) => {
   return (
@@ -50,13 +57,17 @@ const TextInput = ({
       <CustomLabel htmlFor={name}>{label}</CustomLabel>
       <CutstomTextInput
         disabled={disabled}
+        type={dob}
+        data-date-inline-picker={isDob}
         error={touched[field.name] && errors[field.name]}
         accepted={(touched[field.name] && !errors[field.name]) || disabled}
         {...field}
         {...props}
       />
       {touched[field.name] && errors[field.name] && (
-        <ErrorMessage>{errors[field.name]}</ErrorMessage>
+        <ErrorMessage>{`${errors[field.name]} ${
+          errorSuffix || ''
+        }`}</ErrorMessage>
       )}
       {touched[field.name] && !errors[field.name] && (
         <TickIcon src={tickIconSrc} />
