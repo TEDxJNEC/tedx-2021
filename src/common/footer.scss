@@ -23,7 +23,7 @@ footer {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-footer .container {
+footer .container-footer {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -96,7 +96,7 @@ footer p {
   color: #fff;
 }
 .contact {
-  width: calc(25% - 70px);
+  width: calc(25% - 15px);
   margin-right: 0 !important;
   font-family: $FONT_SECONDARY;
 }

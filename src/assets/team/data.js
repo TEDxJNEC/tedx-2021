@@ -94,11 +94,11 @@ const teamData = {
       quote: 'If I Could meet anybody, Its you !',
     },
     {
-      name: 'Ayush Nayar',
+      name: 'Ayush Nayyar',
       quirk1: 'Trustworthy',
       quirk2: 'Passionate',
       img: webAyush,
-      quote: `Born to OverwhelWhat doesn't kill me, only makes me stronger.`,
+      quote: `What doesn't kill me, only makes me stronger.`,
     },
   ],
   graphic: [

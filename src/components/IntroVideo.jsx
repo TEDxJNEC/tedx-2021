@@ -36,6 +36,11 @@ const VideoSection = ({
       }
     }
   }, [ratio]);
+  useEffect(() => {
+    return function cleanup() {
+      document.body.classList.remove(overflowClass);
+    };
+  }, []);
   return (
     <section ref={vidRefs} className="video-section">
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
