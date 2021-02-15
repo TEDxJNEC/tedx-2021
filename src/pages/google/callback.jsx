@@ -30,11 +30,21 @@ const GoogleAuthCallback = () => {
     const urlParams = new URLSearchParams(queryString);
     const code = urlParams.get('code');
     if (code) {
-      const res = await sendCodeToApi(code);
-      dispatch({
-        type: 'LOGIN',
-        payload: { user: res.user, token: res.token, isLoggedIn: true },
-      });
+      try {
+        const res = await sendCodeToApi(code);
+        if (res.token) {
+          dispatch({
+            type: 'LOGIN',
+            payload: { user: res.user, token: res.token, isLoggedIn: true },
+          });
+        } else {
+          dispatch({
+            type: 'LOGOUT',
+          });
+        }
+      } catch (error) {
+        return error;
+      }
     } else {
       dispatch({
         type: 'LOGOUT',

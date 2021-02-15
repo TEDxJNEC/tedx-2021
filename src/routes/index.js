@@ -98,6 +98,7 @@ const Routes = () => {
           />
           {/* <Route exact path={TEAM} component={}></Route> */}
           <Route exact path={REGISTRATION} component={Registration} />
+
           <Route exact path="/test" component={TestPage} />
           {/* <Route exact path={BOOKINGS} component={}></Route> */}
           <Route component={Error} />
