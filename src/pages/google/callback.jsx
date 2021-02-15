@@ -45,7 +45,9 @@ const GoogleAuthCallback = () => {
           });
         }
       } catch (error) {
-        return error;
+        dispatch({
+          type: 'LOGOUT',
+        });
       }
     } else {
       dispatch({
