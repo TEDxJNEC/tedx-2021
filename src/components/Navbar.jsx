@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import CloseMenu from 'components/icons/CloseMenu';
 import ROUTES from '../constants/routes';
-import '../common/nav.scss';
+
 import img from '../assets/JNEC.svg';
 import MenuIcon from './icons/MenuIcon';
 
-const { HOME, ABOUT, REGISTRATION, TEAM } = ROUTES;
+const { HOME, ABOUT, TEAM } = ROUTES;
 
 const Desktop = () => {
   return (
@@ -25,14 +25,6 @@ const Desktop = () => {
 
           <NavLink to={TEAM} exact activeClassName="active" className="title">
             TEAM
-          </NavLink>
-          <NavLink
-            to={REGISTRATION}
-            exact
-            activeClassName="active"
-            className="title"
-          >
-            REGISTRATION
           </NavLink>
         </ul>
       </nav>
@@ -116,14 +108,6 @@ const Mobile = () => {
               className="mobi_title"
             >
               TEAM
-            </NavLink>
-            <NavLink
-              to={REGISTRATION}
-              exact
-              activeClassName="active"
-              className="mobi_title"
-            >
-              REGISTRATION
             </NavLink>
           </ul>
         </div>

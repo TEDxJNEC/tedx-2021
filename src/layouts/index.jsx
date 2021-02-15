@@ -1,27 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import Loader from 'components/Loader';
+import React from 'react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import 'common/footer.scss';
+import 'common/nav.scss';
 
 const DefaultLayout = ({ children }) => {
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setIsMounted(true);
-    }, 7000);
-  }, []);
   return (
-    <>
-      {isMounted ? (
-        <div>
-          <Navbar />
-          <div className="page-wrapper">{children}</div>
-          <Footer />
-        </div>
-      ) : (
-        <Loader />
-      )}
-    </>
+    <div>
+      <Navbar />
+      <div className="page-wrapper">{children}</div>
+      <Footer />
+    </div>
   );
 };
 

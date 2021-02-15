@@ -1,6 +1,5 @@
 import React from 'react';
-import 'common/main.scss';
-import 'common/footer.scss';
+
 import {
   Logo,
   Facebook,
