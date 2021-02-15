@@ -1,0 +1,18 @@
+@import './colors.scss';
+
+.callback-page-wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: $BACKGROUND;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 24px;
+  font-size: 2em;
+  color: $PRIMARY_COLOR;
+}
+.callback-image {
+  width: 240px;
+  height: auto;
+}

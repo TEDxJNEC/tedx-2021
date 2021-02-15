@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import aboutPageData from '../assets/about-content.json';
 import Content from '../components/Content';
 import AboutDetails from '../components/AboutDetails';
@@ -12,6 +13,13 @@ const About = () => {
   const renderContent = aboutPageData.map((aboutData) => {
     return (
       <DefaultLayout>
+        <Helmet>
+          <title>About TEDx JNEC</title>
+          <meta
+            name="description"
+            content="TEDxJNEC is all about sparking conversations and making great ideas accessible. We believe passion is contagious, and wish to spread our speaker’s commitment to innovation thus creating a unique space where we expand our Perceptions."
+          />
+        </Helmet>
         <div key={aboutData.id}>
           <Content
             headline={aboutData.headline}

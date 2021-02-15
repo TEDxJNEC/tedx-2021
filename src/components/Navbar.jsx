@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import CloseMenu from 'components/icons/CloseMenu';
 import ROUTES from '../constants/routes';
-import '../common/nav.scss';
+
 import img from '../assets/JNEC.svg';
 import MenuIcon from './icons/MenuIcon';
 

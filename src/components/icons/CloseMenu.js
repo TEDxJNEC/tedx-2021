@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../common/colors.scss';
 
 const CloseMenu = () => {
   const styleIcon = { width: '3rem', height: '2rem' };
