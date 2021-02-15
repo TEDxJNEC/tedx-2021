@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../common/colors.scss';
 
 const Login = () => {
   const styleImage = { width: '20rem', height: '20rem' };
