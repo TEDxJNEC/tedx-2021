@@ -22,8 +22,8 @@ body {
   position: absolute;
   top: 10px;
   left: 10px;
-  width: 200px;
-  height: 200px;
+  width: 190px;
+  height: 190px;
 }
 
 .slide .carousel-image {
@@ -49,8 +49,8 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
-    width: 180px;
-    height: 180px;
+    width: 170px;
+    height: 170px;
   }
 }
 /*
@@ -83,31 +83,40 @@ So, `r` is (about) 412px long! This means we need to TRANSLATE the slides in the
   transform: rotateY(0deg) translateZ(412px);
 }
 .slide.two {
-  transform: rotateY(36deg) translateZ(412px);
+  transform: rotateY(27.6deg) translateZ(412px);
 }
 .slide.three {
-  transform: rotateY(72deg) translateZ(412px);
+  transform: rotateY(55.2deg) translateZ(412px);
 }
 .slide.four {
-  transform: rotateY(108deg) translateZ(412px);
+  transform: rotateY(82.8deg) translateZ(412px);
 }
 .slide.five {
-  transform: rotateY(144deg) translateZ(412px);
+  transform: rotateY(110.4deg) translateZ(412px);
 }
 .slide.six {
-  transform: rotateY(180deg) translateZ(412px);
+  transform: rotateY(138deg) translateZ(412px);
 }
 .slide.seven {
-  transform: rotateY(216deg) translateZ(412px);
+  transform: rotateY(165.6deg) translateZ(412px);
 }
 .slide.eight {
-  transform: rotateY(252deg) translateZ(412px);
+  transform: rotateY(193.2deg) translateZ(412px);
 }
 .slide.nine {
-  transform: rotateY(288deg) translateZ(412px);
+  transform: rotateY(220.8deg) translateZ(412px);
 }
 .slide.ten {
-  transform: rotateY(324deg) translateZ(412px);
+  transform: rotateY(248.4deg) translateZ(412px);
+}
+.slide.eleven {
+  transform: rotateY(276deg) translateZ(412px);
+}
+.slide.twelve {
+  transform: rotateY(303.6deg) translateZ(412px);
+}
+.slide.thirteen {
+  transform: rotateY(331.2deg) translateZ(412px);
 }
 
 /*
