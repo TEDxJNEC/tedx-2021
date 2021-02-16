@@ -53,8 +53,8 @@ const Button = styled.button`
   outline: none;
   border: none;
   color: #fff;
-  cursor: pointer;
   transition: 1000ms;
+  ${(props) => (props.disabled ? `cursor: no-drop` : `cursor: pointer`)}
   ${(props) => (props.backBtn ? `display:none` : null)}
 `;
 const StyledForm = styled(Form)``;
@@ -152,7 +152,7 @@ const FormComponent = ({ name, email }) => {
             .required('Email address is required'),
           address: yup.string().required('Address is required'),
           age: yup
-            .string()
+            .number()
             .min(8, 'You must be older than 8 years')
             .max(100, 'You must be younger than 100 years')
             .required('Please provide your age'),
@@ -163,8 +163,6 @@ const FormComponent = ({ name, email }) => {
               'Please select one of the options'
             )
             .required('Selection is required'),
-          // clgName: yup.string().required('Please provide your college name'),
-          // profession: yup.string().required('Please provide your profession'),
           occupationDescription: yup.string().required('Please provide your '),
           judgingParameters: yup
             .string()
@@ -245,9 +243,7 @@ const FormComponent = ({ name, email }) => {
               <StepWrapper key="step2" visible={animateRight}>
                 <Field
                   name="age"
-                  label="DOB"
-                  type="date"
-                  data-date-inline-picker="true"
+                  label="Age"
                   component={CutstomTextInput}
                   placeholder="Your Age"
                 />
