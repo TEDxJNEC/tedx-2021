@@ -55,6 +55,10 @@ const TestPage = Loadable({
   loader: () => import('pages/test'),
   loading: Loader,
 });
+const AmbassadorDashboard = Loadable({
+  loader: () => import('pages/ambassador/ambassador-dashboard'),
+  loading: Loader,
+});
 const Routes = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const {
@@ -68,6 +72,7 @@ const Routes = () => {
     LOGIN,
     ADMIN_LOGIN,
     AMBASSADOR_LOGIN,
+    AMBASSADOR_DASHBOARD,
   } = ROUTES;
   return (
     <AuthContext.Provider
@@ -86,6 +91,12 @@ const Routes = () => {
           <Route exact path={LOGIN} component={Login} />
           <Route exact path={ADMIN_LOGIN} component={AdminLogin} />
           <Route exact path={AMBASSADOR_LOGIN} component={AmbassdorLogin} />
+          <Route
+            exact
+            path={AMBASSADOR_DASHBOARD}
+            component={AmbassadorDashboard}
+          />
+
           <Route
             exact
             path={GOOGLE_AUTH_CALLBACK_USER}
