@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import 'common/formComponent.scss';
@@ -135,6 +136,7 @@ const FormComponent = ({ name, email }) => {
           know: '',
           judgingParameters: '',
           bestSkill: '',
+          acceptedTerms: false,
         }}
         validationSchema={yup.object({
           name: yup
@@ -176,6 +178,10 @@ const FormComponent = ({ name, email }) => {
             .string()
             .required('Required')
             .min(10, 'Please enter at least 10 letters'),
+          acceptedTerms: yup
+            .boolean()
+            .required('Required')
+            .oneOf([true], 'Required'),
         })}
         onSubmit={(values, { setSubmitting, resetForm }) => {
           setTimeout(() => {
@@ -267,6 +273,11 @@ const FormComponent = ({ name, email }) => {
                   component={CutstomTextAreaInput}
                   placeholder="Your answer"
                 />
+                <Field name="acceptedTerms" component={CutstomTextInput}>
+                  <span>
+                    accept <Link to="/team">Terms and Policy</Link>
+                  </span>
+                </Field>
               </StepWrapper>
             )}
             {validateStep(props)}
