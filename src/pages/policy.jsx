@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import DefaultLayout from 'layouts';
+import { Helmet } from 'react-helmet';
 
 const PageWrapper = styled.div`
   min-height: 100%;
@@ -59,6 +60,45 @@ This policy is effective as of 15 February 2021.`;
 const TermsAndConditions = () => {
   return (
     <DefaultLayout>
+      <Helmet>
+        <title>Privacy Policy - TEDx JNEC</title>
+        <meta name="description" content="PRIVACY POLICY of TEDx JNEC" />
+        <meta
+          name="keywords"
+          content="ted,tedx, jnec, tedxjnec, team, mgmjnec, aurangabad, tedxaurangabad, best, event, tedxtalk, talk, tedtalk, events, engineering, college, pruthvi, shetty, web, kintsugi, tedxjnec,mgm,mgmu,pruthvishetty,top,events,about,abhishek,manik,soham,tamboli,priyanka,jain,terms,service"
+        />
+        <meta name="author" content="pruthvishetty" />
+
+        <meta property="og:url" content="https://tedxjnec.com/policy" />
+        <meta
+          property="og:title"
+          content="PRIVACY POLICY | TEDx JNEC | Kintsugi"
+        />
+        <meta
+          property="og:description"
+          content="TERMS OF SERVICE of TEDx JNEC"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
+        <meta property="og:site_name" content="TEDxJNEC" />
+        <meta property="og:locale" content="en_us" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@tedxjnec" />
+        <meta name="twitter:creator" content="@pruthvi2103" />
+        <meta name="twitter:url" content="https://tedxjnec.com/policy" />
+        <meta
+          name="twitter:title"
+          content="PRIVACY POLICY | TEDx JNEC | Kintsugi"
+        />
+        <meta
+          name="twitter:description"
+          content="PRIVACY POLICY of TEDx JNEC"
+        />
+        <meta name="twitter:image:src" content="%PUBLIC_URL%/logo192.png" />
+        <link rel="shortcut icon" href="%PUBLIC_URL%/logo192.png" />
+        <link rel="author" href="//github.com/pruthvi2103" />
+        <link rel="canonical" href="//tedxjnec.com/policy" />
+      </Helmet>
       <PageWrapper>
         <Container>
           <TOCcontainer>
