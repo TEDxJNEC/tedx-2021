@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const CutstomTextInput = styled.input`
@@ -43,6 +44,9 @@ const checkInput = ({ name, field, form: { touched, errors }, ...props }) => {
         {...field}
         {...props}
       />
+      <span>
+        accept <Link to="/team">Terms of Services and Policy</Link>
+      </span>
       {touched[field.name] && errors[field.name] && (
         <ErrorMessage>{`${errors[field.name]}`}</ErrorMessage>
       )}

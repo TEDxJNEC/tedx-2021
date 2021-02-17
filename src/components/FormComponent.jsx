@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import 'common/formComponent.scss';
 import styled, { keyframes, css } from 'styled-components';
 
 import CutstomTextInput from 'components/form-fields/textInput';
+import CustomCheckbox from 'components/form-fields/checkInput';
 import CutstomTextAreaInput from 'components/form-fields/textareaInput';
 import CutstomSelectInput from 'components/form-fields/selectInput';
 
@@ -93,8 +94,7 @@ const FormComponent = ({ name, email }) => {
         props.touched.address &&
         !phone &&
         props.touched.phone &&
-        !occupationDescription &&
-        props.touched.occupationDescription
+        !occupationDescription
       ) {
         if (stepError[1]) {
           setStpError({ ...step, 1: false });
@@ -273,11 +273,7 @@ const FormComponent = ({ name, email }) => {
                   component={CutstomTextAreaInput}
                   placeholder="Your answer"
                 />
-                <Field name="acceptedTerms" component={CutstomTextInput}>
-                  <span>
-                    accept <Link to="/team">Terms and Policy</Link>
-                  </span>
-                </Field>
+                <Field name="acceptedTerms" component={CustomCheckbox} />
               </StepWrapper>
             )}
             {validateStep(props)}
