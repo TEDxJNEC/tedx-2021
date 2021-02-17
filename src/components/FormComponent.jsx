@@ -54,8 +54,8 @@ const Button = styled.button`
   border: none;
   color: #fff;
   transition: 1000ms;
-  ${(props) => (props.disabled ? `cursor: no-drop` : `cursor: pointer`)}
-  ${(props) => (props.backBtn ? `display:none` : null)}
+  ${(props) => (props.disabled ? `cursor: no-drop;` : `cursor: pointer;`)};
+  ${(props) => (props.backBtn ? `display:none;` : null)};
 `;
 const StyledForm = styled(Form)``;
 const FormComponent = ({ name, email }) => {
@@ -194,6 +194,7 @@ const FormComponent = ({ name, email }) => {
                 <Field
                   name="name"
                   label="Name"
+                  disabled
                   component={CutstomTextInput}
                   placeholder="Your Name"
                 />
@@ -201,11 +202,12 @@ const FormComponent = ({ name, email }) => {
                   name="phone"
                   label="Mobile No."
                   component={CutstomTextInput}
-                  placeholder="Your Mobile Number"
+                  placeholder="Whatsapp Number"
                 />
                 <Field
                   name="email"
                   label="E-mail"
+                  disabled
                   component={CutstomTextInput}
                   placeholder="Your E-mail"
                 />
@@ -213,7 +215,7 @@ const FormComponent = ({ name, email }) => {
                   name="address"
                   label="Address"
                   component={CutstomTextAreaInput}
-                  placeholder="Your Address"
+                  placeholder="PLot/Flat No,&#10;Locality/Area/Nearby Places,&#10;City, State."
                 />
                 <Field
                   name="occupation"
@@ -249,15 +251,15 @@ const FormComponent = ({ name, email }) => {
                 />
                 <Field
                   name="judgingParameters"
-                  label="What are your parameters to judge a good TED Talk?"
+                  label="What are your views on a good TED Talk?"
                   component={CutstomTextAreaInput}
                   placeholder="Your views"
                 />
                 <Field
                   name="know"
-                  label="How did you come to learn about TEDxJNEC"
+                  label="How did you come to know about TEDxJNEC 2021"
                   component={CutstomTextAreaInput}
-                  placeholder="Your answer"
+                  placeholder="For eg. Social Media/ Friend/ Advertisement/ Campus Ambassador/ Other"
                 />
                 <Field
                   name="bestSkill"
@@ -274,7 +276,7 @@ const FormComponent = ({ name, email }) => {
                 disabled={stepError[step]}
                 onClick={() => incrementStep()}
               >
-                Next
+                {step === 2 ? 'Confirm and Pay' : 'Next'}
               </Button>
               <Button
                 type="button"
