@@ -116,9 +116,9 @@ const Footer = () => {
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href="mailto:contact@tedxjnec.com "
+                    href="mailto:tedxjnec@gmail.com "
                   >
-                    contact@tedxjnec.com{' '}
+                    tedxjnec@gmail.com{' '}
                   </a>
                 </p>
               </li>
@@ -127,8 +127,8 @@ const Footer = () => {
                   <Phone />
                 </span>
                 <p>
-                  <a target="_blank" rel="noreferrer" href="tel:7218078452">
-                    7218078452
+                  <a target="_blank" rel="noreferrer" href="tel:9028960519">
+                    9028960519
                   </a>
                 </p>
               </li>
