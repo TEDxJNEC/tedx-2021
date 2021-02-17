@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { AuthContext } from 'routes';
-import Login from 'components/Login';
+import Login from 'components/AmbassdorLogin';
 import DefaultLayout from '../layouts';
 
 import '../common/login.scss';
@@ -13,7 +13,7 @@ function RegLogin() {
     dispatch({
       type: 'SETTYPE',
       payload: {
-        type: 'attendee',
+        type: 'amb',
       },
     });
   }, []);

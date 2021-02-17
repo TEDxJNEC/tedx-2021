@@ -52,7 +52,7 @@ const AdminLogin = Loadable({
   loading: Loader,
 });
 const AmbassdorLogin = Loadable({
-  loader: () => import('components/AmbassdorLogin'),
+  loader: () => import('pages/loginambas'),
   loading: Loader,
 });
 const TestPage = Loadable({
