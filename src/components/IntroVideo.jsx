@@ -9,6 +9,7 @@ import VideoFull from 'assets/videos/videoFull.webm';
 import VideoFullMobile from 'assets/videos/videoFullmobile.webm';
 import logo from 'assets/JNEC-black.svg';
 import ThemeLogo from 'assets/theme-logo.svg';
+import Spinner from './Spinner';
 
 const buildThresholdArray = () => Array.from(Array(100).keys(), (i) => i / 100);
 const VideoSection = ({
@@ -18,7 +19,11 @@ const VideoSection = ({
   overflowClass,
   setOverflowClass,
 }) => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [showMask, setMask] = useState(false);
+  const handleLoad = () => {
+    setIsVideoLoaded(true);
+  };
   const handleVideoEnd = () => {
     setMask(true);
     document.body.classList.remove(overflowClass);
@@ -37,6 +42,9 @@ const VideoSection = ({
     }
   }, [ratio]);
   useEffect(() => {
+    setIsVideoLoaded(true);
+  }, []);
+  useEffect(() => {
     return function cleanup() {
       document.body.classList.remove(overflowClass);
     };
@@ -44,14 +52,19 @@ const VideoSection = ({
   return (
     <section ref={vidRefs} className="video-section">
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <video
-        onEnded={handleVideoEnd}
-        muted
-        ref={videoRef}
-        className="video-playback"
-      >
-        <source src={videoSrc} type="video/webm" />
-      </video>
+      {!isVideoLoaded ? (
+        <video
+          onLoadedData={handleLoad}
+          onEnded={handleVideoEnd}
+          muted
+          ref={videoRef}
+          className="video-playback"
+        >
+          <source src={videoSrc} type="video/webm" />
+        </video>
+      ) : (
+        <Spinner />
+      )}
       {showMask ? (
         <div className="video-mask">
           {window.screen.width >= 720 ? (
