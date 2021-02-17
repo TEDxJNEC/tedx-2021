@@ -54,13 +54,13 @@ const TeamComponent = () => {
           <Link to="/team/web" className="slide ten">
             <img className="carousel-image" src={webPruthvi} alt="dd" />
           </Link>
-          <Link to="/team/web" className="slide eleven">
+          <Link to="/team/graphic" className="slide eleven">
             <img className="carousel-image" src={graphicKrishna} alt="dd" />
           </Link>
-          <Link to="/team/web" className="slide twelve">
+          <Link to="/team/technical" className="slide twelve">
             <img className="carousel-image" src={technicalShubham} alt="dd" />
           </Link>
-          <Link to="/team/web" className="slide thirteen">
+          <Link to="/team/curation" className="slide thirteen">
             <img className="carousel-image" src={curationSaumitra} alt="dd" />
           </Link>
         </div>
