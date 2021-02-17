@@ -104,15 +104,15 @@ const teamData = {
   graphic: [
     {
       name: 'Krishna Zolpatil',
-      quirk1: 'Drowsy',
-      quirk2: 'Lethargic',
+      quirk1: 'Meticulous',
+      quirk2: 'Creative',
       img: graphicKrishna,
-      quote: `I'm not on a power saving mode, I am just lazy.`,
+      quote: `We all are like the bright moon, we still have our darker side.`,
     },
     {
       name: 'Mitanshu Salvi',
-      quirk1: 'dank',
-      quirk2: 'confused',
+      quirk1: 'Intuitive',
+      quirk2: 'Honest',
       img: graphicMitanshu,
       quote: 'Watashi ga Kitta!',
     },
@@ -133,10 +133,10 @@ const teamData = {
     },
     {
       name: 'Dhruv Jain',
-      quirk1: 'Lethargic',
-      quirk2: 'Drowsy',
+      quirk1: 'Charismatic',
+      quirk2: 'unbothered',
       img: graphicDhruv,
-      quote: `I'm not on a power saving mode, I am just lazy.`,
+      quote: `Keep your composure;`,
     },
     {
       name: 'Riddhi Shelokar',
@@ -167,7 +167,7 @@ const teamData = {
       quirk1: 'Photographer',
       quirk2: 'Visionary',
       img: marketingPranav,
-      quote: 'Busy in finding frames',
+      quote: 'I don’t trust words. I trust pictures.',
     },
     {
       name: 'Sayali Patil',
@@ -185,10 +185,10 @@ const teamData = {
     },
     {
       name: 'Nikita Khirsagar',
-      quirk1: 'Drowsy',
-      quirk2: 'Lethargic',
+      quirk1: 'Self Aware',
+      quirk2: 'Optimistic',
       img: marketingNikita,
-      quote: `I’m not lazy, I’m on power saving mode.`,
+      quote: `Your only limit is your mind.`,
     },
     {
       name: 'Ishaan Rathi',
@@ -338,11 +338,11 @@ const teamData = {
   ],
   creative: [
     {
-      name: 'Sarang Patil',
-      quirk1: 'Accountable',
-      quirk2: 'Self Motivated',
-      img: creativeSarang,
-      quote: `I don't like to manage people, I like to manage events`,
+      name: 'Anuj Jangle',
+      quirk1: 'Resilience',
+      quirk2: 'Photographer',
+      img: dopAnuj,
+      quote: 'Your attitude and aptitude will decide your success in future',
     },
     {
       name: 'Divya Khedkar',
@@ -460,14 +460,42 @@ const teamData = {
       img: dopAnuj,
       quote: 'Your attitude and aptitude will decide your success in future',
     },
+    {
+      name: 'Manik Sardeshpande',
+      quirk1: 'Resilience',
+      quirk2: 'logical',
+      img: officialManik,
+      quote: `I don't play the game, I play the man.`,
+    },
+    {
+      name: 'Sarang Patil',
+      quirk1: 'Accountable',
+      quirk2: 'Motivated',
+      img: creativeSarang,
+      quote: `I don't like to manage people, I like to manage events`,
+    },
+    {
+      name: 'Riya Jain',
+      quirk1: 'Creative',
+      quirk2: 'Elegant',
+      img: webRiya,
+      quote: 'Whoever is happy will make others happy too',
+    },
+    {
+      name: 'Shubham Jadhao',
+      quirk1: 'Smart',
+      quirk2: 'Technical',
+      img: technicalShubham,
+      quote: 'Grant us the knowledge that we desire',
+    },
   ],
   official: [
     {
       name: 'Abhishek Sonwane',
-      quirk1: 'Leadership',
-      quirk2: 'Actor',
+      quirk1: 'Articulate',
+      quirk2: 'Aesthete',
       img: officialAbhishek,
-      quote: 'Ya tufanala koni ghar det ka ghar',
+      quote: 'The future is no place to place your better days! ',
     },
     {
       name: 'Priyanka Jain',
@@ -475,13 +503,6 @@ const teamData = {
       quirk2: 'Magnanimity',
       img: officialPriyanka,
       quote: 'Follow your inner moonlight, set yourself free',
-    },
-    {
-      name: 'Manik Sardeshpande',
-      quirk1: 'Resilience',
-      quirk2: 'Charming',
-      img: officialManik,
-      quote: 'Your attitude and aptitude will decide your success in future',
     },
   ],
 };
