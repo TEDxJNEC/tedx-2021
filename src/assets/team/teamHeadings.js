@@ -7,7 +7,7 @@ const headings = {
   management: 'Management',
   creative: 'Creative',
   technical: 'Technical',
-  event: 'Event Management',
+  event: 'Logistics',
   budget: 'Budget',
   documentation: 'Documentation',
   dop: 'Director of Production',
