@@ -1,12 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useContext, useState } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 
-// eslint-disable-next-line import/no-cycle
-import { AuthContext } from 'routes';
-import API_ROUTES from 'constants/api';
 // import splash from 'assets/ui.svg';
 import mobileSplash from 'assets/patternMobile.svg';
 
@@ -14,7 +9,6 @@ import '../common/registration.scss';
 
 import FormComponent from './FormComponent';
 
-const { GET_USER_INFO } = API_ROUTES;
 const FormWrapper = styled.div`
   display: flex;
   width: calc(100% - 1em);
@@ -44,46 +38,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const Register = () => {
-  const history = useHistory();
-  const { state, dispatch } = useContext(AuthContext);
-  const [user, setUser] = useState({
-    name: '',
-    email: '',
-  });
-  const getUserInfo = async () => {
-    try {
-      let { token } = state;
-      if (!token) {
-        token = localStorage.getItem('token');
-      }
-
-      const { data } = await axios.get(
-        `${process.env.REACT_APP_BACKEND_URL}/${GET_USER_INFO}`,
-        {
-          headers: { token },
-        }
-      );
-      return data;
-    } catch (error) {
-      // dispatch({
-      //   type: 'LOGOUT',
-      // });
-      // history.push('/login');
-      const userloc = localStorage.getItem('user');
-      return {
-        email: userloc.email,
-        name: userloc.email,
-      };
-    }
-  };
-  useEffect(async () => {
-    const userData = await getUserInfo();
-    setUser({
-      email: userData.email,
-      name: userData.name,
-    });
-  }, []);
+const Register = ({ user }) => {
   return (
     <FormWrapper>
       <ImageWrapper>{/* <LeftImage src={splash} /> */}</ImageWrapper>

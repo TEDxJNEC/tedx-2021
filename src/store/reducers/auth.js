@@ -17,7 +17,7 @@ export const reducer = (state, action) => {
         ...state,
         isLoggedIn: action.payload.isLoggedIn,
         user: action.payload.user,
-        token: action.payload.user,
+        token: action.payload.token,
       };
     }
     case 'LOGOUT': {
