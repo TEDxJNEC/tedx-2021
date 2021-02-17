@@ -21,23 +21,24 @@ const VideoSection = ({
 }) => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [showMask, setMask] = useState(false);
+  const videoRef = useRef(null);
   const handleLoad = () => {
     setIsVideoLoaded(true);
+    videoRef.current.play();
   };
   const handleVideoEnd = () => {
     setMask(true);
-    document.body.classList.remove(overflowClass);
+    //  document.body.classList.remove(overflowClass);
     setOverflowClass('');
   };
   //   const handleVideoEndLoad = () => {
   //     console.log('Video Loaded');
   //   };
-  const videoRef = useRef(null);
+
   useEffect(() => {
     if (ratio > 0.99) {
       if (overflowClass) {
-        document.body.classList.add(overflowClass);
-        videoRef.current.play();
+        // document.body.classList.add(overflowClass);
       }
     }
   }, [ratio]);
@@ -52,19 +53,17 @@ const VideoSection = ({
   return (
     <section ref={vidRefs} className="video-section">
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      {!isVideoLoaded ? (
-        <video
-          onLoadedData={handleLoad}
-          onEnded={handleVideoEnd}
-          muted
-          ref={videoRef}
-          className="video-playback"
-        >
-          <source src={videoSrc} type="video/webm" />
-        </video>
-      ) : (
-        <Spinner />
-      )}
+
+      <video
+        onLoadedData={handleLoad}
+        onEnded={handleVideoEnd}
+        muted
+        ref={videoRef}
+        className="video-playback"
+      >
+        <source src={videoSrc} type="video/webm" />
+      </video>
+      {isVideoLoaded ? null : <Spinner />}
       {showMask ? (
         <div className="video-mask">
           {window.screen.width >= 720 ? (
