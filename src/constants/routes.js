@@ -9,6 +9,8 @@ const ROUTES = {
   ADMIN_LOGIN: '/admin/login',
   AMBASSADOR_LOGIN: '/ambassador/login',
   LOGIN: '/login',
+  TOC: '/tos',
+  POLICY: '/policy',
 };
 
 export default ROUTES;

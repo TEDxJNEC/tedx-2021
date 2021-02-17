@@ -3,11 +3,13 @@ import 'common/callback.scss';
 import axios from 'axios';
 import kintsugi from 'assets/logo.svg';
 import API_ROUTES from 'constants/api';
+import ROUTES from 'constants/routes';
 // eslint-disable-next-line import/no-cycle
 import { AuthContext } from 'routes';
 import { Redirect } from 'react-router-dom';
 
 const { REGISTER_USER } = API_ROUTES;
+const { REGISTRATION } = ROUTES;
 const GoogleAuthCallback = () => {
   const { state, dispatch } = useContext(AuthContext);
   const sendCodeToApi = async (code) => {
@@ -30,11 +32,23 @@ const GoogleAuthCallback = () => {
     const urlParams = new URLSearchParams(queryString);
     const code = urlParams.get('code');
     if (code) {
-      const res = await sendCodeToApi(code);
-      dispatch({
-        type: 'LOGIN',
-        payload: { user: res.user, token: res.token, isLoggedIn: true },
-      });
+      try {
+        const res = await sendCodeToApi(code);
+        if (res.token) {
+          dispatch({
+            type: 'LOGIN',
+            payload: { user: res.user, token: res.token, isLoggedIn: true },
+          });
+        } else {
+          dispatch({
+            type: 'LOGOUT',
+          });
+        }
+      } catch (error) {
+        dispatch({
+          type: 'LOGOUT',
+        });
+      }
     } else {
       dispatch({
         type: 'LOGOUT',
@@ -43,7 +57,7 @@ const GoogleAuthCallback = () => {
   }, []);
   if (state.isLoggedIn) {
     // send to Book page after its made [TODO]
-    return <Redirect to="/test" />;
+    return <Redirect to={REGISTRATION} />;
   }
   return (
     <div className="callback-page-wrapper">

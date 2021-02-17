@@ -55,6 +55,14 @@ const TestPage = Loadable({
   loader: () => import('pages/test'),
   loading: Loader,
 });
+const Policy = Loadable({
+  loader: () => import('pages/policy'),
+  loading: Loader,
+});
+const TOCPage = Loadable({
+  loader: () => import('pages/toc'),
+  loading: Loader,
+});
 const Routes = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const {
@@ -68,6 +76,8 @@ const Routes = () => {
     LOGIN,
     ADMIN_LOGIN,
     AMBASSADOR_LOGIN,
+    POLICY,
+    TOC,
   } = ROUTES;
   return (
     <AuthContext.Provider
@@ -91,6 +101,8 @@ const Routes = () => {
             path={GOOGLE_AUTH_CALLBACK_USER}
             component={UserCallback}
           />
+          <Route exact path={TOC} component={TOCPage} />
+          <Route exact path={POLICY} component={Policy} />
           <Route
             exact
             path={`${TEAM}/:committee`}
@@ -98,6 +110,7 @@ const Routes = () => {
           />
           {/* <Route exact path={TEAM} component={}></Route> */}
           <Route exact path={REGISTRATION} component={Registration} />
+
           <Route exact path="/test" component={TestPage} />
           {/* <Route exact path={BOOKINGS} component={}></Route> */}
           <Route component={Error} />
