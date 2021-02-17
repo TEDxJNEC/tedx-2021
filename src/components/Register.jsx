@@ -57,7 +57,7 @@ const Register = () => {
       if (!token) {
         token = localStorage.getItem('token');
       }
-      console.log(token);
+
       const { data } = await axios.get(
         `${process.env.REACT_APP_BACKEND_URL}/${GET_USER_INFO}`,
         {
@@ -70,8 +70,11 @@ const Register = () => {
       //   type: 'LOGOUT',
       // });
       // history.push('/login');
-      console.log(error);
-      return {};
+      const userloc = localStorage.getItem('user');
+      return {
+        email: userloc.email,
+        name: userloc.email,
+      };
     }
   };
   useEffect(async () => {
