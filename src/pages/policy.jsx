@@ -3,14 +3,17 @@ import styled from 'styled-components';
 import DefaultLayout from 'layouts';
 
 const PageWrapper = styled.div`
-  height: 100%;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 const TOCcontainer = styled.div`
   border: 1px solid #f6c90e;
-  padding: 24px 64px;
+  padding: 24px 24px;
+  @media (min-width: 768px) {
+    padding: 24px 64px;
+  }
   p {
     text-align: justify;
     line-height: 1.6;
