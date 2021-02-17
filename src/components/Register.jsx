@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useContext, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
@@ -52,7 +53,11 @@ const Register = () => {
   });
   const getUserInfo = async () => {
     try {
-      const { token } = state;
+      let { token } = state;
+      if (!token) {
+        token = localStorage.getItem('token');
+      }
+      console.log(token);
       const { data } = await axios.get(
         `${process.env.REACT_APP_BACKEND_URL}/${GET_USER_INFO}`,
         {
@@ -61,10 +66,11 @@ const Register = () => {
       );
       return data;
     } catch (error) {
-      dispatch({
-        type: 'LOGOUT',
-      });
-      history.push('/login');
+      // dispatch({
+      //   type: 'LOGOUT',
+      // });
+      // history.push('/login');
+      console.log(error);
       return {};
     }
   };
