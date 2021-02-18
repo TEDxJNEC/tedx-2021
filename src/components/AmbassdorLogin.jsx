@@ -3,7 +3,7 @@ import * as queryString from 'query-string';
 import CollegeAmbassdor from 'assets/CollegeAmbassdor.svg';
 import img from 'assets/JNEC.svg';
 import img1 from 'assets/search.svg';
-import img2 from 'assets/google_logo.svg';
+import { Google } from 'components/icons';
 import 'common/ambassdorlogin.scss';
 
 const AmbassdorLogin = () => {
@@ -35,12 +35,16 @@ const AmbassdorLogin = () => {
           <div className="google-logo">
             <img src={img1} alt="TEDxJNEC_logo" />
           </div>
-          <a href={googleLoginUrl} className="btn-action">
-            <button type="submit">
-              <img src={img2} alt="TEDxJNEC_logo" />
-              Log In
-            </button>
-          </a>
+          <div className="method">
+            <div className="method-item">
+              <a href={googleLoginUrl} className="btn-action">
+                <Google />
+                <span>
+                  <b>Sign in with Google</b>
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
