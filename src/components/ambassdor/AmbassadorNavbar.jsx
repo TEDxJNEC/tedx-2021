@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import '../../common/ambassador-navbar.scss';
+import ROUTES from 'constants/routes';
 
 const AmbassdorNavbar = () => {
   return (
@@ -9,19 +10,8 @@ const AmbassdorNavbar = () => {
 
       <div className="nav-links">
         <div>
-          <NavLink activeClassName="active" to="/admin/dashboard">
+          <NavLink activeClassName="active" to={ROUTES.AMBASSADOR_DASHBOARD}>
             DASHBOARD
-          </NavLink>
-        </div>
-
-        <div>
-          <NavLink activeClassName="active" to="/admin/contact">
-            CONTACT
-          </NavLink>
-        </div>
-        <div>
-          <NavLink activeClassName="active" to="/admin/notifications">
-            NOTIFICATIONS
           </NavLink>
         </div>
       </div>

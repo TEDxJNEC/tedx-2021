@@ -1,14 +1,11 @@
-import AdminPageLayout from 'layouts/admin';
+import AmbassdorPageLayout from 'layouts/ambassador';
 import React from 'react';
-import AmbassadorDashboard from '../../components/ambassdor/AmbassadorNavbar';
 
 const ambassadorDashboard = () => {
   return (
-    <AdminPageLayout>
-      <div>
-        <AmbassadorDashboard />
-      </div>
-    </AdminPageLayout>
+    <AmbassdorPageLayout>
+      <div>hii</div>
+    </AmbassdorPageLayout>
   );
 };
 
