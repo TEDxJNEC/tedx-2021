@@ -127,7 +127,7 @@ Simply rotates the carousel around the Y axis by using rotateY and starting at i
 
 @keyframes swirl {
   from {
-    transform: rotateY(-360deg);
+    transform: rotateY(360deg);
   }
   to {
     transform: rotateY(0deg);

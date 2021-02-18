@@ -1,15 +1,64 @@
-import React, { useEffect, useRef } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useRef, useState, useContext } from 'react';
 import { Helmet } from 'react-helmet';
+import axios from 'axios';
+
+// eslint-disable-next-line import/no-cycle
+import { AuthContext } from 'routes';
+import API_ROUTES from 'constants/api';
+
+import { useHistory } from 'react-router-dom';
 // eslint-disable-next-line import/no-cycle
 import Register from '../components/Register';
 import DefaultLayout from '../layouts';
 
-const Registration = () => {
+const { GET_USER_INFO } = API_ROUTES;
+const Registration = ({ propState }) => {
   const myRef = useRef(null);
-  useEffect(() => {
-    const executeScroll = () => myRef.current.scrollIntoView();
-    executeScroll();
-  }, []);
+  const history = useHistory();
+  const { state, dispatch } = useContext(AuthContext);
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+  });
+  const getUserInfo = async () => {
+    try {
+      let { token } = state;
+      if (!token) {
+        token = localStorage.getItem('token');
+      }
+      if (!token) {
+        token = propState;
+      }
+
+      const resp = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/${GET_USER_INFO}`,
+        {
+          headers: { token },
+        }
+      );
+      return resp.data;
+    } catch (error) {
+      // dispatch({
+      //   type: 'LOGOUT',
+      // });
+      // history.push('/login');
+      return {};
+    }
+  };
+  useEffect(async () => {
+    if (state.token && user.name === '') {
+      const executeScroll = () => myRef.current.scrollIntoView();
+
+      const userData = await getUserInfo();
+      setUser({
+        email: userData.email,
+        name: userData.name,
+      });
+      executeScroll();
+    }
+  }, [state]);
+
   return (
     <>
       <DefaultLayout>
@@ -21,7 +70,7 @@ const Registration = () => {
           />
         </Helmet>
         <div ref={myRef} className="register-page-wrapper">
-          <Register />
+          <Register user={user} />
         </div>
       </DefaultLayout>
     </>

@@ -9,7 +9,11 @@ import UserCallback from 'pages/google/callback';
 import Loader from 'components/Loader';
 import { initialState, reducer } from 'store/reducers/auth';
 
-export const AuthContext = createContext();
+export const AuthContext = createContext({
+  isLoggedIn: JSON.parse(localStorage.getItem('isLoggedIn')) || false,
+  user: JSON.parse(localStorage.getItem('user')) || null,
+  token: JSON.parse(localStorage.getItem('token')) || null,
+});
 const Home = Loadable({
   loader: () => import('pages'),
   loading: Loader,
@@ -48,7 +52,7 @@ const AdminLogin = Loadable({
   loading: Loader,
 });
 const AmbassdorLogin = Loadable({
-  loader: () => import('components/AmbassdorLogin'),
+  loader: () => import('pages/loginambas'),
   loading: Loader,
 });
 const TestPage = Loadable({
@@ -57,6 +61,13 @@ const TestPage = Loadable({
 });
 const AmbassadorDashboard = Loadable({
   loader: () => import('pages/ambassador/ambassador-dashboard'),
+});
+const Policy = Loadable({
+  loader: () => import('pages/policy'),
+  loading: Loader,
+});
+const TOCPage = Loadable({
+  loader: () => import('pages/toc'),
   loading: Loader,
 });
 const Routes = () => {
@@ -73,6 +84,8 @@ const Routes = () => {
     ADMIN_LOGIN,
     AMBASSADOR_LOGIN,
     AMBASSADOR_DASHBOARD,
+    POLICY,
+    TOC,
   } = ROUTES;
   return (
     <AuthContext.Provider
@@ -102,13 +115,19 @@ const Routes = () => {
             path={GOOGLE_AUTH_CALLBACK_USER}
             component={UserCallback}
           />
+          <Route exact path={TOC} component={TOCPage} />
+          <Route exact path={POLICY} component={Policy} />
           <Route
             exact
             path={`${TEAM}/:committee`}
             render={(props) => <Committee {...props} />}
           />
           {/* <Route exact path={TEAM} component={}></Route> */}
-          <Route exact path={REGISTRATION} component={Registration} />
+          <Route
+            exact
+            path={REGISTRATION}
+            render={(props) => <Registration {...props} propState={state} />}
+          />
 
           <Route exact path="/test" component={TestPage} />
           {/* <Route exact path={BOOKINGS} component={}></Route> */}

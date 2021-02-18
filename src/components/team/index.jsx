@@ -29,39 +29,39 @@ const TeamComponent = () => {
           <Link to="/team/official" className="slide three">
             <img className="carousel-image" src={officialManik} alt="dd" />
           </Link>
-          <Link to="/team/budget" className="slide four">
+          <Link to="/team/curation" className="slide four">
+            <img className="carousel-image" src={curationSaumitra} alt="dd" />
+          </Link>
+          <Link to="/team/budget" className="slide twelve">
             <img className="carousel-image" src={budgetRaj} alt="dd" />
           </Link>
-          <Link to="/team/documentation" className="slide five">
+          <Link to="/team/documentation" className="slide eleven">
             <img
               className="carousel-image"
               src={documentationSiddhi}
               alt="dd"
             />
           </Link>
-          <Link to="/team/dop" className="slide six">
+          <Link to="/team/dop" className="slide ten">
             <img className="carousel-image" src={dopAnuj} alt="dd" />
           </Link>
-          <Link to="/team/management" className="slide seven">
+          <Link to="/team/management" className="slide six">
             <img className="carousel-image" src={managementGayatri} alt="dd" />
           </Link>
-          <Link to="/team/marketing" className="slide eight">
+          <Link to="/team/marketing" className="slide seven">
             <img className="carousel-image" src={marketingOmkar} alt="dd" />
           </Link>
-          <Link to="/team/sponsorship" className="slide nine">
+          <Link to="/team/sponsorship" className="slide five">
             <img className="carousel-image" src={sponsorshipEsha} alt="dd" />
           </Link>
-          <Link to="/team/web" className="slide ten">
+          <Link to="/team/web" className="slide nine">
             <img className="carousel-image" src={webPruthvi} alt="dd" />
           </Link>
-          <Link to="/team/web" className="slide eleven">
+          <Link to="/team/graphic" className="slide eight">
             <img className="carousel-image" src={graphicKrishna} alt="dd" />
           </Link>
-          <Link to="/team/web" className="slide twelve">
+          <Link to="/team/technical" className="slide thirteen">
             <img className="carousel-image" src={technicalShubham} alt="dd" />
-          </Link>
-          <Link to="/team/web" className="slide thirteen">
-            <img className="carousel-image" src={curationSaumitra} alt="dd" />
           </Link>
         </div>
       </div>
