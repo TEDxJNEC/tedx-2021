@@ -23,25 +23,21 @@
 }
 
 .login-card {
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 450px;
   background: #353535;
   padding: 40px;
+  border-radius: 8px;
 
   .google-logo {
     padding: 40px 150px;
-  }
-
-  h1 {
-    font-size: 32px;
-    margin-top: 10px;
-    text-align: center;
   }
 
   h3 {
     text-align: center;
     letter-spacing: 5px;
     font-size: 32px;
+    margin-top: 20px;
   }
 
   .method-item .btn-action {
@@ -86,7 +82,7 @@
   }
   .login-card {
     width: auto;
-    height: 400px;
+    height: 350px;
     margin: 0 20px;
 
     .google-logo {

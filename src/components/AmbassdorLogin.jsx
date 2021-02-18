@@ -30,7 +30,6 @@ const AmbassdorLogin = () => {
           <div className="logo">
             <img src={img} className="logo_tedx" alt="TEDxJNEC_logo" />
           </div>
-          <h1>Welcome Back!!!</h1>
           <h3>Log in With</h3>
           <div className="google-logo">
             <img src={img1} alt="TEDxJNEC_logo" />
