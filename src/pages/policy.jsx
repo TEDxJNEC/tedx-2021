@@ -79,7 +79,6 @@ const TermsAndConditions = () => {
           content="TERMS OF SERVICE of TEDx JNEC"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
         <meta property="og:site_name" content="TEDxJNEC" />
         <meta property="og:locale" content="en_us" />
         <meta name="twitter:card" content="summary" />
@@ -94,8 +93,6 @@ const TermsAndConditions = () => {
           name="twitter:description"
           content="PRIVACY POLICY of TEDx JNEC"
         />
-        <meta name="twitter:image:src" content="%PUBLIC_URL%/logo192.png" />
-        <link rel="shortcut icon" href="%PUBLIC_URL%/logo192.png" />
         <link rel="author" href="//github.com/pruthvi2103" />
         <link rel="canonical" href="//tedxjnec.com/policy" />
       </Helmet>

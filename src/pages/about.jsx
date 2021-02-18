@@ -32,7 +32,6 @@ const About = () => {
             content="TEDxJNEC is all about sparking conversations and making great ideas accessible. We believe passion is contagious, and wish to spread our speaker’s commitment to innovation thus creating a unique space where we expand our Perceptions."
           />
           <meta property="og:type" content="website" />
-          <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
           <meta property="og:site_name" content="TEDxJNEC" />
           <meta property="og:locale" content="en_us" />
           <meta name="twitter:card" content="summary" />
@@ -44,8 +43,6 @@ const About = () => {
             name="twitter:description"
             content="TEDxJNEC is all about sparking conversations and making great ideas accessible. We believe passion is contagious, and wish to spread our speaker’s commitment to innovation thus creating a unique space where we expand our Perceptions."
           />
-          <meta name="twitter:image:src" content="%PUBLIC_URL%/logo192.png" />
-          <link rel="shortcut icon" href="%PUBLIC_URL%/logo192.png" />
           <link rel="author" href="//github.com/pruthvi2103" />
           <link rel="canonical" href="//tedxjnec.com/about" />
         </Helmet>

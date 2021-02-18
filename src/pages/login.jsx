@@ -12,7 +12,7 @@ function RegLogin() {
   useEffect(() => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const aId = urlParams.get('aId');
+    const aId = urlParams.get('aid');
     dispatch({
       type: 'LOGOUT',
     });
@@ -20,7 +20,7 @@ function RegLogin() {
       dispatch({
         type: 'SETAMB',
         payload: {
-          aId,
+          amb: aId,
         },
       });
     }

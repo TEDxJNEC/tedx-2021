@@ -3,6 +3,7 @@ export const initialState = {
   user: JSON.parse(localStorage.getItem('user')) || null,
   token: JSON.parse(localStorage.getItem('token')) || null,
   type: JSON.parse(localStorage.getItem('type')) || null,
+  amb: JSON.parse(localStorage.getItem('amb')) || null,
 };
 
 export const reducer = (state, action) => {
@@ -39,6 +40,14 @@ export const reducer = (state, action) => {
         type: action.payload.type,
       };
     }
+    case 'SETAMB': {
+      localStorage.setItem('amb', JSON.stringify(action.payload.amb));
+      return {
+        ...state,
+        amb: action.payload.amb,
+      };
+    }
+
     default:
       return state;
   }

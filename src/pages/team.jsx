@@ -26,7 +26,6 @@ function Team() {
           content="The TEDx JNEC team comprises of a group of independent individuals working towards a common goal. The Team is determined to make great ideas accessible and spark conversation."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
         <meta property="og:site_name" content="TEDxJNEC" />
         <meta property="og:locale" content="en_us" />
         <meta name="twitter:card" content="summary" />
@@ -38,8 +37,6 @@ function Team() {
           name="twitter:description"
           content="The TEDx JNEC team comprises of a group of independent individuals working towards a common goal. The Team is determined to make great ideas accessible and spark conversation."
         />
-        <meta name="twitter:image:src" content="%PUBLIC_URL%/logo192.png" />
-        <link rel="shortcut icon" href="%PUBLIC_URL%/logo192.png" />
         <link rel="author" href="//github.com/pruthvi2103" />
         <link rel="canonical" href="//tedxjnec.com/team" />
       </Helmet>

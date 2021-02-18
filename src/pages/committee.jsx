@@ -40,7 +40,6 @@ const Committee = ({ match }) => {
           content={`The ${committee} Team of TEDx JNEC has put in endless work and effort into  making this event possible and have imporoved and reinforced theri cracks with gold to keep the event together`}
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
         <meta property="og:site_name" content="TEDxJNEC" />
         <meta property="og:locale" content="en_us" />
         <meta name="twitter:card" content="summary" />
@@ -58,8 +57,7 @@ const Committee = ({ match }) => {
           name="twitter:description"
           content={`The ${committee} Team of TEDx JNEC has put in endless work and effort into  making this event possible and have imporoved and reinforced theri cracks with gold to keep the event together`}
         />
-        <meta name="twitter:image:src" content="%PUBLIC_URL%/logo192.png" />
-        <link rel="shortcut icon" href="%PUBLIC_URL%/logo192.png" />
+
         <link rel="author" href="//github.com/pruthvi2103" />
         <link rel="canonical" href={`//tedxjnec.com/team/${committee}`} />
       </Helmet>

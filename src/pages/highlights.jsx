@@ -44,7 +44,6 @@ const Highlight = () => {
             content="TEDXJNEC 2018 Was Marathwada’s first ever TED event which aimed at unifying people in their thoughts and motives.The theme of the event was ‘Trailblazers’. "
           />
           <meta property="og:type" content="website" />
-          <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
           <meta property="og:site_name" content="TEDxJNEC" />
           <meta property="og:locale" content="en_us" />
           <meta name="twitter:card" content="summary" />
@@ -59,8 +58,6 @@ const Highlight = () => {
             name="twitter:description"
             content="TEDXJNEC 2018 Was Marathwada’s first ever TED event which aimed at unifying people in their thoughts and motives.The theme of the event was ‘Trailblazers’. "
           />
-          <meta name="twitter:image:src" content="%PUBLIC_URL%/logo192.png" />
-          <link rel="shortcut icon" href="%PUBLIC_URL%/logo192.png" />
           <link rel="author" href="//github.com/pruthvi2103" />
           <link rel="canonical" href="//tedxjnec.com/about" />
         </Helmet>
