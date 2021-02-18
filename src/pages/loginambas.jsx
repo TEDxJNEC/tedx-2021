@@ -11,6 +11,9 @@ function RegLogin() {
   const { state, dispatch } = useContext(AuthContext);
   useEffect(() => {
     dispatch({
+      type: 'LOGOUT',
+    });
+    dispatch({
       type: 'SETTYPE',
       payload: {
         type: 'amb',

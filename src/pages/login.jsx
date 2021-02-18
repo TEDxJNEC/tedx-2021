@@ -10,6 +10,20 @@ function RegLogin() {
   // eslint-disable-next-line no-unused-vars
   const { state, dispatch } = useContext(AuthContext);
   useEffect(() => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const aId = urlParams.get('aId');
+    dispatch({
+      type: 'LOGOUT',
+    });
+    if (aId) {
+      dispatch({
+        type: 'SETAMB',
+        payload: {
+          aId,
+        },
+      });
+    }
     dispatch({
       type: 'SETTYPE',
       payload: {
