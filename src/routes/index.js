@@ -61,6 +61,7 @@ const TestPage = Loadable({
 });
 const AmbassadorDashboard = Loadable({
   loader: () => import('pages/ambassador/ambassador-dashboard'),
+  loading: Loader,
 });
 const Policy = Loadable({
   loader: () => import('pages/policy'),
