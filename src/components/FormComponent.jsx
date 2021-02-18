@@ -48,16 +48,54 @@ const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
-  margin-top: 3rem;
+  margin-top: 2rem;
 `;
+
+const disabledBtnStyles = `
+    background: #81c784;
+    cursor: no-drop;
+`;
+const enabledBtnStyles = `
+    background: #4caf50;
+    cursor: pointer;
+
+    &:hover{
+      background: #388e3c;
+    }
+`;
+
+const backBtnStyles = `
+    background: #ffb74d;
+
+    &:hover{
+      background: #f57c00;
+    }
+`;
+
 const Button = styled.button`
-  background: transparent;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
   outline: none;
   border: none;
   color: #fff;
-  transition: 1000ms;
-  ${(props) => (props.disabled ? `cursor: no-drop;` : `cursor: pointer;`)};
-  ${(props) => (props.backBtn ? `display:none;` : null)};
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 500ms;
+  ${(props) =>
+    props.disabled
+      ? css`
+          ${disabledBtnStyles}
+        `
+      : css`
+          ${enabledBtnStyles}
+        `};
+  ${(props) => (props.backBtn ? `display: none;` : null)};
+  ${(props) =>
+    props.backColor
+      ? css`
+          ${backBtnStyles}
+        `
+      : null}
 `;
 const StyledForm = styled(Form)``;
 const FormComponent = ({ name, email }) => {
@@ -278,16 +316,23 @@ const FormComponent = ({ name, email }) => {
             )}
             {validateStep(props)}
             <ButtonWrapper>
-              <Button
-                type="button"
-                disabled={stepError[step]}
-                onClick={() => incrementStep()}
-              >
-                {step === 2 ? 'Confirm and Pay' : 'Next'}
-              </Button>
+              {step === 2 ? (
+                <Button type="submit" disabled={stepError[step]}>
+                  {props.isSubmitting ? 'Redirecting...' : 'Submit'}
+                </Button>
+              ) : (
+                <Button
+                  type="button"
+                  disabled={stepError[step]}
+                  onClick={() => incrementStep()}
+                >
+                  Next
+                </Button>
+              )}
               <Button
                 type="button"
                 backBtn={step === 1}
+                backColor
                 onClick={decrementStep}
               >
                 Back
