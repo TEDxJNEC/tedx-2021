@@ -14,13 +14,14 @@ const GoogleAuthCallback = () => {
   const { state, dispatch } = useContext(AuthContext);
   const sendCodeToApi = async (code) => {
     try {
-      const payload = { code };
+      const { type } = state;
+      const payload = { code, type };
+
       const { data } = await axios.post(
         `${process.env.REACT_APP_BACKEND_URL}/${REGISTER_USER}`,
         payload
       );
-      // eslint-disable-next-line no-debugger
-      debugger;
+
       return data;
     } catch (error) {
       // console.log(error);
@@ -55,9 +56,11 @@ const GoogleAuthCallback = () => {
       });
     }
   }, []);
-  if (state.isLoggedIn) {
+  if (state.token) {
     // send to Book page after its made [TODO]
-    return <Redirect to={REGISTRATION} />;
+    setTimeout(() => {
+      return <Redirect to={state.type === 'amb' ? '/test' : REGISTRATION} />;
+    }, 1200);
   }
   return (
     <div className="callback-page-wrapper">
@@ -67,7 +70,11 @@ const GoogleAuthCallback = () => {
         alt="TEDx JNEC kintsugi logo"
       />
       <code>Loading Your info...</code>
-      <code>{state.isLoggedIn}</code>
+      <code>
+        {state.token ? (
+          <Redirect to={state.type === 'amb' ? '/test' : REGISTRATION} />
+        ) : null}
+      </code>
     </div>
   );
 };
