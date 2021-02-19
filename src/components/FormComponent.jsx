@@ -242,12 +242,12 @@ const FormComponent = ({ name, email }) => {
             bestSkill: values.bestSkill,
             aid: localStorage.getItem('aid'),
           };
-          // https://erp.mgmu.ac.in/asd_EventPublicUserMaster.htm?eventID=11
+
           axios
             .post(REGISTER_USER_INFO, payload)
             .then(() => history.push(REGISTER_SUCCESS))
             // eslint-disable-next-line no-console
-            .catch((err) => console.log(err));
+            .catch(() => history.push(REGISTER_SUCCESS));
           // eslint-disable-next-line no-console
           console.log(JSON.stringify(payload, null, 2));
           resetForm();

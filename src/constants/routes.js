@@ -3,7 +3,7 @@ const ROUTES = {
   ABOUT: '/about',
   TEAM: '/team',
   REGISTRATION: '/registration',
-  REGISTER_SUCCESS: '/register/success',
+  REGISTER_SUCCESS: '/registration/success',
   DASHBOARD: '/admin/dashboard',
   HIGHLIGHT: '/highlight',
   GOOGLE_AUTH_CALLBACK_USER: '/callback/google',
