@@ -67,6 +67,10 @@ const TOCPage = Loadable({
   loader: () => import('pages/toc'),
   loading: Loader,
 });
+const RegistrationSuccess = Loadable({
+  loader: () => import('pages/success-registration'),
+  loading: Loader,
+});
 const Routes = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const {
@@ -76,6 +80,7 @@ const Routes = () => {
     DASHBOARD,
     HIGHLIGHT,
     REGISTRATION,
+    REGISTER_SUCCESS,
     GOOGLE_AUTH_CALLBACK_USER,
     LOGIN,
     ADMIN_LOGIN,
@@ -112,7 +117,11 @@ const Routes = () => {
             path={`${TEAM}/:committee`}
             render={(props) => <Committee {...props} />}
           />
-          {/* <Route exact path={TEAM} component={}></Route> */}
+          <Route
+            exact
+            path={REGISTER_SUCCESS}
+            component={RegistrationSuccess}
+          />
           <Route
             exact
             path={REGISTRATION}

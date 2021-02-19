@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import 'common/formComponent.scss';
 import styled, { keyframes, css } from 'styled-components';
+
+import API_ROUTES from 'constants/api';
+import ROUTES from 'constants/routes';
 
 import CutstomTextInput from 'components/form-fields/textInput';
 import CustomCheckbox from 'components/form-fields/checkInput';
@@ -104,8 +108,11 @@ const FormComponent = ({ name, email }) => {
   const emailRegExp = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
   const [step, setStep] = useState(1);
   const [stepError, setStpError] = useState({ 1: true, 2: true });
-
   const [animateRight, toggleRight] = useState(true);
+  const { REGISTER_USER_INFO } = API_ROUTES;
+  const { REGISTER_SUCCESS } = ROUTES;
+  const history = useHistory();
+
   const incrementStep = () => {
     toggleRight(true);
     setStep(step + 1);
@@ -211,7 +218,7 @@ const FormComponent = ({ name, email }) => {
           bestSkill: yup
             .string()
             .required('Required')
-            .min(10, 'Please enter at least 10 letters'),
+            .min(2, 'Please enter at least 2 letters'),
           know: yup
             .string()
             .required('Required')
@@ -222,12 +229,29 @@ const FormComponent = ({ name, email }) => {
             .oneOf([true], 'Required'),
         })}
         onSubmit={(values, { setSubmitting, resetForm }) => {
-          setTimeout(() => {
+          const payload = {
+            email: values.email,
+            name: values.name,
+            address: values.address,
+            phoneNo: values.phone,
+            age: values.age,
+            occupation: values.occupation,
+            occupationDescription: values.occupationDescription,
+            judgingParameters: values.judgingParameters,
+            medium: values.know,
+            bestSkill: values.bestSkill,
+            aid: localStorage.getItem('aid'),
+          };
+          // https://erp.mgmu.ac.in/asd_EventPublicUserMaster.htm?eventID=11
+          axios
+            .post(REGISTER_USER_INFO, payload)
+            .then(() => history.push(REGISTER_SUCCESS))
             // eslint-disable-next-line no-console
-            console.log(JSON.stringify(values, null, 2));
-            resetForm();
-            setSubmitting(false);
-          }, 3000);
+            .catch((err) => console.log(err));
+          // eslint-disable-next-line no-console
+          console.log(JSON.stringify(payload, null, 2));
+          resetForm();
+          setSubmitting(false);
         }}
         enableReinitialize
       >
@@ -308,7 +332,7 @@ const FormComponent = ({ name, email }) => {
                 <Field
                   name="bestSkill"
                   label="What is your one best skill"
-                  component={CutstomTextAreaInput}
+                  component={CutstomTextInput}
                   placeholder="Your answer"
                 />
                 <Field name="acceptedTerms" component={CustomCheckbox} />
