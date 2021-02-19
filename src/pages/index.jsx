@@ -31,7 +31,6 @@ function Home() {
     creating a unique space where we expand our Perceptions."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
         <meta property="og:site_name" content="TEDxJNEC" />
         <meta property="og:locale" content="en_us" />
 
@@ -47,12 +46,8 @@ function Home() {
     contagious, and wish to spread our speaker’s commitment to innovation thus
     creating a unique space where we expand our Perceptions."
         />
-        <meta name="twitter:image:src" content="%PUBLIC_URL%/logo.svg" />
-        <link rel="shortcut icon" href="%PUBLIC_URL%/logo.svg" />
         <link rel="author" href="//github.com/pruthvi2103" />
         <link rel="canonical" href="//tedxjnec.com" />
-
-        <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
       </Helmet>
       <IntroVideo />
       <AboutTheme />
