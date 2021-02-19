@@ -12,6 +12,7 @@ const ROUTES = {
   LOGIN: '/login',
   TOC: '/tos',
   POLICY: '/policy',
+  AMBASSADOR_DASHBOARD: '/ambassador/dashboard',
 };
 
 export default ROUTES;

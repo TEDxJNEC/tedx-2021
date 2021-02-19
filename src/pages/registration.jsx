@@ -39,15 +39,15 @@ const Registration = ({ propState }) => {
       );
       return resp.data;
     } catch (error) {
-      // dispatch({
-      //   type: 'LOGOUT',
-      // });
-      // history.push('/login');
+      dispatch({
+        type: 'LOGOUT',
+      });
+      history.push('/login');
       return {};
     }
   };
   useEffect(async () => {
-    if (state.token && user.name === '') {
+    if (state.token) {
       const executeScroll = () => myRef.current.scrollIntoView();
 
       const userData = await getUserInfo();
@@ -56,6 +56,11 @@ const Registration = ({ propState }) => {
         name: userData.name,
       });
       executeScroll();
+    } else {
+      dispatch({
+        type: 'LOGOUT',
+      });
+      history.push('/login');
     }
   }, [state]);
 
