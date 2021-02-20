@@ -137,7 +137,10 @@ const Footer = () => {
         </div>
       </footer>
       <div className="text">
-        <p>Made By WebDevelopment Team : TEDxJNEC 2021</p>
+        <p>
+          Made By <Link to="/team/web">WebDevelopment Team</Link> : TEDxJNEC
+          2021
+        </p>
       </div>
     </div>
   );
