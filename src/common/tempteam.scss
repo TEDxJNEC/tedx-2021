@@ -19,6 +19,9 @@
   top: 7px;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
+  @media screen and (max-width: 720px) {
+    right: 7px;
+  }
 }
 
 .left {
@@ -27,6 +30,9 @@
   top: 7px;
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
+  @media screen and (max-width: 720px) {
+    left: 7px;
+  }
 }
 
 .up {
