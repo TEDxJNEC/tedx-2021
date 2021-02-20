@@ -21,7 +21,8 @@ const teamName = [
 ];
 const TempTeam = () => {
   return (
-    <>
+    <div className="team-list">
+      <div className="left arrow" />
       <div className="container-team-list">
         {teamName.map((txt) => (
           <animated.div key={txt} className="card-team-list">
@@ -34,7 +35,8 @@ const TempTeam = () => {
           </animated.div>
         ))}
       </div>
-    </>
+      <div className="right arrow" />
+    </div>
   );
 };
 
