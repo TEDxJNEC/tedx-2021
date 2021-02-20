@@ -64,56 +64,25 @@ const AmbassadorRegistration = ({ name, email }) => {
   const phoneRegExp = /^[6789]\d{9}$/;
   const nameRegExp = /^[A-Za-z]+$/;
   const emailRegExp = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
-  const [step, setStep] = useState(1);
-  const [stepError, setStpError] = useState({ 1: true, 2: true });
+
+  const [enabled, setEnabled] = useState(true);
 
   const [animateRight, toggleRight] = useState(true);
-  const incrementStep = () => {
-    toggleRight(true);
-    setStep(step + 1);
-  };
-  const decrementStep = () => {
-    toggleRight(false);
-    setStep(step - 1);
-  };
 
   const validateStep = (props) => {
     const { college, phone, year } = props.errors;
 
-    if (step === 1) {
-      if (
-        !college &&
-        props.touched.college &&
-        !name &&
-        props.touched.name &&
-        !phone &&
-        props.touched.phone &&
-        !year &&
-        props.touched.year
-      ) {
-        if (stepError[1]) {
-          setStpError({ ...step, 1: false });
-        }
-      } else if (!stepError[1]) {
-        setStpError({ ...step, 1: true });
-      }
-    } else if (step === 2) {
-      // if (
-      //   !age &&
-      //   props.touched.age &&
-      //   !judgingParameters &&
-      //   props.touched.judgingParameters &&
-      //   !bestSkill &&
-      //   props.touched.bestSkill &&
-      //   !know &&
-      //   props.touched.know
-      // ) {
-      //   if (stepError[2]) {
-      //     setStpError({ ...step, 2: false });
-      //   }
-      // } else if (!stepError[2]) {
-      //   setStpError({ ...step, 2: true });
-      // }
+    if (
+      !college &&
+      props.touched.college &&
+      !name &&
+      props.touched.name &&
+      !phone &&
+      props.touched.phone &&
+      !year
+    ) {
+      setEnabled(false);
+      toggleRight(true);
     }
   };
   const FormWrapper = styled.div`
@@ -145,7 +114,7 @@ const AmbassadorRegistration = ({ name, email }) => {
     }
   `;
   return (
-    <>
+    <div className="register-page-wrapper">
       <FormWrapper>
         <ImageWrapper>{/* <LeftImage src={splash} /> */}</ImageWrapper>
         <div className="form__place">
@@ -195,55 +164,43 @@ const AmbassadorRegistration = ({ name, email }) => {
           >
             {(props) => (
               <StyledForm className="form__component">
-                {step === 1 ? (
-                  <StepWrapper key="step1" visible={animateRight}>
-                    <Field
-                      name="name"
-                      label="Name"
-                      component={CutstomTextInput}
-                      placeholder="Your Name"
-                    />
-                    <Field
-                      name="phone"
-                      label="Mobile No."
-                      component={CutstomTextInput}
-                      placeholder="Your Mobile Number"
-                    />
-                    <Field
-                      name="email"
-                      label="E-mail"
-                      component={CutstomTextInput}
-                      placeholder="Your E-mail"
-                    />
-                    <Field
-                      name="college"
-                      label="College"
-                      component={CutstomTextInput}
-                      placeholder="Your College Name"
-                    />
-                    <Field
-                      name="year"
-                      label="Year"
-                      component={CutstomTextInput}
-                      placeholder="Enter your Year"
-                    />
-                  </StepWrapper>
-                ) : null}
+                <StepWrapper visible={animateRight}>
+                  <Field
+                    name="name"
+                    label="Name"
+                    component={CutstomTextInput}
+                    placeholder="Your Name"
+                  />
+                  <Field
+                    name="phone"
+                    label="Mobile No."
+                    component={CutstomTextInput}
+                    placeholder="Your Mobile Number"
+                  />
+                  <Field
+                    name="email"
+                    label="E-mail"
+                    component={CutstomTextInput}
+                    placeholder="Your E-mail"
+                  />
+                  <Field
+                    name="college"
+                    label="College"
+                    component={CutstomTextInput}
+                    placeholder="Your College Name"
+                  />
+                  <Field
+                    name="year"
+                    label="Year"
+                    component={CutstomTextInput}
+                    placeholder="Enter Your College Year"
+                  />
+                </StepWrapper>
+
                 {validateStep(props)}
                 <ButtonWrapper>
-                  <Button
-                    type="button"
-                    disabled={stepError[step]}
-                    onClick={() => incrementStep()}
-                  >
-                    Next
-                  </Button>
-                  <Button
-                    type="button"
-                    backBtn={step === 1}
-                    onClick={decrementStep}
-                  >
-                    Back
+                  <Button type="submit" disabled={enabled}>
+                    Submit
                   </Button>
                 </ButtonWrapper>
               </StyledForm>
@@ -251,7 +208,7 @@ const AmbassadorRegistration = ({ name, email }) => {
           </Formik>
         </div>
       </FormWrapper>
-    </>
+    </div>
   );
 };
 
