@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import 'common/formComponent.scss';
 import styled, { keyframes, css } from 'styled-components';
 
+import API_ROUTES from 'constants/api';
+import ROUTES from 'constants/routes';
+
 import CutstomTextInput from 'components/form-fields/textInput';
+import CustomCheckbox from 'components/form-fields/checkInput';
 import CutstomTextAreaInput from 'components/form-fields/textareaInput';
 import CutstomSelectInput from 'components/form-fields/selectInput';
 
@@ -46,16 +52,54 @@ const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
-  margin-top: 3rem;
+  margin-top: 2rem;
 `;
+
+const disabledBtnStyles = `
+    background: #81c784;
+    cursor: no-drop;
+`;
+const enabledBtnStyles = `
+    background: #4caf50;
+    cursor: pointer;
+
+    &:hover{
+      background: #388e3c;
+    }
+`;
+
+const backBtnStyles = `
+    background: #ffb74d;
+
+    &:hover{
+      background: #f57c00;
+    }
+`;
+
 const Button = styled.button`
-  background: transparent;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
   outline: none;
   border: none;
   color: #fff;
-  cursor: pointer;
-  transition: 1000ms;
-  ${(props) => (props.backBtn ? `display:none` : null)}
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 500ms;
+  ${(props) =>
+    props.disabled
+      ? css`
+          ${disabledBtnStyles}
+        `
+      : css`
+          ${enabledBtnStyles}
+        `};
+  ${(props) => (props.backBtn ? `display: none;` : null)};
+  ${(props) =>
+    props.backColor
+      ? css`
+          ${backBtnStyles}
+        `
+      : null}
 `;
 const StyledForm = styled(Form)``;
 const FormComponent = ({ name, email }) => {
@@ -64,8 +108,11 @@ const FormComponent = ({ name, email }) => {
   const emailRegExp = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
   const [step, setStep] = useState(1);
   const [stepError, setStpError] = useState({ 1: true, 2: true });
-
   const [animateRight, toggleRight] = useState(true);
+  const { REGISTER_USER_INFO } = API_ROUTES;
+  const { REGISTER_SUCCESS } = ROUTES;
+  const history = useHistory();
+
   const incrementStep = () => {
     toggleRight(true);
     setStep(step + 1);
@@ -92,8 +139,7 @@ const FormComponent = ({ name, email }) => {
         props.touched.address &&
         !phone &&
         props.touched.phone &&
-        !occupationDescription &&
-        props.touched.occupationDescription
+        !occupationDescription
       ) {
         if (stepError[1]) {
           setStpError({ ...step, 1: false });
@@ -135,6 +181,7 @@ const FormComponent = ({ name, email }) => {
           know: '',
           judgingParameters: '',
           bestSkill: '',
+          acceptedTerms: false,
         }}
         validationSchema={yup.object({
           name: yup
@@ -152,7 +199,7 @@ const FormComponent = ({ name, email }) => {
             .required('Email address is required'),
           address: yup.string().required('Address is required'),
           age: yup
-            .string()
+            .number()
             .min(8, 'You must be older than 8 years')
             .max(100, 'You must be younger than 100 years')
             .required('Please provide your age'),
@@ -163,8 +210,6 @@ const FormComponent = ({ name, email }) => {
               'Please select one of the options'
             )
             .required('Selection is required'),
-          // clgName: yup.string().required('Please provide your college name'),
-          // profession: yup.string().required('Please provide your profession'),
           occupationDescription: yup.string().required('Please provide your '),
           judgingParameters: yup
             .string()
@@ -173,19 +218,40 @@ const FormComponent = ({ name, email }) => {
           bestSkill: yup
             .string()
             .required('Required')
-            .min(10, 'Please enter at least 10 letters'),
+            .min(2, 'Please enter at least 2 letters'),
           know: yup
             .string()
             .required('Required')
             .min(10, 'Please enter at least 10 letters'),
+          acceptedTerms: yup
+            .boolean()
+            .required('Required')
+            .oneOf([true], 'Required'),
         })}
         onSubmit={(values, { setSubmitting, resetForm }) => {
-          setTimeout(() => {
+          const payload = {
+            email: values.email,
+            name: values.name,
+            address: values.address,
+            phoneNo: values.phone,
+            age: values.age,
+            occupation: values.occupation,
+            occupationDescription: values.occupationDescription,
+            judgingParameters: values.judgingParameters,
+            medium: values.know,
+            bestSkill: values.bestSkill,
+            aid: localStorage.getItem('aid'),
+          };
+
+          axios
+            .post(REGISTER_USER_INFO, payload)
+            .then(() => history.push(REGISTER_SUCCESS))
             // eslint-disable-next-line no-console
-            console.log(JSON.stringify(values, null, 2));
-            resetForm();
-            setSubmitting(false);
-          }, 3000);
+            .catch(() => history.push(REGISTER_SUCCESS));
+          // eslint-disable-next-line no-console
+          console.log(JSON.stringify(payload, null, 2));
+          resetForm();
+          setSubmitting(false);
         }}
         enableReinitialize
       >
@@ -196,6 +262,7 @@ const FormComponent = ({ name, email }) => {
                 <Field
                   name="name"
                   label="Name"
+                  disabled
                   component={CutstomTextInput}
                   placeholder="Your Name"
                 />
@@ -203,11 +270,12 @@ const FormComponent = ({ name, email }) => {
                   name="phone"
                   label="Mobile No."
                   component={CutstomTextInput}
-                  placeholder="Your Mobile Number"
+                  placeholder="Whatsapp Number"
                 />
                 <Field
                   name="email"
                   label="E-mail"
+                  disabled
                   component={CutstomTextInput}
                   placeholder="Your E-mail"
                 />
@@ -215,7 +283,7 @@ const FormComponent = ({ name, email }) => {
                   name="address"
                   label="Address"
                   component={CutstomTextAreaInput}
-                  placeholder="Your Address"
+                  placeholder="PLot/Flat No,&#10;Locality/Area/Nearby Places,&#10;City, State."
                 />
                 <Field
                   name="occupation"
@@ -245,44 +313,50 @@ const FormComponent = ({ name, email }) => {
               <StepWrapper key="step2" visible={animateRight}>
                 <Field
                   name="age"
-                  label="DOB"
-                  type="date"
-                  data-date-inline-picker="true"
+                  label="Age"
                   component={CutstomTextInput}
                   placeholder="Your Age"
                 />
                 <Field
                   name="judgingParameters"
-                  label="What are your parameters to judge a good TED Talk?"
+                  label="What are your views on a good TED Talk?"
                   component={CutstomTextAreaInput}
                   placeholder="Your views"
                 />
                 <Field
                   name="know"
-                  label="How did you come to learn about TEDxJNEC"
+                  label="How did you come to know about TEDxJNEC 2021"
                   component={CutstomTextAreaInput}
-                  placeholder="Your answer"
+                  placeholder="For eg. Social Media/ Friend/ Advertisement/ Campus Ambassador/ Other"
                 />
                 <Field
                   name="bestSkill"
                   label="What is your one best skill"
-                  component={CutstomTextAreaInput}
+                  component={CutstomTextInput}
                   placeholder="Your answer"
                 />
+                <Field name="acceptedTerms" component={CustomCheckbox} />
               </StepWrapper>
             )}
             {validateStep(props)}
             <ButtonWrapper>
-              <Button
-                type="button"
-                disabled={stepError[step]}
-                onClick={() => incrementStep()}
-              >
-                Next
-              </Button>
+              {step === 2 ? (
+                <Button type="submit" disabled={stepError[step]}>
+                  {props.isSubmitting ? 'Redirecting...' : 'Submit'}
+                </Button>
+              ) : (
+                <Button
+                  type="button"
+                  disabled={stepError[step]}
+                  onClick={() => incrementStep()}
+                >
+                  Next
+                </Button>
+              )}
               <Button
                 type="button"
                 backBtn={step === 1}
+                backColor
                 onClick={decrementStep}
               >
                 Back

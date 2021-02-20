@@ -1,5 +1,5 @@
-@import './colors.scss';
-@import './fonts.scss';
+@import 'common/colors.scss';
+@import 'common/fonts.scss';
 
 .container__login_page {
   -webkit-box-align: center;
@@ -28,46 +28,7 @@
   width: 50%;
   padding: 0 3em;
 }
-.right_side h2 {
-  color: #151518;
-  font-size: 1.75em;
-  text-align: center;
-}
 
-.socials-wrapper h2 {
-  background: $ACCENT_COLOR;
-  color: #1f1f24;
-  font-size: 1rem;
-  position: relative;
-  text-align: center;
-  z-index: 10;
-}
-.socials-wrapper h2:before,
-.socials-wrapper h2:after {
-  background: $ACCENT_COLOR;
-  content: '';
-  display: block;
-  height: 0.1em;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  width: 17.5%;
-}
-.socials-wrapper h2:before {
-  left: 0;
-}
-.socials-wrapper h2:after {
-  right: 0;
-}
-.socials-wrapper ul {
-  display: -webkit-box;
-  display: flex;
-  list-style: none;
-  -webkit-box-pack: center;
-  justify-content: center;
-  padding: 0;
-}
 .socials-wrapper {
   margin: 0.5em;
 }
@@ -136,4 +97,10 @@
 .method-item .btn-action:hover {
   background: #504a42;
   border: 1.3px solid #504a42;
+}
+
+.method {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

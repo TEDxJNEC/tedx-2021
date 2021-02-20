@@ -59,12 +59,20 @@ const TestPage = Loadable({
   loader: () => import('pages/test'),
   loading: Loader,
 });
+const AmbassadorDashboard = Loadable({
+  loader: () => import('pages/ambassador/ambassador-dashboard'),
+  loading: Loader,
+});
 const Policy = Loadable({
   loader: () => import('pages/policy'),
   loading: Loader,
 });
 const TOCPage = Loadable({
   loader: () => import('pages/toc'),
+  loading: Loader,
+});
+const RegistrationSuccess = Loadable({
+  loader: () => import('pages/success-registration'),
   loading: Loader,
 });
 const Routes = () => {
@@ -76,10 +84,12 @@ const Routes = () => {
     DASHBOARD,
     HIGHLIGHT,
     REGISTRATION,
+    REGISTER_SUCCESS,
     GOOGLE_AUTH_CALLBACK_USER,
     LOGIN,
     ADMIN_LOGIN,
     AMBASSADOR_LOGIN,
+    AMBASSADOR_DASHBOARD,
     POLICY,
     TOC,
   } = ROUTES;
@@ -102,6 +112,12 @@ const Routes = () => {
           <Route exact path={AMBASSADOR_LOGIN} component={AmbassdorLogin} />
           <Route
             exact
+            path={AMBASSADOR_DASHBOARD}
+            component={AmbassadorDashboard}
+          />
+
+          <Route
+            exact
             path={GOOGLE_AUTH_CALLBACK_USER}
             component={UserCallback}
           />
@@ -112,7 +128,11 @@ const Routes = () => {
             path={`${TEAM}/:committee`}
             render={(props) => <Committee {...props} />}
           />
-          {/* <Route exact path={TEAM} component={}></Route> */}
+          <Route
+            exact
+            path={REGISTER_SUCCESS}
+            component={RegistrationSuccess}
+          />
           <Route
             exact
             path={REGISTRATION}
