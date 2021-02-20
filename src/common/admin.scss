@@ -1,50 +1,51 @@
 .admin-page {
-    width: 100%;
-    height: 100vh;
-    background-color: #fff;
-    padding: 2.5%;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  padding: 2.5%;
 }
 
 .dashboard-wrapper {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
 }
 
 .dashboard-item {
-    margin: 10px;
+  margin: 10px;
 }
 
 .card-users {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 0 auto 0 0;
+  color: #000;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto 0 0;
 }
 
 .heading-users {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .card-registrations {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    border: 1px solid #eee;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 0 auto 0 0;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto 0 0;
 }
 
 .heading-registrations {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
