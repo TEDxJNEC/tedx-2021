@@ -9,7 +9,7 @@ const RouteChangeTracker = ({ history }) => {
     ReactGA.pageview(location.pathname);
   });
 
-  return <div>hihi</div>;
+  return <div />;
 };
 
 export default withRouter(RouteChangeTracker);
