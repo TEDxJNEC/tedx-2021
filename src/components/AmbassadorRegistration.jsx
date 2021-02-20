@@ -48,14 +48,51 @@ const ButtonWrapper = styled.div`
   flex-direction: row-reverse;
   margin-top: 3rem;
 `;
+const disabledBtnStyles = `
+    background: #81c784;
+    cursor: no-drop;
+`;
+const enabledBtnStyles = `
+    background: #4caf50;
+    cursor: pointer;
+
+    &:hover{
+      background: #388e3c;
+    }
+`;
+
+const backBtnStyles = `
+    background: #ffb74d;
+
+    &:hover{
+      background: #f57c00;
+    }
+`;
+
 const Button = styled.button`
-  background: transparent;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
   outline: none;
   border: none;
   color: #fff;
-  cursor: pointer;
-  transition: 1000ms;
-  ${(props) => (props.backBtn ? `display:none` : null)}
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 500ms;
+  ${(props) =>
+    props.disabled
+      ? css`
+          ${disabledBtnStyles}
+        `
+      : css`
+          ${enabledBtnStyles}
+        `};
+  ${(props) => (props.backBtn ? `display: none;` : null)};
+  ${(props) =>
+    props.backColor
+      ? css`
+          ${backBtnStyles}
+        `
+      : null}
 `;
 const StyledForm = styled(Form)``;
 
