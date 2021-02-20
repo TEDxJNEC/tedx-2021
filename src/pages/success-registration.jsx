@@ -18,13 +18,23 @@ const WrapperCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding: 0 3rem 3rem;
+  margin: 0 2rem;
+  padding: 3rem 3rem;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 12px;
+    padding: 1.5rem 1.5rem;
+  }
 `;
 
 const Vector = styled.img`
   height: 320px;
   width: auto;
   align-items: flex-start;
+
+  @media only screen and (max-width: 600px) {
+    height: 180px;
+  }
 `;
 
 const Heading = styled.h1`
