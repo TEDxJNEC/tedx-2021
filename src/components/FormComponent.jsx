@@ -244,14 +244,20 @@ const FormComponent = ({ name, email }) => {
             judgingParameters: values.judgingParameters,
             medium: values.know,
             bestSkill: values.bestSkill,
-            aid: localStorage.getItem('aid'),
+            aId: JSON.parse(localStorage.getItem('amb')),
           };
-
+          const token = JSON.parse(localStorage.getItem('token'));
           axios
-            .post(REGISTER_USER_INFO, payload)
+            .post(
+              `${process.env.REACT_APP_BACKEND_URL}/${REGISTER_USER_INFO}`,
+              payload,
+              {
+                headers: { token },
+              }
+            )
             .then(() => history.push(REGISTER_SUCCESS))
             // eslint-disable-next-line no-console
-            .catch(() => history.push(REGISTER_SUCCESS));
+            .catch((err) => console.log(err));
           // eslint-disable-next-line no-console
           console.log(JSON.stringify(payload, null, 2));
           resetForm();

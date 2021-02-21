@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
+import { AuthContext } from 'routes';
+import ROUTES from 'constants/routes';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import DefaultLayout from 'layouts';
 import paymentSrc from 'assets/payment.svg';
@@ -72,8 +75,19 @@ const RedirectLink = styled.a`
     }
   }
 `;
-
+const { LOGIN } = ROUTES;
 const successRegistration = () => {
+  const history = useHistory();
+  const { state, dispatch } = useContext(AuthContext);
+  useEffect(() => {
+    const { token } = state;
+    if (!token) {
+      dispatch({
+        type: 'LOGOUT',
+      });
+      history.push(LOGIN);
+    }
+  }, []);
   return (
     <DefaultLayout>
       <ContentWrapper>

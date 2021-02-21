@@ -6,13 +6,15 @@ import axios from 'axios';
 // eslint-disable-next-line import/no-cycle
 import { AuthContext } from 'routes';
 import API_ROUTES from 'constants/api';
+import ROUTES from 'constants/routes';
 
 import { useHistory } from 'react-router-dom';
 // eslint-disable-next-line import/no-cycle
-import Register from '../components/Register';
-import DefaultLayout from '../layouts';
+import Register from 'components/Register';
+import DefaultLayout from 'layouts';
 
 const { GET_USER_INFO } = API_ROUTES;
+const { REGISTER_SUCCESS, LOGIN } = ROUTES;
 const Registration = ({ propState }) => {
   const myRef = useRef(null);
   const history = useHistory();
@@ -42,7 +44,7 @@ const Registration = ({ propState }) => {
       dispatch({
         type: 'LOGOUT',
       });
-      history.push('/login');
+      history.push(LOGIN);
       return {};
     }
   };
@@ -60,19 +62,24 @@ const Registration = ({ propState }) => {
       });
     }
     if (state.token) {
-      const executeScroll = () => myRef.current.scrollIntoView();
-
       const userData = await getUserInfo();
       setUser({
         email: userData.email,
         name: userData.name,
       });
-      executeScroll();
+      if (userData.phoneNo) {
+        history.push(REGISTER_SUCCESS);
+      }
+
+      if (myRef.current) {
+        const executeScroll = () => myRef.current.scrollIntoView();
+        executeScroll();
+      }
     } else {
       dispatch({
         type: 'LOGOUT',
       });
-      history.push('/login');
+      history.push(LOGIN);
     }
   }, [state]);
 
