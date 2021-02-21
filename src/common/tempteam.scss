@@ -2,7 +2,51 @@
   width: 0px;
 }
 
+.team-list {
+  position: relative;
+}
+
+.arrow {
+  border: solid #f6c90e;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  position: absolute;
+  right: 15px;
+  top: 7px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  @media screen and (max-width: 720px) {
+    right: 7px;
+  }
+}
+
+.left {
+  position: absolute;
+  left: 15px;
+  top: 7px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  @media screen and (max-width: 720px) {
+    left: 7px;
+  }
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
 .container-team-list {
+  position: relative;
   display: flex;
   overflow-x: scroll;
   gap: 32px;
