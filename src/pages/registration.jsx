@@ -47,6 +47,18 @@ const Registration = ({ propState }) => {
     }
   };
   useEffect(async () => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const aId = urlParams.get('aid');
+
+    if (aId) {
+      dispatch({
+        type: 'SETAMB',
+        payload: {
+          amb: aId,
+        },
+      });
+    }
     if (state.token) {
       const executeScroll = () => myRef.current.scrollIntoView();
 
