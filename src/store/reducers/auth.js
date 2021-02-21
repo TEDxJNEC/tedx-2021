@@ -24,7 +24,11 @@ export const reducer = (state, action) => {
       };
     }
     case 'LOGOUT': {
+      const amb = localStorage.getItem('amb');
       localStorage.clear();
+      if (amb) {
+        localStorage.setItem('amb', amb);
+      }
       return {
         ...state,
         isLoggedIn: false,
