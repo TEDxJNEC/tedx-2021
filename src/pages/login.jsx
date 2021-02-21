@@ -4,8 +4,6 @@ import { AuthContext } from 'routes';
 import Login from 'components/Login';
 import DefaultLayout from '../layouts';
 
-import '../common/login.scss';
-
 function RegLogin() {
   // eslint-disable-next-line no-unused-vars
   const { state, dispatch } = useContext(AuthContext);
