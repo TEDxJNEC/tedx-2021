@@ -1,6 +1,5 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import AmbassadorRegistration from 'components/AmbassadorRegistration';
 import aboutPageData from '../assets/about-content.json';
 import Content from '../components/Content';
 import AboutDetails from '../components/AboutDetails';
@@ -79,7 +78,6 @@ const About = () => {
             />
           </div>
         </div>
-        <AmbassadorRegistration />
       </DefaultLayout>
     );
   });
