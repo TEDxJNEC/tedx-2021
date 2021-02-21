@@ -54,6 +54,8 @@ import officialAbhishek from 'assets/team/official/officialAbhishek.webp';
 import officialManik from 'assets/team/official/officialManik.webp';
 import officialPriyanka from 'assets/team/official/officialPriyanka.webp';
 import dopAnuj from 'assets/team/official/dopAnuj.webp';
+import dopRiya from 'assets/team/official/dopRiya.webp';
+import dopSarang from 'assets/team/official/dopSarang.webp';
 
 const teamData = {
   web: [
@@ -345,6 +347,13 @@ const teamData = {
       quote: 'Your attitude and aptitude will decide your success in future',
     },
     {
+      name: 'Sarang Patil',
+      quirk1: 'Accountable',
+      quirk2: 'Motivated',
+      img: creativeSarang,
+      quote: `I don't like to manage people, I like to manage events`,
+    },
+    {
       name: 'Divya Khedkar',
       quirk1: 'Innovative',
       quirk2: 'Confident',
@@ -454,13 +463,6 @@ const teamData = {
   ],
   dop: [
     {
-      name: 'Anuj Jangle',
-      quirk1: 'Resilience',
-      quirk2: 'Photographer',
-      img: dopAnuj,
-      quote: 'Your attitude and aptitude will decide your success in future',
-    },
-    {
       name: 'Manik Sardeshpande',
       quirk1: 'Resilience',
       quirk2: 'logical',
@@ -471,16 +473,24 @@ const teamData = {
       name: 'Sarang Patil',
       quirk1: 'Accountable',
       quirk2: 'Motivated',
-      img: creativeSarang,
+      img: dopSarang,
       quote: `I don't like to manage people, I like to manage events`,
     },
     {
       name: 'Riya Jain',
       quirk1: 'Creative',
       quirk2: 'Elegant',
-      img: webRiya,
+      img: dopRiya,
       quote: 'Whoever is happy will make others happy too',
     },
+    {
+      name: 'Anuj Jangle',
+      quirk1: 'Resilience',
+      quirk2: 'Photographer',
+      img: dopAnuj,
+      quote: 'Your attitude and aptitude will decide your success in future',
+    },
+
     {
       name: 'Shubham Jadhao',
       quirk1: 'Smart',
@@ -503,6 +513,13 @@ const teamData = {
       quirk2: 'Magnanimity',
       img: officialPriyanka,
       quote: 'Follow your inner moonlight, set yourself free',
+    },
+    {
+      name: 'Manik Sardeshpande',
+      quirk1: 'Resilience',
+      quirk2: 'logical',
+      img: officialManik,
+      quote: `I don't play the game, I play the man.`,
     },
   ],
 };

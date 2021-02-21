@@ -1,10 +1,44 @@
 import React from 'react';
 import styled from 'styled-components';
 import * as queryString from 'query-string';
-import 'common/login.scss';
 import 'common/colors.scss';
 import 'common/fonts.scss';
 import Login from './icons/Login';
+
+const LeftSide = styled.div``;
+const RightSide = styled.div``;
+
+const RightWrapper = styled.div``;
+
+const ContainerPageWrapper = styled.div`
+  display: flex;
+  font-family: '"Poppins" sans-serif';
+  min-height: calc(100% - 80px);
+  justify-content: center;
+  align-items: center;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
+const ContentWrapper = styled.div`
+  background: #353535;
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 2rem 5rem;
+  gap: 4rem;
+  margin: 0 3rem;
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+  }
+`;
 
 const CustomGoogleButton = styled.a`
   transition: background-color 0.3s, box-shadow 0.3s;
@@ -13,7 +47,7 @@ const CustomGoogleButton = styled.a`
   border: none;
   border-radius: 3px;
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
-
+  margin: 0 auto;
   color: #757575;
   font-size: 14px;
   font-weight: 500;
@@ -31,7 +65,7 @@ const CustomGoogleButton = styled.a`
 `;
 
 const Subheadline = styled.h2`
-  color: #1f1f24;
+  color: #fff;
   font-size: 1rem;
   margin: 1rem 0;
   text-align: center;
@@ -39,7 +73,7 @@ const Subheadline = styled.h2`
 `;
 
 const Heading = styled.h1`
-  color: #151518;
+  color: #fff;
   text-align: center;
 `;
 
@@ -58,26 +92,26 @@ const RegLogin = () => {
 
   const googleLoginUrl = `https://accounts.google.com/o/oauth2/v2/auth?${stringifiedParams}`;
   return (
-    <div className="container__login_page">
-      <div className="contact-wrapper">
-        <div className="left_side">
+    <ContainerPageWrapper>
+      <ContentWrapper>
+        <LeftSide>
           <Login />
-        </div>
-        <div className="right_side">
-          <Heading>Account Login</Heading>
+        </LeftSide>
+        <RightSide>
+          <RightWrapper>
+            <Heading>Account Login</Heading>
 
-          <div className="socials-wrapper">
-            <Subheadline>Login with your Google Account</Subheadline>
+            <ButtonWrapper>
+              <Subheadline>Login with your Google Account</Subheadline>
 
-            <div className="method">
               <CustomGoogleButton href={googleLoginUrl}>
                 Sign in with Google
               </CustomGoogleButton>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            </ButtonWrapper>
+          </RightWrapper>
+        </RightSide>
+      </ContentWrapper>
+    </ContainerPageWrapper>
   );
 };
 
