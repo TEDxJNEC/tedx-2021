@@ -27,7 +27,7 @@ export const reducer = (state, action) => {
       const amb = localStorage.getItem('amb');
       localStorage.clear();
       if (amb) {
-        localStorage.setItem('amb', JSON.stringify(amb));
+        localStorage.setItem('amb', amb);
       }
       return {
         ...state,
