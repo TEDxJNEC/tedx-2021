@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
+import { AuthContext } from 'routes';
+import ROUTES from 'constants/routes';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import DefaultLayout from 'layouts';
 import paymentSrc from 'assets/payment.svg';
@@ -18,13 +21,23 @@ const WrapperCard = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding: 0 3rem 3rem;
+  margin: 0 2rem;
+  padding: 3rem 3rem;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 12px;
+    padding: 1.5rem 1.5rem;
+  }
 `;
 
 const Vector = styled.img`
   height: 320px;
   width: auto;
   align-items: flex-start;
+
+  @media only screen and (max-width: 600px) {
+    height: 180px;
+  }
 `;
 
 const Heading = styled.h1`
@@ -62,8 +75,19 @@ const RedirectLink = styled.a`
     }
   }
 `;
-
+const { LOGIN } = ROUTES;
 const successRegistration = () => {
+  const history = useHistory();
+  const { state, dispatch } = useContext(AuthContext);
+  useEffect(() => {
+    const { token } = state;
+    if (!token) {
+      dispatch({
+        type: 'LOGOUT',
+      });
+      history.push(LOGIN);
+    }
+  }, []);
   return (
     <DefaultLayout>
       <ContentWrapper>

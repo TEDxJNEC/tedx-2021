@@ -106,6 +106,7 @@ const FormComponent = ({ name, email }) => {
   // const phoneRegExp = /^((+*)((0[ -]+)*|(91 )*)(d{10}+))|d{5}([- ]*)d{6}$/;
   const phoneRegExp = /^[6789]\d{9}$/;
   const emailRegExp = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
+  const nameRegExp = /^[A-Za-z]+$/;
   const [step, setStep] = useState(1);
   const [stepError, setStpError] = useState({ 1: true, 2: true });
   const [animateRight, toggleRight] = useState(true);
@@ -210,7 +211,10 @@ const FormComponent = ({ name, email }) => {
               'Please select one of the options'
             )
             .required('Selection is required'),
-          occupationDescription: yup.string().required('Please provide your '),
+          occupationDescription: yup
+            .string()
+            .matches(nameRegExp, 'This should not contain any number')
+            .required('Please provide your '),
           judgingParameters: yup
             .string()
             .required('Required')
@@ -240,14 +244,20 @@ const FormComponent = ({ name, email }) => {
             judgingParameters: values.judgingParameters,
             medium: values.know,
             bestSkill: values.bestSkill,
-            aid: localStorage.getItem('aid'),
+            aId: JSON.parse(localStorage.getItem('amb')),
           };
-
+          const token = JSON.parse(localStorage.getItem('token'));
           axios
-            .post(REGISTER_USER_INFO, payload)
+            .post(
+              `${process.env.REACT_APP_BACKEND_URL}/${REGISTER_USER_INFO}`,
+              payload,
+              {
+                headers: { token },
+              }
+            )
             .then(() => history.push(REGISTER_SUCCESS))
             // eslint-disable-next-line no-console
-            .catch(() => history.push(REGISTER_SUCCESS));
+            .catch((err) => console.log(err));
           // eslint-disable-next-line no-console
           console.log(JSON.stringify(payload, null, 2));
           resetForm();
@@ -319,7 +329,7 @@ const FormComponent = ({ name, email }) => {
                 />
                 <Field
                   name="judgingParameters"
-                  label="What are your views on a good TED Talk?"
+                  label="Have you attended a TEDx event before? If yes, share your experience. If no, why do you wish to attend TEDxJNEC 2021?"
                   component={CutstomTextAreaInput}
                   placeholder="Your views"
                 />
@@ -331,7 +341,7 @@ const FormComponent = ({ name, email }) => {
                 />
                 <Field
                   name="bestSkill"
-                  label="What is your one best skill"
+                  label="Describe yourself in any three distinct words"
                   component={CutstomTextInput}
                   placeholder="Your answer"
                 />
