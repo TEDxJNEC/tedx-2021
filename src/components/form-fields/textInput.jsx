@@ -48,8 +48,6 @@ const TextInput = ({
   label,
   errorSuffix,
   disabled,
-  dob,
-  isDob,
   ...props
 }) => {
   return (
@@ -57,8 +55,6 @@ const TextInput = ({
       <CustomLabel htmlFor={name}>{label}</CustomLabel>
       <CutstomTextInput
         disabled={disabled}
-        type={dob}
-        data-date-inline-picker={isDob}
         error={touched[field.name] && errors[field.name]}
         accepted={(touched[field.name] && !errors[field.name]) || disabled}
         {...field}
