@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import * as yup from 'yup';
 import 'common/formComponent.scss';
 import styled, { keyframes, css } from 'styled-components';
 import mobileSplash from 'assets/patternMobile.svg';
 import CutstomTextInput from 'components/form-fields/textInput';
-
+import API_ROUTES from 'constants/api';
+import ROUTES from 'constants/routes';
 import '../common/ambassadorregistration.scss';
+import axios from 'axios';
 
 const slideIn = keyframes`
 from{
@@ -106,6 +109,10 @@ const AmbassadorRegistration = ({ name, email }) => {
 
   const [animateRight, toggleRight] = useState(true);
 
+  const { REGISTER_AMBASSADOR_INFO } = API_ROUTES;
+  const { REGISTER_SUCCESS } = ROUTES;
+  const history = useHistory();
+
   const validateStep = (props) => {
     const { college, phone, year } = props.errors;
 
@@ -190,12 +197,31 @@ const AmbassadorRegistration = ({ name, email }) => {
               year: yup.string().required('Year is required'),
             })}
             onSubmit={(values, { setSubmitting, resetForm }) => {
-              setTimeout(() => {
+              const payload = {
+                name: values.name,
+                email: values.email,
+                college: values.college,
+                year: values.year,
+                phoneNo: values.phone,
+                aId: JSON.parse(localStorage.getItem('amb')),
+              };
+
+              const token = JSON.parse(localStorage.getItem('token'));
+              axios
+                .post(
+                  `${process.env.REACT_APP_BACKEND_URL}/${REGISTER_AMBASSADOR_INFO}`,
+                  payload,
+                  {
+                    headers: { token },
+                  }
+                )
+                .then(() => history.push(REGISTER_SUCCESS))
                 // eslint-disable-next-line no-console
-                console.log(JSON.stringify(values, null, 2));
-                resetForm();
-                setSubmitting(false);
-              }, 3000);
+                .catch((err) => console.log(err));
+              // eslint-disable-next-line no-console
+              console.log(JSON.stringify(values, null, 2));
+              resetForm();
+              setSubmitting(false);
             }}
             enableReinitialize
           >
