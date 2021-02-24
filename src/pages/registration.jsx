@@ -23,7 +23,7 @@ const LoaderMask = styled.div`
   z-index: 5000;
 `;
 const { GET_USER_INFO } = API_ROUTES;
-const { REGISTER_SUCCESS, LOGIN } = ROUTES;
+const { REGISTER_SUCCESS, LOGIN, PAYMENT_SUCCESS } = ROUTES;
 const Registration = ({ propState }) => {
   const myRef = useRef(null);
   const history = useHistory();
@@ -78,6 +78,9 @@ const Registration = ({ propState }) => {
         email: userData.email,
         name: userData.name,
       });
+      if (userData.phoneNo && userData.ticketsBought) {
+        history.push(PAYMENT_SUCCESS);
+      }
       if (userData.phoneNo) {
         history.push(REGISTER_SUCCESS);
       }
