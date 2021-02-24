@@ -80,8 +80,7 @@ const Registration = ({ propState }) => {
       });
       if (userData.phoneNo && userData.ticketsBought) {
         history.push(PAYMENT_SUCCESS);
-      }
-      if (userData.phoneNo) {
+      } else if (userData.phoneNo) {
         history.push(REGISTER_SUCCESS);
       }
 
