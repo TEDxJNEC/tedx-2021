@@ -9,11 +9,11 @@ const AmbPageWrapper = styled.div`
   color: black;
   min-height: 100%;
 `;
-const AmbassdorPageLayout = ({ children }) => {
+const AmbassdorPageLayout = ({ children, name, onLogout }) => {
   return (
     <AmbPageWrapper>
-      <Navbar />
-      <div className="dashboard-wrapper">{children}</div>
+      <Navbar name={name} onLogout={onLogout} />
+      <div className="amb-dashboard-wrapper">{children}</div>
     </AmbPageWrapper>
   );
 };

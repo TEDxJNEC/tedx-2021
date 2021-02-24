@@ -5,7 +5,7 @@ import ROUTES from 'constants/routes';
 
 const AmbassdorNavbar = () => {
   return (
-    <nav className="sidenav">
+    <nav className="amb-sidenav">
       <div className="name">Full Name</div>
 
       <div className="nav-links">

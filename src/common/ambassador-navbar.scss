@@ -1,10 +1,9 @@
-.sidenav {
+.amb-sidenav {
   display: flex;
   flex-flow: column;
   text-align: center;
-  height: 100%;
+  min-height: 100%;
   width: 20%;
-  position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
@@ -13,14 +12,14 @@
   box-shadow: 7px 0px 10px 4px #eee;
 }
 
-.sidenav a {
+.amb-sidenav a {
   margin: 40px auto;
   text-decoration: none;
   display: block;
   color: #707c97;
 }
 
-.sidenav a:hover {
+.amb-sidenav a:hover {
   margin: 40px auto;
   text-decoration: none;
   display: block;
@@ -43,7 +42,7 @@
   margin: 0px auto 20px auto;
 }
 
-.sidenav .active {
+.amb-sidenav .active {
   color: #000;
   margin: 40px auto;
   text-decoration: none;
@@ -51,7 +50,7 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .sidenav {
+  .amb-sidenav {
     display: none;
   }
 }
