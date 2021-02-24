@@ -118,6 +118,14 @@ const Mobile = () => {
             >
               TEAM
             </NavLink>
+            <NavLink
+              to={REGISTRATION}
+              exact
+              activeClassName="active"
+              className="title"
+            >
+              BOOK TICKETS
+            </NavLink>
           </ul>
         </div>
       </nav>

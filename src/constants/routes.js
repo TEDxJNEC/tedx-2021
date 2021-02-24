@@ -15,7 +15,7 @@ const ROUTES = {
   AMBASSADOR_DASHBOARD: '/ambassador/dashboard',
   TNC: '/tnc',
   AMBASSADOR_REGISTRATION: '/ambassador/registration',
-
+  PAYMENT_SUCCESS: '/payment/success',
 };
 
 export default ROUTES;

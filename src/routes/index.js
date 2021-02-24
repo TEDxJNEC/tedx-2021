@@ -83,6 +83,11 @@ const AmbassadorRegistrations = Loadable({
   loader: () => import('pages/ambassador/ambassador-registration'),
   loading: Loader,
 });
+
+const PaymentSuccess = Loadable({
+  loader: () => import('pages/success-payment'),
+  loading: Loader,
+});
 const Routes = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const {
@@ -102,6 +107,7 @@ const Routes = () => {
     TOC,
     TNC,
     AMBASSADOR_REGISTRATION,
+    PAYMENT_SUCCESS,
   } = ROUTES;
   return (
     <AuthContext.Provider
@@ -155,6 +161,7 @@ const Routes = () => {
             path={AMBASSADOR_REGISTRATION}
             component={AmbassadorRegistrations}
           />
+          <Route exact path={PAYMENT_SUCCESS} component={PaymentSuccess} />
           <Route exact path="/test" component={TestPage} />
           {/* <Route exact path={BOOKINGS} component={}></Route> */}
           <Route component={Error} />

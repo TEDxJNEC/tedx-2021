@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 import useIntersect from 'hooks/useIntersect';
 import 'common/scrollsnap.scss';
 import 'common/introvideo.scss';
+import ROUTES from 'constants/routes';
 // import Part1 from 'assets/videos/kintsugiVideo1.webm';
 // import Part2 from 'assets/videos/kintsugiVideo2.webm';
 // import Part3 from 'assets/videos/kintsugiVideo3.webm';
@@ -11,6 +14,26 @@ import logo from 'assets/JNEC-black.svg';
 import ThemeLogo from 'assets/theme-logo.svg';
 import Spinner from './Spinner';
 
+const { REGISTRATION } = ROUTES;
+const BookingButton = styled(NavLink)`
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  width: 12rem;
+  padding: 0.8rem;
+  background: red;
+  border-radius: 12px;
+  color: white;
+  :hover {
+    background: #f6c90e;
+    color: black;
+  }
+  transition: 3s;
+`;
 const buildThresholdArray = () => Array.from(Array(100).keys(), (i) => i / 100);
 const VideoSection = ({
   videoSrc,
@@ -79,6 +102,9 @@ const VideoSection = ({
           />
         </div>
       ) : null}
+      <div className="video-mask">
+        <BookingButton to={REGISTRATION}>Book Tickets</BookingButton>
+      </div>
     </section>
   );
 };
