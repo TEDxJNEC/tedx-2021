@@ -71,6 +71,10 @@ const TOCPage = Loadable({
   loader: () => import('pages/toc'),
   loading: Loader,
 });
+const TNCPage = Loadable({
+  loader: () => import('pages/tnc'),
+  loading: Loader,
+});
 const RegistrationSuccess = Loadable({
   loader: () => import('pages/success-registration'),
   loading: Loader,
@@ -96,6 +100,7 @@ const Routes = () => {
     AMBASSADOR_DASHBOARD,
     POLICY,
     TOC,
+    TNC,
     AMBASSADOR_REGISTRATION,
   } = ROUTES;
   return (
@@ -115,6 +120,8 @@ const Routes = () => {
           <Route exact path={LOGIN} component={Login} />
           <Route exact path={ADMIN_LOGIN} component={AdminLogin} />
           <Route exact path={AMBASSADOR_LOGIN} component={AmbassdorLogin} />
+          <Route exact path={TNC} component={TNCPage} />
+
           <Route
             exact
             path={AMBASSADOR_DASHBOARD}

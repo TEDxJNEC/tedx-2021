@@ -55,8 +55,8 @@ const checkInput = ({ name, field, form: { touched, errors }, ...props }) => {
         />
         <span>
           Accept{' '}
-          <CustomLink to="/tos" target="_blank">
-            Terms of Services
+          <CustomLink to="/tns" target="_blank">
+            Terms and Conditions
           </CustomLink>{' '}
           and{' '}
           <CustomLink to="/policy" target="_blank">

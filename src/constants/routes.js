@@ -13,7 +13,9 @@ const ROUTES = {
   TOC: '/tos',
   POLICY: '/policy',
   AMBASSADOR_DASHBOARD: '/ambassador/dashboard',
+  TNC: '/tnc',
   AMBASSADOR_REGISTRATION: '/ambassador/registration',
+
 };
 
 export default ROUTES;
