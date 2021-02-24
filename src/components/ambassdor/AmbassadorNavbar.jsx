@@ -3,10 +3,10 @@ import { NavLink, Link } from 'react-router-dom';
 import '../../common/ambassador-navbar.scss';
 import ROUTES from 'constants/routes';
 
-const AmbassdorNavbar = () => {
+const AmbassdorNavbar = ({ name }) => {
   return (
     <nav className="amb-sidenav">
-      <div className="name">Full Name</div>
+      <div className="name">{name}</div>
 
       <div className="nav-links">
         <div>

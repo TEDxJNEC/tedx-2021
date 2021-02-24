@@ -7,12 +7,15 @@ const AmbPageWrapper = styled.div`
   display: flex;
   background: #fff;
   color: black;
+  width: 100%;
   min-height: 100%;
 `;
 const AmbassdorPageLayout = ({ children, name, onLogout }) => {
   return (
     <AmbPageWrapper>
-      <Navbar name={name} onLogout={onLogout} />
+      {window.screen.width >= 720 ? (
+        <Navbar name={name} onLogout={onLogout} />
+      ) : null}
       <div className="amb-dashboard-wrapper">{children}</div>
     </AmbPageWrapper>
   );

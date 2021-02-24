@@ -5,13 +5,20 @@ import { AuthContext } from 'routes';
 import { useHistory } from 'react-router-dom';
 
 const Dashboard = styled.div`
-  width: 100%;
+  max-width: 100%;
   min-height: 100%;
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
 `;
-const LinkText = styled.span`
-  color: #6319ff;
+const LinkText = styled.p`
+  color: #fff;
+  background: #f6c90e;
+  text-align: center;
   cursor: pointer;
-  text-decoration: underline;
+  margin: 1rem auto;
+  width: 50%;
+  padding: 1rem;
 `;
 const DashboardItem = styled.div`
   border-radius: 8px;
@@ -33,17 +40,29 @@ const ambassadorDashboard = () => {
       history.push('/');
     }
   }, []);
-  const copyLink = () => {};
+  const copyLink = () => {
+    const link = `https://www.tedxjnec.com/registration?aid=${state.user.aId}`;
+    navigator.clipboard.writeText(link);
+  };
   return (
-    <AmbassdorPageLayout>
+    <AmbassdorPageLayout name={state.user.name}>
       <Dashboard>
         <DashboardItem>
           <p>
             <b>Your Unique Referral Link:</b>{' '}
-            <LinkText
-              onClick={copyLink}
-            >{`https://www.tedxjnec.com/registration?aid=${state.user.aId}`}</LinkText>
+            <LinkText onClick={copyLink}>Copy Link</LinkText>
           </p>
+        </DashboardItem>
+        <DashboardItem>
+          <h2>
+            <b>Directs:</b> {' Coming Soon'}
+          </h2>
+        </DashboardItem>
+        <DashboardItem>
+          <h2>
+            <b>Conversions:</b>
+            {' Coming Soon'}
+          </h2>
         </DashboardItem>
       </Dashboard>
     </AmbassdorPageLayout>

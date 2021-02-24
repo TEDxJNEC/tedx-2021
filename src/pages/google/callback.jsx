@@ -9,7 +9,7 @@ import { AuthContext } from 'routes';
 import { Redirect } from 'react-router-dom';
 
 const { REGISTER_USER } = API_ROUTES;
-const { REGISTRATION } = ROUTES;
+const { REGISTRATION, AMBASSADOR_DASHBOARD } = ROUTES;
 const GoogleAuthCallback = () => {
   const { state, dispatch } = useContext(AuthContext);
   const sendCodeToApi = async (code) => {
@@ -59,7 +59,11 @@ const GoogleAuthCallback = () => {
   if (state.token) {
     // send to Book page after its made [TODO]
     setTimeout(() => {
-      return <Redirect to={state.type === 'amb' ? '/test' : REGISTRATION} />;
+      return (
+        <Redirect
+          to={state.type === 'amb' ? AMBASSADOR_DASHBOARD : REGISTRATION}
+        />
+      );
     }, 1200);
   }
   return (
@@ -72,7 +76,9 @@ const GoogleAuthCallback = () => {
       <code>Loading Your info...</code>
       <code>
         {state.token ? (
-          <Redirect to={state.type === 'amb' ? '/test' : REGISTRATION} />
+          <Redirect
+            to={state.type === 'amb' ? AMBASSADOR_DASHBOARD : REGISTRATION}
+          />
         ) : null}
       </code>
     </div>

@@ -6,7 +6,7 @@ import ROUTES from '../constants/routes';
 import img from '../assets/JNEC.svg';
 import MenuIcon from './icons/MenuIcon';
 
-const { HOME, ABOUT, TEAM } = ROUTES;
+const { HOME, ABOUT, TEAM, REGISTRATION } = ROUTES;
 
 const Desktop = () => {
   return (
@@ -25,6 +25,15 @@ const Desktop = () => {
 
           <NavLink to={TEAM} exact activeClassName="active" className="title">
             TEAM
+          </NavLink>
+
+          <NavLink
+            to={REGISTRATION}
+            exact
+            activeClassName="active"
+            className="title"
+          >
+            BOOK TICKETS
           </NavLink>
         </ul>
       </nav>

@@ -94,7 +94,7 @@ const successRegistration = () => {
         <WrapperCard>
           <Vector src={paymentSrc} />
           <Heading>Registration Successful !!!</Heading>
-          <RedirectLink href="https://rzp.io/l/JZWllRPkq">
+          <RedirectLink href="https://rzp.io/l/tedxjnec2021">
             Continue to Payment
           </RedirectLink>
         </WrapperCard>
