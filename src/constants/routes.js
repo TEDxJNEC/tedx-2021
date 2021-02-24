@@ -13,6 +13,7 @@ const ROUTES = {
   TOC: '/tos',
   POLICY: '/policy',
   AMBASSADOR_DASHBOARD: '/ambassador/dashboard',
+  AMBASSADOR_REGISTRATION: '/ambassador/registration',
 };
 
 export default ROUTES;
