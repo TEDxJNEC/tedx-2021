@@ -94,7 +94,7 @@ const successRegistration = () => {
         <WrapperCard>
           <Vector src={paymentSrc} />
           <Heading>Registration Successful !!!</Heading>
-          <RedirectLink href="https://erp.mgmu.ac.in/asd_EventPublicUserMaster.htm?eventID=11">
+          <RedirectLink href="https://rzp.io/l/JZWllRPkq">
             Continue to Payment
           </RedirectLink>
         </WrapperCard>
