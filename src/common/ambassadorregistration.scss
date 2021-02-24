@@ -1,0 +1,13 @@
+.register-page-wrapper {
+  min-height: calc(100%-80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form__place {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  flex-grow: 1;
+  align-items: center;
+}
