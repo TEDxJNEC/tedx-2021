@@ -1,0 +1,2 @@
+.form__component{color:#fff;display:flex;flex-direction:column;justify-content:center;width:90%;padding:24px 32px}@media only screen and (min-width:768px){.form__component{width:65%}}.form__elements{display:flex;flex-direction:column;width:300px}.form__error{color:red}.register-page-wrapper{min-height:calc(100% - 80px)}.form__place,.register-page-wrapper{display:flex;justify-content:center;align-items:center}.form__place{height:100%;flex-grow:1}
+/*# sourceMappingURL=16.e96cb138.chunk.css.map */
