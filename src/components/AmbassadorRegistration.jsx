@@ -99,7 +99,6 @@ const StyledForm = styled(Form)``;
 const AmbassadorRegistration = ({ name, email }) => {
   // const phoneRegExp = /^((+*)((0[ -]+)*|(91 )*)(d{10}+))|d{5}([- ]*)d{6}$/;
   const phoneRegExp = /^[6789]\d{9}$/;
-  const nameRegExp = /^[A-Za-z]+$/;
   const emailRegExp = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
 
   const [enabled, setEnabled] = useState(true);
@@ -167,7 +166,6 @@ const AmbassadorRegistration = ({ name, email }) => {
               name: yup
                 .string()
                 .min(2, 'Name must be at least 2 letters')
-                .matches(nameRegExp, 'Name should not be include number')
                 .max(30, 'Name should be less than 30 characters')
                 .required('Name is required'),
               phone: yup
@@ -181,10 +179,6 @@ const AmbassadorRegistration = ({ name, email }) => {
               college: yup
                 .string()
                 .min(2, 'College Name must be at least 2 letters')
-                .matches(
-                  nameRegExp,
-                  'College Name should not be include number'
-                )
                 .max(30, 'College Name should be less than 30 characters')
                 .required('College Name is required'),
               year: yup.string().required('Year is required'),
