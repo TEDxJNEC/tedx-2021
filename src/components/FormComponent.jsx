@@ -106,7 +106,6 @@ const FormComponent = ({ name, email }) => {
   // const phoneRegExp = /^((+*)((0[ -]+)*|(91 )*)(d{10}+))|d{5}([- ]*)d{6}$/;
   const phoneRegExp = /^[6789]\d{9}$/;
   const emailRegExp = /^([a-zA-Z0-9_\-.]+)@([a-zA-Z0-9_\-.]+)\.([a-zA-Z]{2,5})$/;
-  const nameRegExp = /^[A-Za-z]+$/;
   const [step, setStep] = useState(1);
   const [stepError, setStpError] = useState({ 1: true, 2: true });
   const [animateRight, toggleRight] = useState(true);
@@ -211,10 +210,7 @@ const FormComponent = ({ name, email }) => {
               'Please select one of the options'
             )
             .required('Selection is required'),
-          occupationDescription: yup
-            .string()
-            .matches(nameRegExp, 'This should not contain any number')
-            .required('Please provide your '),
+          occupationDescription: yup.string().required('Please provide your '),
           judgingParameters: yup
             .string()
             .required('Required')
