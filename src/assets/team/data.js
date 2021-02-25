@@ -297,10 +297,10 @@ const teamData = {
   management: [
     {
       name: 'Gayatri Ghanekar',
-      quirk1: 'Drowsy',
-      quirk2: 'Lethargic',
+      quirk1: 'Deligent',
+      quirk2: 'Sarcastic',
       img: managementGayatri,
-      quote: `I'm not on a power saving mode, I am just lazy.`,
+      quote: `Life really does begin at forty.`,
     },
     {
       name: 'Suyash Kulkarni',
@@ -423,10 +423,10 @@ const teamData = {
     },
     {
       name: 'Sumit Wadhwani',
-      quirk1: 'Drowsy',
-      quirk2: 'Lethargic',
+      quirk1: 'Humility',
+      quirk2: 'Authenticity',
       img: logisticsSumit,
-      quote: `I’m not lazy, I’m on power saving mode.`,
+      quote: `Willingness is the first step towards success.`,
     },
   ],
   budget: [
@@ -448,10 +448,10 @@ const teamData = {
   documentation: [
     {
       name: 'Siddhi Katariya',
-      quirk1: 'Lethargic',
-      quirk2: 'Drowsy',
+      quirk1: 'Optimism',
+      quirk2: 'Integrity',
       img: documentationSiddhi,
-      quote: `I’m not lazy, I’m on power saving mode.`,
+      quote: `Only write a story that only you can write.`,
     },
     {
       name: 'Gayatri Modani',
