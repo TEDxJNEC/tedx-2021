@@ -123,15 +123,7 @@ const FormComponent = ({ name, email }) => {
   };
 
   const validateStep = (props) => {
-    const {
-      address,
-      age,
-      bestSkill,
-      judgingParameters,
-      know,
-      occupationDescription,
-      phone,
-    } = props.errors;
+    const { address, age, occupationDescription, phone } = props.errors;
 
     if (step === 1) {
       if (
@@ -148,16 +140,7 @@ const FormComponent = ({ name, email }) => {
         setStpError({ ...step, 1: true });
       }
     } else if (step === 2) {
-      if (
-        !age &&
-        props.touched.age &&
-        !judgingParameters &&
-        props.touched.judgingParameters &&
-        !bestSkill &&
-        props.touched.bestSkill &&
-        !know &&
-        props.touched.know
-      ) {
+      if (!age) {
         if (stepError[2]) {
           setStpError({ ...step, 2: false });
         }
@@ -211,18 +194,6 @@ const FormComponent = ({ name, email }) => {
             )
             .required('Selection is required'),
           occupationDescription: yup.string().required('Please provide your '),
-          judgingParameters: yup
-            .string()
-            .required('Required')
-            .min(10, 'Please enter at least 10 letters'),
-          bestSkill: yup
-            .string()
-            .required('Required')
-            .min(2, 'Please enter at least 2 letters'),
-          know: yup
-            .string()
-            .required('Required')
-            .min(10, 'Please enter at least 10 letters'),
           acceptedTerms: yup
             .boolean()
             .required('Required')
