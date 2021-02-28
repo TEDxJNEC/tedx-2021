@@ -16,6 +16,7 @@ const ROUTES = {
   TNC: '/tnc',
   AMBASSADOR_REGISTRATION: '/ambassador/registration',
   PAYMENT_SUCCESS: '/payment/success',
+  LOGOUT: '/logout',
 };
 
 export default ROUTES;

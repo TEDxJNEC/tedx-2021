@@ -1,14 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from 'routes';
 import CloseMenu from 'components/icons/CloseMenu';
 import ROUTES from '../constants/routes';
 
 import img from '../assets/JNEC.svg';
 import MenuIcon from './icons/MenuIcon';
 
-const { HOME, ABOUT, TEAM, REGISTRATION } = ROUTES;
+const {
+  HOME,
+  ABOUT,
+  TEAM,
+  REGISTRATION,
+  LOGOUT,
+  AMBASSADOR_DASHBOARD,
+} = ROUTES;
 
-const Desktop = () => {
+const Desktop = ({ state }) => {
+  useEffect(() => {
+    console.log(state);
+    console.log(state.type === 'amb');
+    console.log(state.isLoggedIn);
+  }, []);
   return (
     <>
       <nav>
@@ -35,13 +48,33 @@ const Desktop = () => {
           >
             BOOK TICKETS
           </NavLink>
+          {state.isLoggedIn && state.type === 'amb' ? (
+            <NavLink
+              to={AMBASSADOR_DASHBOARD}
+              exact
+              activeClassName="active"
+              className="title"
+            >
+              DASHBOARD
+            </NavLink>
+          ) : null}
+          {!state.isLoggedIn ? null : (
+            <NavLink
+              to={LOGOUT}
+              exact
+              activeClassName="active"
+              className="title"
+            >
+              LOGOUT
+            </NavLink>
+          )}
         </ul>
       </nav>
     </>
   );
 };
 
-const Mobile = () => {
+const Mobile = ({ state }) => {
   const [active, setActive] = useState(false);
   const [navClass, setNavClass] = useState('mobile_menu');
   useEffect(() => {
@@ -109,7 +142,6 @@ const Mobile = () => {
             >
               ABOUT
             </NavLink>
-
             <NavLink
               to={TEAM}
               exact
@@ -126,6 +158,26 @@ const Mobile = () => {
             >
               BOOK TICKETS
             </NavLink>
+            {state.isLoggedIn && state.type === 'amb' ? (
+              <NavLink
+                to={AMBASSADOR_DASHBOARD}
+                exact
+                activeClassName="active"
+                className="title"
+              >
+                DASHBOARD
+              </NavLink>
+            ) : null}
+            {!state.isLoggedIn ? null : (
+              <NavLink
+                to={LOGOUT}
+                exact
+                activeClassName="active"
+                className="title"
+              >
+                LOGOUT
+              </NavLink>
+            )}
           </ul>
         </div>
       </nav>
@@ -134,8 +186,20 @@ const Mobile = () => {
 };
 
 const Navbar = () => {
+  const { state, dispatch } = useContext(AuthContext);
   const isMobile = window.screen.width < 720;
-  return <>{isMobile ? <Mobile /> : <Desktop />}</>;
+  useEffect(() => {
+    console.log(state);
+  }, []);
+  return (
+    <>
+      {isMobile ? (
+        <Mobile state={state} dispatch={dispatch} />
+      ) : (
+        <Desktop state={state} dispatch={dispatch} />
+      )}
+    </>
+  );
 };
 
 export default Navbar;

@@ -88,6 +88,11 @@ const PaymentSuccess = Loadable({
   loader: () => import('pages/success-payment'),
   loading: Loader,
 });
+const LogoutPage = Loadable({
+  loader: () => import('pages/logout'),
+  loading: Loader,
+});
+
 const Routes = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const {
@@ -108,6 +113,7 @@ const Routes = () => {
     TNC,
     AMBASSADOR_REGISTRATION,
     PAYMENT_SUCCESS,
+    LOGOUT,
   } = ROUTES;
   return (
     <AuthContext.Provider
@@ -163,6 +169,7 @@ const Routes = () => {
           />
           <Route exact path={PAYMENT_SUCCESS} component={PaymentSuccess} />
           <Route exact path="/test" component={TestPage} />
+          <Route exact path={LOGOUT} component={LogoutPage} />
           {/* <Route exact path={BOOKINGS} component={}></Route> */}
           <Route component={Error} />
         </Switch>

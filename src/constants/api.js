@@ -3,5 +3,6 @@ const API_ROUTES = {
   GET_USER_INFO: 'api/users/me',
   REGISTER_USER_INFO: 'api/users/register/',
   REGISTER_AMBASSADOR_INFO: 'api/ambassador/register',
+  GET_AMBASSADOR_INFO: 'api/ambassadors/me',
 };
 export default API_ROUTES;

@@ -1,9 +1,13 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../../common/ambassador-navbar.scss';
 import ROUTES from 'constants/routes';
+import styled from 'styled-components';
 
-const AmbassdorNavbar = ({ name }) => {
+const LinkLog = styled.span`
+  cursor: pointer;
+`;
+const AmbassdorNavbar = ({ name, onLogout }) => {
   return (
     <nav className="amb-sidenav">
       <div className="name">{name}</div>
@@ -16,7 +20,7 @@ const AmbassdorNavbar = ({ name }) => {
         </div>
       </div>
       <div className="logout">
-        <Link to="/">LOGOUT</Link>
+        <LinkLog onClick={onLogout}>LOGOUT</LinkLog>
       </div>
     </nav>
   );
