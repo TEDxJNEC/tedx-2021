@@ -17,11 +17,7 @@ const {
 } = ROUTES;
 
 const Desktop = ({ state }) => {
-  useEffect(() => {
-    console.log(state);
-    console.log(state.type === 'amb');
-    console.log(state.isLoggedIn);
-  }, []);
+  useEffect(() => {}, []);
   return (
     <>
       <nav>
@@ -188,9 +184,7 @@ const Mobile = ({ state }) => {
 const Navbar = () => {
   const { state, dispatch } = useContext(AuthContext);
   const isMobile = window.screen.width < 720;
-  useEffect(() => {
-    console.log(state);
-  }, []);
+  useEffect(() => {}, []);
   return (
     <>
       {isMobile ? (
