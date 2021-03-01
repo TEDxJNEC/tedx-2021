@@ -9,10 +9,10 @@ html {
 .container__speakers {
   display: flex;
   align-items: center;
-  overflow-x: scroll;
+  overflow: auto;
   width: 100%;
   padding: 20px 0;
-  margin: 3rem 2rem;
+  margin: 0;
 }
 
 .card {
@@ -28,8 +28,8 @@ html {
 
 .flip-card {
   margin: 0 25px;
-  width: 400px;
-  height: 350px;
+  min-width: 400px;
+  height: 300px;
 }
 
 .card-front,

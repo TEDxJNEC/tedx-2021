@@ -15,13 +15,20 @@ const clamp = (value, clampAt = 30) => {
 const SpeakerCardWrapper = styled.div`
   position: relative;
 `;
-
+const Padder = styled.div`
+  width: 1rem;
+  height: 100%;
+`;
 const partners = [
   'https://source.unsplash.com/400x300/?patterns,white',
   'https://source.unsplash.com/400x300/?patterns,laptop',
   'https://source.unsplash.com/400x300/?patterns,tech',
   'https://source.unsplash.com/400x300/?model,river',
   'https://source.unsplash.com/400x300/?coffee,laptop',
+  'https://source.unsplash.com/400x300/?meeting,student',
+  'https://source.unsplash.com/400x300/?meeting,student',
+  'https://source.unsplash.com/400x300/?meeting,student',
+  'https://source.unsplash.com/400x300/?meeting,student',
   'https://source.unsplash.com/400x300/?meeting,student',
 ];
 const Partners = () => {
@@ -45,6 +52,7 @@ const Partners = () => {
             <SponsorCard src={src} style={style} />
           </SpeakerCardWrapper>
         ))}
+        <Padder />
       </div>
     </>
   );
