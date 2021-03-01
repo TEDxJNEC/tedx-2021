@@ -1,7 +1,8 @@
 import React from 'react';
-import { animated, useSpring } from 'react-spring';
+import { useSpring } from 'react-spring';
 import { useScroll } from 'react-use-gesture';
 import '../common/partners.scss';
+import SponsorCard from './SpeakersCard';
 
 const clamp = (value, clampAt = 30) => {
   if (value > 0) {
@@ -35,14 +36,7 @@ const Partners = () => {
     <>
       <div className="container" {...bind()}>
         {partners.map((src) => (
-          <animated.div
-            key={src}
-            className="card"
-            style={{
-              ...style,
-              backgroundImage: `url(${src})`,
-            }}
-          />
+          <SponsorCard src={src} style={style} />
         ))}
       </div>
     </>

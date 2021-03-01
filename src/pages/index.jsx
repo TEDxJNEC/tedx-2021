@@ -6,6 +6,7 @@ import '../common/main.scss';
 import DefaultLayout from '../layouts';
 import Card from '../components/ComingsoonCard';
 import HighlightsLink from '../components/HighlightsLink';
+import Partners from '../components/Partners';
 
 function Home() {
   return (
@@ -52,6 +53,7 @@ function Home() {
       <IntroVideo />
       <AboutTheme />
       <Card />
+      <Partners />
       <HighlightsLink />
     </DefaultLayout>
   );
