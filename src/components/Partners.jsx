@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useSpring } from 'react-spring';
 import { useScroll } from 'react-use-gesture';
 import '../common/partners.scss';
@@ -10,6 +11,11 @@ const clamp = (value, clampAt = 30) => {
   }
   return value < -clampAt ? -clampAt : value;
 };
+
+const SpeakerCardWrapper = styled.div`
+  margin: 0 12rem;
+  position: relative;
+`;
 
 const partners = [
   'https://source.unsplash.com/400x300/?patterns,white',
@@ -34,9 +40,11 @@ const Partners = () => {
 
   return (
     <>
-      <div className="container" {...bind()}>
+      <div className="container__speakers" {...bind()}>
         {partners.map((src) => (
-          <SponsorCard src={src} style={style} />
+          <SpeakerCardWrapper>
+            <SponsorCard src={src} style={style} />
+          </SpeakerCardWrapper>
         ))}
       </div>
     </>

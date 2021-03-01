@@ -2,13 +2,13 @@
   width: 0px;
 }
 
-.container {
-  position: relative;
+.container__speakers {
   display: flex;
+  align-items: center;
   overflow-x: scroll;
   width: 100%;
   padding: 20px 0;
-  margin: 60px 0;
+  margin: 3rem 2rem;
 }
 
 .card {
