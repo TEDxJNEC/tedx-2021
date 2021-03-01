@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
 
-const SponsorCard = ({ src, style }) => {
+const SpeakersCard = ({ src, style }) => {
   const [flipped, setFlipped] = useState(false);
 
   const { transform, opacity } = useSpring({
@@ -40,4 +40,4 @@ const SponsorCard = ({ src, style }) => {
   );
 };
 
-export default SponsorCard;
+export default SpeakersCard;

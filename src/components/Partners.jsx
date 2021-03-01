@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useSpring } from 'react-spring';
 import { useScroll } from 'react-use-gesture';
 import '../common/partners.scss';
-import SponsorCard from './SpeakersCard';
+import SpeakersCard from './SpeakersCard';
 
 const clamp = (value, clampAt = 30) => {
   if (value > 0) {
@@ -45,16 +45,18 @@ const Partners = () => {
   });
 
   return (
-    <>
+    <div className="speakers-wrapper">
       <div className="container__speakers" {...bind()}>
         {partners.map((src) => (
           <SpeakerCardWrapper>
-            <SponsorCard src={src} style={style} />
+            <SpeakersCard src={src} style={style} />
           </SpeakerCardWrapper>
         ))}
         <Padder />
+        <div className="left arrow" />
+        <div className="right arrow" />
       </div>
-    </>
+    </div>
   );
 };
 
