@@ -12,6 +12,7 @@ const SponsorCard = ({ src, style }) => {
 
   return (
     <animated.div
+      key={`${src}abc`}
       className="flip-card"
       onClick={() => setFlipped((state) => !state)}
     >

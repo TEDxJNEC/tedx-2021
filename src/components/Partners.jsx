@@ -13,7 +13,6 @@ const clamp = (value, clampAt = 30) => {
 };
 
 const SpeakerCardWrapper = styled.div`
-  margin: 0 12rem;
   position: relative;
 `;
 
