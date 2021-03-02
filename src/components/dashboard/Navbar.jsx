@@ -2,10 +2,10 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import '../../common/admin-navbar.scss';
 
-const Navbar = () => {
+const Navbar = ({ name, onLogout }) => {
   return (
     <nav className="sidenav">
-      <div className="name">Full Name</div>
+      <div className="name">{name}</div>
 
       <div className="nav-links">
         <div>
@@ -13,7 +13,7 @@ const Navbar = () => {
             DASHBOARD
           </NavLink>
         </div>
-        <div>
+        {/* <div>
           <NavLink activeClassName="active" to="/admin/chat">
             CHAT
           </NavLink>
@@ -37,10 +37,12 @@ const Navbar = () => {
           <NavLink activeClassName="active" to="/admin/settings">
             SETTINGS
           </NavLink>
-        </div>
+        </div> */}
       </div>
       <div className="logout">
-        <Link to="/">LOGOUT</Link>
+        <Link to="/" onClick={onLogout}>
+          LOGOUT
+        </Link>
       </div>
     </nav>
   );
