@@ -5,7 +5,7 @@
 .form__place {
   display: flex;
   justify-content: center;
-  height: 100%;
+  min-height: 100%;
   flex-grow: 1;
   align-items: center;
 }
