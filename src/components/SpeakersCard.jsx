@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { animated, useSpring } from 'react-spring';
 
-const SpeakersCard = ({ src, style }) => {
+const SpeakersCard = ({ src, style, speakersData }) => {
   const [flipped, setFlipped] = useState(false);
 
   const { transform, opacity } = useSpring({
@@ -12,23 +12,30 @@ const SpeakersCard = ({ src, style }) => {
 
   return (
     <animated.div
-      key={`${src}abc`}
+      key={src}
       className="flip-card"
       onClick={() => setFlipped((state) => !state)}
     >
       <animated.div
-        key={src}
-        className="card card-front"
+        key={`${speakersData.id}back`}
+        className="card card-back"
         style={{
           ...style,
-          backgroundImage: `url(${src})`,
+
           opacity,
-          transform: transform.interpolate((t) => `${t} rotateX(0deg)`),
+          transform: transform.interpolate(
+            (t) => `${t} rotateX(0deg) rotateY(180deg)`
+          ),
         }}
-      />
+      >
+        <div className="speaker-name">
+          <strong>{speakersData.name}</strong>
+        </div>
+        <div className="speaker-details">{speakersData.details}</div>
+      </animated.div>
       <animated.div
-        key={`${src}xyz`}
-        className="card card-back"
+        key={`${speakersData.id}front`}
+        className="card card-front"
         style={{
           ...style,
           backgroundImage: `url(${src})`,

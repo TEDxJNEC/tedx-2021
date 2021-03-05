@@ -4,9 +4,9 @@ import IntroVideo from 'components/IntroVideo';
 import AboutTheme from 'components/AboutTheme';
 import '../common/main.scss';
 import DefaultLayout from '../layouts';
-import Card from '../components/ComingsoonCard';
+// import Card from '../components/ComingsoonCard';
 import HighlightsLink from '../components/HighlightsLink';
-import Partners from '../components/Partners';
+import Speakers from '../components/Speakers';
 
 function Home() {
   return (
@@ -52,8 +52,8 @@ function Home() {
       </Helmet>
       <IntroVideo />
       <AboutTheme />
-      <Card />
-      <Partners />
+      {/* <Card /> */}
+      <Speakers />
       <HighlightsLink />
     </DefaultLayout>
   );

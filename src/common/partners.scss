@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 ::-webkit-scrollbar {
   width: 0px;
 }
@@ -11,8 +13,26 @@
   margin: 0;
 }
 
+.speakers-heading {
+  letter-spacing: 10px;
+  color: $SECONDARY_COLOR;
+  flex: 100%;
+  text-align: center;
+  font-weight: 800;
+  font-size: 3rem;
+  padding: 5px;
+  margin: 20px 0;
+}
+
+.speakers-heading-underline {
+  margin: 0 auto;
+  width: 5rem;
+  margin-bottom: 50px;
+  color: $ACCENT_COLOR;
+}
+
 .arrow {
-  border: solid #f6c90e;
+  border: solid #fff;
   border-width: 0 5px 5px 0;
   display: inline-block;
   padding: 5px;
@@ -21,9 +41,9 @@
 .right {
   position: absolute;
   right: 15px;
-  top: 167px;
+  top: 307px;
   @media screen and (max-width: 800px) {
-    top: 117px;
+    top: 257px;
   }
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
@@ -35,9 +55,9 @@
 .left {
   position: absolute;
   left: 15px;
-  top: 167px;
+  top: 307px;
   @media screen and (max-width: 800px) {
-    top: 117px;
+    top: 257px;
   }
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
@@ -78,6 +98,41 @@
 
 .card-front,
 .card-back {
+  overflow-y: hidden;
   position: absolute;
   top: 0;
+}
+
+.card-back {
+  background-color: $PRIMARY_COLOR;
+  color: black;
+  padding: 0 12.5px;
+  @media screen and (max-width: 800px) {
+    padding: 0 5px;
+  }
+}
+
+.speaker-name {
+  color: black;
+  letter-spacing: 1;
+  margin: 15px;
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-align: center;
+  @media screen and (max-width: 800px) {
+    letter-spacing: 0.75;
+    margin: 7.5px;
+    font-size: 0.8rem;
+  }
+}
+
+.speaker-details {
+  letter-spacing: 0.5;
+  line-height: 1rem;
+  text-align: justify;
+  font-size: 0.75rem;
+  @media screen and (max-width: 800px) {
+    line-height: 0.7rem;
+    font-size: 0.6rem;
+  }
 }

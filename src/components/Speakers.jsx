@@ -4,6 +4,15 @@ import { useSpring } from 'react-spring';
 import { useScroll } from 'react-use-gesture';
 import '../common/partners.scss';
 import SpeakersCard from './SpeakersCard';
+import SpeakersData from '../assets/speakersData.json';
+import amol from '../assets/speakers/amol.webp';
+import baluji from '../assets/speakers/baluji.webp';
+import bhargsetu from '../assets/speakers/bhargsetu.webp';
+import bhavook from '../assets/speakers/bhavook.webp';
+import mokshada from '../assets/speakers/mokshada.webp';
+import shruti from '../assets/speakers/shruti.webp';
+import sridhar from '../assets/speakers/sridhar.webp';
+import vishnu from '../assets/speakers/vishnu.webp';
 
 const clamp = (value, clampAt = 30) => {
   if (value > 0) {
@@ -20,18 +29,16 @@ const Padder = styled.div`
   height: 100%;
 `;
 const partners = [
-  'https://source.unsplash.com/400x300/?patterns,white',
-  'https://source.unsplash.com/400x300/?patterns,laptop',
-  'https://source.unsplash.com/400x300/?patterns,tech',
-  'https://source.unsplash.com/400x300/?model,river',
-  'https://source.unsplash.com/400x300/?coffee,laptop',
-  'https://source.unsplash.com/400x300/?meeting,student',
-  'https://source.unsplash.com/400x300/?meeting,student',
-  'https://source.unsplash.com/400x300/?meeting,student',
-  'https://source.unsplash.com/400x300/?meeting,student',
-  'https://source.unsplash.com/400x300/?meeting,student',
+  amol,
+  baluji,
+  bhargsetu,
+  bhavook,
+  mokshada,
+  shruti,
+  sridhar,
+  vishnu,
 ];
-const Partners = () => {
+const Speakers = () => {
   const [style, set] = useSpring(() => ({
     transform: 'perspective(500px) rotateY(0deg)',
   }));
@@ -46,10 +53,16 @@ const Partners = () => {
 
   return (
     <div className="speakers-wrapper">
+      <div className="speakers-heading">SPEAKERS</div>
+      <hr className="speakers-heading-underline" />
       <div className="container__speakers" {...bind()}>
-        {partners.map((src) => (
+        {partners.map((src, index) => (
           <SpeakerCardWrapper>
-            <SpeakersCard src={src} style={style} />
+            <SpeakersCard
+              src={src}
+              style={style}
+              speakersData={SpeakersData[index]}
+            />
           </SpeakerCardWrapper>
         ))}
         <Padder />
@@ -60,4 +73,4 @@ const Partners = () => {
   );
 };
 
-export default Partners;
+export default Speakers;
