@@ -4,7 +4,15 @@ import styled from 'styled-components';
 const TableContainer = styled.div`
   overflow-y: scroll;
   height: 600px;
+
+  @media only screen and (max-width: 768px) {
+    width: 80vw;
+    overflow-x: scroll;
+  }
   ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar::horizontal {
     width: 5px;
   }
 
@@ -30,10 +38,11 @@ const TableRow = styled.tr`
 `;
 const TableHeadings = styled.th`
   padding: 1rem 1rem 1rem 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #cccccc;
 `;
 const Tabledata = styled.td`
   padding: 1rem 1rem 1rem 0;
+  border-bottom: 0.5px solid #333333;
 `;
 
 const BookedUsersTable = ({ userData }) => {

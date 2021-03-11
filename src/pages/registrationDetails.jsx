@@ -12,11 +12,10 @@ const TableWrapper = styled.div`
   min-height: calc(100% - 80px);
   display: flex;
   justify-content: center;
-  align-items: center;
 `;
 
 const Title = styled.h1`
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 3rem;
 `;
 
 const RegistrationDetails = () => {
