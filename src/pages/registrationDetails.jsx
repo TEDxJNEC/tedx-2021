@@ -25,7 +25,7 @@ const RegistrationDetails = () => {
   const [unRegisteredUsers, setUnRegisteredUsers] = useState([]);
   useEffect(() => {
     axios
-      .get('http://api.tedxjnec.com/api/users')
+      .get('https://api.tedxjnec.com/api/users')
       .then((res) => {
         console.log(res.data);
         const userData = res.data;
