@@ -4,6 +4,7 @@ const ROUTES = {
   TEAM: '/team',
   REGISTRATION: '/registration',
   REGISTER_SUCCESS: '/registration/success',
+  REGISTRATIONS_DETAILS: '/users',
   DASHBOARD: '/admin/dashboard',
   HIGHLIGHT: '/highlight',
   GOOGLE_AUTH_CALLBACK_USER: '/callback/google',
