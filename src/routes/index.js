@@ -79,6 +79,10 @@ const RegistrationSuccess = Loadable({
   loader: () => import('pages/success-registration'),
   loading: Loader,
 });
+const RegistrationDetails = Loadable({
+  loader: () => import('pages/registrationDetails'),
+  loading: Loader,
+});
 const AmbassadorRegistrations = Loadable({
   loader: () => import('pages/ambassador/ambassador-registration'),
   loading: Loader,
@@ -103,6 +107,7 @@ const Routes = () => {
     HIGHLIGHT,
     REGISTRATION,
     REGISTER_SUCCESS,
+    REGISTRATIONS_DETAILS,
     GOOGLE_AUTH_CALLBACK_USER,
     LOGIN,
     ADMIN_LOGIN,
@@ -133,13 +138,11 @@ const Routes = () => {
           <Route exact path={ADMIN_LOGIN} component={AdminLogin} />
           <Route exact path={AMBASSADOR_LOGIN} component={AmbassdorLogin} />
           <Route exact path={TNC} component={TNCPage} />
-
           <Route
             exact
             path={AMBASSADOR_DASHBOARD}
             component={AmbassadorDashboard}
           />
-
           <Route
             exact
             path={GOOGLE_AUTH_CALLBACK_USER}
@@ -162,6 +165,12 @@ const Routes = () => {
             path={REGISTRATION}
             render={(props) => <Registration {...props} propState={state} />}
           />
+          <Route
+            exact
+            path={REGISTRATIONS_DETAILS}
+            component={RegistrationDetails}
+          />
+
           <Route
             exact
             path={AMBASSADOR_REGISTRATION}
