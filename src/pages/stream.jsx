@@ -23,6 +23,9 @@ const TransMask = styled.div`
   position: fixed;
   height: calc(100% - 60px);
   width: 100%;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const YTMask = styled.div`
