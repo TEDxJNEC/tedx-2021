@@ -8,7 +8,7 @@ const ROUTES = {
   DASHBOARD: '/admin/dashboard',
   HIGHLIGHT: '/highlight',
   GOOGLE_AUTH_CALLBACK_USER: '/callback/google',
-  ADMIN_LOGIN: '/admin/login',
+  USER_LOGIN: '/event/login',
   AMBASSADOR_LOGIN: '/ambassador/login',
   LOGIN: '/login',
   TOC: '/tos',

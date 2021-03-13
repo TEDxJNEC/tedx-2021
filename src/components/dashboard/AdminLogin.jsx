@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 import 'common/admin_login.scss';
 import img from 'assets/Login.svg';
+import axios from 'axios';
+import API_ROUTES from 'constants/api';
+import { useHistory } from 'react-router-dom';
+import ROUTES from 'constants/routes';
 
 const AdminLogin = () => {
   const [info, setinfo] = useState({
     username: '',
     password: '',
   });
+
+  const { EVENT_USER_LOGIN } = API_ROUTES;
+  const { STREAM } = ROUTES;
+  const history = useHistory();
 
   const inputEvent = (event) => {
     // console.log(event.target.name);
@@ -30,8 +38,17 @@ const AdminLogin = () => {
     });
   };
 
-  const submitEvent = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
+    const payload = {
+      username: info.username,
+      password: info.password,
+    };
+    axios
+      .post(`${process.env.REACT_APP_BACKEND_URL}/${EVENT_USER_LOGIN}`, payload)
+      .then(() => history.push(STREAM))
+      // eslint-disable-next-line no-console
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -40,7 +57,7 @@ const AdminLogin = () => {
         <img src={img} className="image" alt="design" />
       </div>
 
-      <form onSubmit={submitEvent}>
+      <form onSubmit={handleSubmit}>
         <h2>User LogIn</h2>
         <div className="input-group">
           <input

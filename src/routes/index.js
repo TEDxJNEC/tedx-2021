@@ -118,7 +118,7 @@ const Routes = () => {
     REGISTRATIONS_DETAILS,
     GOOGLE_AUTH_CALLBACK_USER,
     LOGIN,
-    ADMIN_LOGIN,
+    USER_LOGIN,
     AMBASSADOR_LOGIN,
     AMBASSADOR_DASHBOARD,
     POLICY,
@@ -145,7 +145,7 @@ const Routes = () => {
           <Route exact path={TEAM} component={Team} />
           <Route exact path={HIGHLIGHT} component={Highlights} />
           <Route exact path={LOGIN} component={Login} />
-          <Route exact path={ADMIN_LOGIN} component={AdminLogin} />
+          <Route exact path={USER_LOGIN} component={AdminLogin} />
           <Route exact path={AMBASSADOR_LOGIN} component={AmbassdorLogin} />
           <Route exact path={TNC} component={TNCPage} />
           <Route exact path={STREAM} component={StreamPage} />
