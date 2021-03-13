@@ -59,6 +59,10 @@ const TestPage = Loadable({
   loader: () => import('pages/test'),
   loading: Loader,
 });
+const UserCredentials = Loadable({
+  loader: () => import('pages/credentials'),
+  loading: Loader,
+});
 const AmbassadorDashboard = Loadable({
   loader: () => import('pages/ambassador/ambassador-dashboard'),
   loading: Loader,
@@ -119,6 +123,11 @@ const Routes = () => {
     AMBASSADOR_REGISTRATION,
     PAYMENT_SUCCESS,
     LOGOUT,
+<<<<<<< Updated upstream
+=======
+    STREAM,
+    USER_CREDENTIALS,
+>>>>>>> Stashed changes
   } = ROUTES;
   return (
     <AuthContext.Provider
@@ -138,6 +147,8 @@ const Routes = () => {
           <Route exact path={ADMIN_LOGIN} component={AdminLogin} />
           <Route exact path={AMBASSADOR_LOGIN} component={AmbassdorLogin} />
           <Route exact path={TNC} component={TNCPage} />
+          <Route exact path={STREAM} component={StreamPage} />
+          <Route exact path={USER_CREDENTIALS} component={UserCredentials} />
           <Route
             exact
             path={AMBASSADOR_DASHBOARD}

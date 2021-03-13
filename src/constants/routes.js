@@ -18,6 +18,8 @@ const ROUTES = {
   AMBASSADOR_REGISTRATION: '/ambassador/registration',
   PAYMENT_SUCCESS: '/payment/success',
   LOGOUT: '/logout',
+  STREAM: '/event',
+  USER_CREDENTIALS: '/credentials',
 };
 
 export default ROUTES;
