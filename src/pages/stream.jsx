@@ -65,11 +65,10 @@ const Stream = () => {
     const eventToken = localStorage.getItem('eventToken');
     if (eventToken) {
       try {
-        const resp = await axios.get(
+        await axios.get(
           `${process.env.REACT_APP_BACKEND_URL}/${EVENT_USER_VERIFY}`,
           { headers: { token: eventToken } }
         );
-        console.log(resp);
         document.addEventListener('contextmenu', (e) => {
           e.preventDefault();
         });
