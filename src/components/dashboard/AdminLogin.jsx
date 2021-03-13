@@ -62,7 +62,7 @@ const AdminLogin = () => {
       </div>
 
       <form onSubmit={handleSubmit}>
-        <h2>User LogIn</h2>
+        <h2>Event LogIn</h2>
         <div className="input-group">
           <input
             type="text"
