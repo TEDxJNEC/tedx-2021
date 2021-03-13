@@ -92,6 +92,10 @@ const PaymentSuccess = Loadable({
   loader: () => import('pages/success-payment'),
   loading: Loader,
 });
+const StreamPage = Loadable({
+  loader: () => import('pages/stream'),
+  loading: Loader,
+});
 const LogoutPage = Loadable({
   loader: () => import('pages/logout'),
   loading: Loader,
@@ -119,6 +123,7 @@ const Routes = () => {
     AMBASSADOR_REGISTRATION,
     PAYMENT_SUCCESS,
     LOGOUT,
+    STREAM,
   } = ROUTES;
   return (
     <AuthContext.Provider
@@ -138,6 +143,7 @@ const Routes = () => {
           <Route exact path={ADMIN_LOGIN} component={AdminLogin} />
           <Route exact path={AMBASSADOR_LOGIN} component={AmbassdorLogin} />
           <Route exact path={TNC} component={TNCPage} />
+          <Route exact path={STREAM} component={StreamPage} />
           <Route
             exact
             path={AMBASSADOR_DASHBOARD}

@@ -1,0 +1,10 @@
+.ytp-hide-controls .ytp-watermark,
+.ytp-chrome-top-buttons {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+button,
+a {
+  pointer-events: none !important;
+}

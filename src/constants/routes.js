@@ -18,6 +18,7 @@ const ROUTES = {
   AMBASSADOR_REGISTRATION: '/ambassador/registration',
   PAYMENT_SUCCESS: '/payment/success',
   LOGOUT: '/logout',
+  STREAM: '/event',
 };
 
 export default ROUTES;
