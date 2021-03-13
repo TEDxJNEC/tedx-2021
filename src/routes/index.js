@@ -59,6 +59,10 @@ const TestPage = Loadable({
   loader: () => import('pages/test'),
   loading: Loader,
 });
+const UserCredentials = Loadable({
+  loader: () => import('pages/credentials'),
+  loading: Loader,
+});
 const AmbassadorDashboard = Loadable({
   loader: () => import('pages/ambassador/ambassador-dashboard'),
   loading: Loader,
@@ -73,6 +77,10 @@ const TOCPage = Loadable({
 });
 const TNCPage = Loadable({
   loader: () => import('pages/tnc'),
+  loading: Loader,
+});
+const StreamPage = Loadable({
+  loader: () => import('pages/stream'),
   loading: Loader,
 });
 const RegistrationSuccess = Loadable({
@@ -119,6 +127,8 @@ const Routes = () => {
     AMBASSADOR_REGISTRATION,
     PAYMENT_SUCCESS,
     LOGOUT,
+    STREAM,
+    USER_CREDENTIALS,
   } = ROUTES;
   return (
     <AuthContext.Provider
@@ -138,6 +148,8 @@ const Routes = () => {
           <Route exact path={ADMIN_LOGIN} component={AdminLogin} />
           <Route exact path={AMBASSADOR_LOGIN} component={AmbassdorLogin} />
           <Route exact path={TNC} component={TNCPage} />
+          <Route exact path={STREAM} component={StreamPage} />
+          <Route exact path={USER_CREDENTIALS} component={UserCredentials} />
           <Route
             exact
             path={AMBASSADOR_DASHBOARD}

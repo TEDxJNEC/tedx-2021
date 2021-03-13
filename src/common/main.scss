@@ -314,3 +314,9 @@ a {
     margin: 0 2.5%;
   }
 }
+
+.ytp-hide-controls .ytp-watermark,
+.ytp-chrome-top-buttons {
+  display: none !important;
+  pointer-events: none !important;
+}

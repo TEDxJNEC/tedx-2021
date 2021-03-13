@@ -13,13 +13,11 @@
 .design {
   img {
     width: 700px;
-    margin-right: 50px;
   }
 }
 form {
   width: 500px;
   height: 400px;
-  background: #353535;
   padding: 40px;
 
   h2 {
@@ -28,7 +26,6 @@ form {
     letter-spacing: 3px;
     color: $PRIMARY_COLOR;
     font-size: 30px;
-    text-transform: uppercase;
   }
   .input-group {
     position: relative;
