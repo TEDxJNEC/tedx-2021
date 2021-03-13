@@ -46,7 +46,11 @@ const AdminLogin = () => {
     };
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/${EVENT_USER_LOGIN}`, payload)
-      .then(() => history.push(STREAM))
+      .then((resp) => {
+        localStorage.setItem('eventToken', resp.data.token);
+        localStorage.setItem('eventEmail', resp.data.user.email);
+        history.push(STREAM);
+      })
       // eslint-disable-next-line no-console
       .catch((err) => console.log(err));
   };

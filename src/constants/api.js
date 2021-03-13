@@ -6,5 +6,6 @@ const API_ROUTES = {
   GET_AMBASSADOR_INFO: 'api/ambassadors/me',
   REGISTRATION_DETAILS: 'api/users',
   EVENT_USER_LOGIN: 'api/event/login',
+  EVENT_USER_VERIFY: 'api/event/me',
 };
 export default API_ROUTES;

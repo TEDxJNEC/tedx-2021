@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
+import ROUTES from 'constants/routes';
+import API_ROUTES from 'constants/api';
 import 'common/stream.scss';
+import axios from 'axios';
 
 const VideoPageWrapper = styled.div`
   min-height: 100vh;
@@ -54,13 +58,30 @@ const AccWrapper = styled.div`
 `;
 
 const Stream = () => {
-  useEffect(() => {
-    document.addEventListener('contextmenu', (e) => {
-      e.preventDefault();
-    });
-    document.querySelectorAll('button', (e) => {
-      e.preventDefault();
-    });
+  const { USER_LOGIN } = ROUTES;
+  const { EVENT_USER_VERIFY } = API_ROUTES;
+  const history = useHistory();
+  useEffect(async () => {
+    const eventToken = localStorage.getItem('eventToken');
+    if (eventToken) {
+      try {
+        const resp = await axios.get(
+          `${process.env.REACT_APP_BACKEND_URL}/${EVENT_USER_VERIFY}`,
+          { headers: { token: eventToken } }
+        );
+        console.log(resp);
+        document.addEventListener('contextmenu', (e) => {
+          e.preventDefault();
+        });
+        document.querySelectorAll('button', (e) => {
+          e.preventDefault();
+        });
+      } catch (error) {
+        history.push(USER_LOGIN);
+      }
+    } else {
+      history.push(USER_LOGIN);
+    }
   }, []);
   return (
     <VideoPageWrapper>
