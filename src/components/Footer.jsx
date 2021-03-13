@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import {
   Logo,
@@ -14,8 +14,31 @@ import {
 import ROUTES from 'constants/routes';
 import { Link } from 'react-router-dom';
 
-const { HOME, ABOUT, TEAM, HIGHLIGHT, REGISTRATION } = ROUTES;
+const { HOME, ABOUT, TEAM, HIGHLIGHT, REGISTRATION, STREAM } = ROUTES;
 const Footer = () => {
+  let interval = useRef();
+  const [difference, setDifference] = useState();
+
+  const timer = () => {
+    const countDownTime = new Date('March 14, 2021 15:00:00').getTime();
+
+    interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDownTime - now;
+
+      if (distance < 0) {
+        setDifference(distance);
+        clearInterval(interval.current);
+      }
+    }, 1000);
+  };
+  useEffect(() => {
+    timer();
+    return () => {
+      clearInterval(interval.current);
+    };
+  }, []);
+
   return (
     <div>
       <footer>
@@ -92,7 +115,9 @@ const Footer = () => {
                 <Link to={HIGHLIGHT}>Highlights</Link>
               </li>
               <li>
-                <Link to={REGISTRATION}>Registrations</Link>
+                <Link to={difference < 0 ? STREAM : REGISTRATION}>
+                  {difference < 0 ? 'Event' : 'Registrations'}
+                </Link>
               </li>
             </ul>
           </div>

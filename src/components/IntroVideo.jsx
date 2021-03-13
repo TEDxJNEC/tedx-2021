@@ -14,7 +14,7 @@ import logo from 'assets/JNEC-black.svg';
 import ThemeLogo from 'assets/theme-logo.svg';
 import Spinner from './Spinner';
 
-const { REGISTRATION } = ROUTES;
+const { REGISTRATION, STREAM } = ROUTES;
 const BookingButton = styled(NavLink)`
   position: absolute;
   bottom: 32px;
@@ -65,6 +65,30 @@ const VideoSection = ({
       }
     }
   }, [ratio]);
+
+  let interval = useRef();
+  const [difference, setDifference] = useState();
+
+  const timer = () => {
+    const countDownTime = new Date('March 14, 2021 15:00:00').getTime();
+
+    interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDownTime - now;
+
+      if (distance < 0) {
+        setDifference(distance);
+        clearInterval(interval.current);
+      }
+    }, 1000);
+  };
+  useEffect(() => {
+    timer();
+    return () => {
+      clearInterval(interval.current);
+    };
+  }, []);
+
   useEffect(() => {
     setIsVideoLoaded(true);
   }, []);
@@ -103,7 +127,9 @@ const VideoSection = ({
         </div>
       ) : null}
       <div className="video-mask">
-        <BookingButton to={REGISTRATION}>Book Tickets</BookingButton>
+        <BookingButton to={difference < 0 ? STREAM : REGISTRATION}>
+          {difference < 0 ? 'EVENT' : 'BOOK TICKETS'}
+        </BookingButton>
       </div>
     </section>
   );
