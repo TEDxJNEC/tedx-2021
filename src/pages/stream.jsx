@@ -19,6 +19,12 @@ const Iframe = styled.iframe`
   height: 100%;
   width: 100%;
 `;
+const TransMask = styled.div`
+  position: fixed;
+  height: calc(100% - 60px);
+  width: 100%;
+`;
+
 const YTMask = styled.div`
   position: absolute;
   height: 40px;
@@ -43,6 +49,7 @@ const AccWrapper = styled.div`
   left: 9px;
   top: 10px;
 `;
+
 const Stream = () => {
   useEffect(() => {
     document.addEventListener('contextmenu', (e) => {
@@ -55,8 +62,9 @@ const Stream = () => {
   return (
     <VideoPageWrapper>
       <VideoWrapper>
+        <TransMask />
         <Iframe
-          src="https://www.youtube.com/embed/r3Hb0ZAmOwU?rel=0&autoplay=1&modestbranding=1&showinfo=0&controls=0&autohide=2&disablekb=1&version=3"
+          src="https://www.youtube-nocookie.com/embed/GgI4SL1mdpE?rel=0&autoplay=1&modestbranding=1&showinfo=0&controls=1&autohide=2&disablekb=1&version=3"
           frameBorder="0"
           allow="autoplay; encrypted-media"
           allowFullScreen
