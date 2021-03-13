@@ -79,6 +79,10 @@ const TNCPage = Loadable({
   loader: () => import('pages/tnc'),
   loading: Loader,
 });
+const StreamPage = Loadable({
+  loader: () => import('pages/stream'),
+  loading: Loader,
+});
 const RegistrationSuccess = Loadable({
   loader: () => import('pages/success-registration'),
   loading: Loader,
@@ -123,11 +127,8 @@ const Routes = () => {
     AMBASSADOR_REGISTRATION,
     PAYMENT_SUCCESS,
     LOGOUT,
-<<<<<<< Updated upstream
-=======
     STREAM,
     USER_CREDENTIALS,
->>>>>>> Stashed changes
   } = ROUTES;
   return (
     <AuthContext.Provider
