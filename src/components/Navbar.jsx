@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useRef, useState, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from 'routes';
 import CloseMenu from 'components/icons/CloseMenu';
@@ -12,12 +12,34 @@ const {
   ABOUT,
   TEAM,
   REGISTRATION,
+  STREAM,
   LOGOUT,
   AMBASSADOR_DASHBOARD,
 } = ROUTES;
 
 const Desktop = ({ state }) => {
-  useEffect(() => {}, []);
+  let interval = useRef();
+  const [difference, setDifference] = useState();
+
+  const timer = () => {
+    const countDownTime = new Date('March 14, 2021 15:00:00').getTime();
+
+    interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDownTime - now;
+
+      if (distance < 0) {
+        setDifference(distance);
+        clearInterval(interval.current);
+      }
+    }, 1000);
+  };
+  useEffect(() => {
+    timer();
+    return () => {
+      clearInterval(interval.current);
+    };
+  }, []);
   return (
     <>
       <nav>
@@ -37,12 +59,12 @@ const Desktop = ({ state }) => {
           </NavLink>
 
           <NavLink
-            to={REGISTRATION}
+            to={difference < 0 ? STREAM : REGISTRATION}
             exact
             activeClassName="active"
             className="title"
           >
-            BOOK TICKETS
+            {difference < 0 ? 'EVENT' : 'BOOK TICKETS'}
           </NavLink>
           {state.isLoggedIn && state.type === 'amb' ? (
             <NavLink
