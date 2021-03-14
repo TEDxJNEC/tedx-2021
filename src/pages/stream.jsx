@@ -100,7 +100,7 @@ const Stream = () => {
       <VideoWrapper>
         <TransMask />
         <Iframe
-          src="https://www.youtube-nocookie.com/embed/GgI4SL1mdpE?rel=0&autoplay=1&modestbranding=1&showinfo=0&controls=1&autohide=2&disablekb=1&version=3"
+          src="https://www.youtube-nocookie.com/embed/mUV53vKdEDc?rel=0&autoplay=1&modestbranding=1&showinfo=0&controls=1&autohide=2&disablekb=1&version=3"
           frameBorder="0"
           allow="autoplay; encrypted-media"
           allowFullScreen
