@@ -69,6 +69,8 @@ const Stream = () => {
           `${process.env.REACT_APP_BACKEND_URL}/${EVENT_USER_VERIFY}`,
           { headers: { token: eventToken } }
         );
+        document.documentElement.requestFullscreen();
+
         document.addEventListener('contextmenu', (e) => {
           e.preventDefault();
         });
