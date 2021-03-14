@@ -1,2 +1,0 @@
-(this["webpackJsonptedx-2021"]=this["webpackJsonptedx-2021"]||[]).push([[23],{324:function(t,e,c){"use strict";c.r(e);var n=c(1),s=c(4),u=c(22),i=c(0);e.default=function(){var t=Object(s.g)(),e=Object(n.useContext)(u.a).dispatch;return Object(n.useEffect)((function(){e({type:"LOGOUT"}),t.push("/")}),[]),Object(i.jsx)("div",{children:"Logging Out"})}}}]);
-//# sourceMappingURL=23.cd54635b.chunk.js.map

@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/common/stream.scss"],"names":[],"mappings":"AAAA,0DAEE,sBAAwB,CACxB,6BAA+B,CAChC,eAGC,mBAAoB","file":"18.1b35af57.chunk.css","sourcesContent":[".ytp-hide-controls .ytp-watermark,\n.ytp-chrome-top-buttons {\n  display: none !important;\n  pointer-events: none !important;\n}\n\n.ytp-watermark {\n  pointer-events: none;\n}\n"]}
