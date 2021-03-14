@@ -1,21 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import 'common/admin_login.scss';
 import img from 'assets/Login.svg';
 import axios from 'axios';
 import API_ROUTES from 'constants/api';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import ROUTES from 'constants/routes';
+import { AuthContext } from 'routes';
 
 const ErrorMessage = styled.div`
   color: red;
   margin: 12px auto;
 `;
+// const Disclaimer = styled.div`
+//   color: #ccc;
+//   font-size: 12px;
+// `;
+const Help = styled(Link)`
+  color: #f6c90e;
+  margin-top: 24px;
+`;
+const MessageFlex = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 const AdminLogin = () => {
+  // eslint-disable-next-line no-unused-vars
+  const { state, dispatch } = useContext(AuthContext);
   const [info, setinfo] = useState({
     username: '',
     password: '',
   });
+
   const [errors, setError] = useState('');
   const { EVENT_USER_LOGIN } = API_ROUTES;
   const { STREAM } = ROUTES;
@@ -54,11 +70,18 @@ const AdminLogin = () => {
       .post(`${process.env.REACT_APP_BACKEND_URL}/${EVENT_USER_LOGIN}`, payload)
       .then((resp) => {
         localStorage.setItem('eventToken', resp.data.token);
+        dispatch({
+          type: 'EVENT_LOGIN',
+          payload: {
+            eventToken: resp.data.token,
+          },
+        });
         localStorage.setItem('eventEmail', resp.data.user.email);
         history.push(STREAM);
       })
-      // eslint-disable-next-line no-console
+
       .catch((err) => {
+        // eslint-disable-next-line no-console
         console.log(err);
         setError('Invalid Credentials');
       });
@@ -94,7 +117,14 @@ const AdminLogin = () => {
           <span>Password</span>
         </div>
         <button type="submit">LOG IN</button>
-        <ErrorMessage>{errors}</ErrorMessage>
+        {/* <Disclaimer>
+          Ios users: Kindly turn private browsing off before logging in as its
+          known to cause issues
+        </Disclaimer> */}
+        <MessageFlex>
+          <ErrorMessage>{errors}</ErrorMessage>
+          <Help to="/help">Help</Help>
+        </MessageFlex>
       </form>
     </div>
   );

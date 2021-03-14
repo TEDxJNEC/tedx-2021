@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import ROUTES from 'constants/routes';
 import API_ROUTES from 'constants/api';
 import 'common/stream.scss';
 import axios from 'axios';
+import { AuthContext } from 'routes';
 
 const VideoPageWrapper = styled.div`
   min-height: 100vh;
@@ -58,18 +59,28 @@ const AccWrapper = styled.div`
 `;
 
 const Stream = () => {
+  // eslint-disable-next-line no-unused-vars
+  const { state, dispatch } = useContext(AuthContext);
   const { USER_LOGIN } = ROUTES;
   const { EVENT_USER_VERIFY } = API_ROUTES;
   const history = useHistory();
   useEffect(async () => {
-    const eventToken = localStorage.getItem('eventToken');
+    let eventToken = localStorage.getItem('eventToken');
+    if (!eventToken) {
+      eventToken = state.eventToken;
+    }
     if (eventToken) {
       try {
         await axios.get(
           `${process.env.REACT_APP_BACKEND_URL}/${EVENT_USER_VERIFY}`,
           { headers: { token: eventToken } }
         );
-        document.documentElement.requestFullscreen();
+        try {
+          document.documentElement.requestFullscreen();
+        } catch (error) {
+          // eslint-disable-next-line no-console
+          console.log(error);
+        }
 
         document.addEventListener('contextmenu', (e) => {
           e.preventDefault();

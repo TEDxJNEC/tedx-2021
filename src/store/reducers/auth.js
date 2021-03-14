@@ -4,6 +4,7 @@ export const initialState = {
   token: JSON.parse(localStorage.getItem('token')) || null,
   type: JSON.parse(localStorage.getItem('type')) || null,
   amb: JSON.parse(localStorage.getItem('amb')) || null,
+  eventToken: localStorage.getItem('eventToken') || null,
 };
 
 export const reducer = (state, action) => {
@@ -49,6 +50,12 @@ export const reducer = (state, action) => {
       return {
         ...state,
         amb: action.payload.amb,
+      };
+    }
+    case 'EVENT_LOGIN': {
+      return {
+        ...state,
+        eventToken: action.payload.eventToken,
       };
     }
 

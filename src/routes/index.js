@@ -13,6 +13,7 @@ export const AuthContext = createContext({
   isLoggedIn: JSON.parse(localStorage.getItem('isLoggedIn')) || false,
   user: JSON.parse(localStorage.getItem('user')) || null,
   token: JSON.parse(localStorage.getItem('token')) || null,
+  eventToken: localStorage.getItem('eventToken') || null,
 });
 const Home = Loadable({
   loader: () => import('pages'),
