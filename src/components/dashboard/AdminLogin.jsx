@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import 'common/admin_login.scss';
 import img from 'assets/Login.svg';
 import axios from 'axios';
@@ -6,17 +7,22 @@ import API_ROUTES from 'constants/api';
 import { useHistory } from 'react-router-dom';
 import ROUTES from 'constants/routes';
 
+const ErrorMessage = styled.div`
+  color: red;
+  margin: 12px auto;
+`;
 const AdminLogin = () => {
   const [info, setinfo] = useState({
     username: '',
     password: '',
   });
-
+  const [errors, setError] = useState('');
   const { EVENT_USER_LOGIN } = API_ROUTES;
   const { STREAM } = ROUTES;
   const history = useHistory();
 
   const inputEvent = (event) => {
+    setError('');
     // console.log(event.target.name);
     // console.log(event.target.value);
     const { value, name } = event.target;
@@ -52,7 +58,10 @@ const AdminLogin = () => {
         history.push(STREAM);
       })
       // eslint-disable-next-line no-console
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setError('Invalid Credentials');
+      });
   };
 
   return (
@@ -85,6 +94,7 @@ const AdminLogin = () => {
           <span>Password</span>
         </div>
         <button type="submit">LOG IN</button>
+        <ErrorMessage>{errors}</ErrorMessage>
       </form>
     </div>
   );
