@@ -40,14 +40,14 @@ const Highlights = Loadable({
   loader: () => import('pages/highlights'),
   loading: Loader,
 });
-const Registration = Loadable({
-  loader: () => import('pages/registration'),
-  loading: Loader,
-});
-const Login = Loadable({
-  loader: () => import('pages/login'),
-  loading: Loader,
-});
+// const Registration = Loadable({
+//   loader: () => import('pages/registration'),
+//   loading: Loader,
+// });
+// const Login = Loadable({
+//   loader: () => import('pages/login'),
+//   loading: Loader,
+// });
 const AdminLogin = Loadable({
   loader: () => import('pages/admin/login'),
   loading: Loader,
@@ -105,6 +105,10 @@ const LogoutPage = Loadable({
   loader: () => import('pages/logout'),
   loading: Loader,
 });
+const RegClose = Loadable({
+  loader: () => import('pages/regclose'),
+  loading: Loader,
+});
 
 const Routes = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -145,7 +149,7 @@ const Routes = () => {
           <Route exact path={DASHBOARD} component={Dashboard} />
           <Route exact path={TEAM} component={Team} />
           <Route exact path={HIGHLIGHT} component={Highlights} />
-          <Route exact path={LOGIN} component={Login} />
+          <Route exact path={LOGIN} component={RegClose} />
           <Route exact path={USER_LOGIN} component={AdminLogin} />
           <Route exact path={AMBASSADOR_LOGIN} component={AmbassdorLogin} />
           <Route exact path={TNC} component={TNCPage} />
@@ -176,7 +180,7 @@ const Routes = () => {
           <Route
             exact
             path={REGISTRATION}
-            render={(props) => <Registration {...props} propState={state} />}
+            render={(props) => <RegClose {...props} />}
           />
           <Route
             exact
