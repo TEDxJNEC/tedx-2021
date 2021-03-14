@@ -169,12 +169,12 @@ const Mobile = ({ state }) => {
               TEAM
             </NavLink>
             <NavLink
-              to={REGISTRATION}
+              to={difference < 0 ? STREAM : REGISTRATION}
               exact
               activeClassName="active"
               className="title"
             >
-              BOOK TICKETS
+              {difference < 0 ? 'EVENT' : 'BOOK TICKETS'}
             </NavLink>
             {state.isLoggedIn && state.type === 'amb' ? (
               <NavLink
