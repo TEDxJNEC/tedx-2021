@@ -1,15 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 import * as queryString from 'query-string';
 import CollegeAmbassdor from 'assets/CollegeAmbassdor.svg';
 import img from 'assets/JNEC.svg';
 import img1 from 'assets/search.svg';
 import { Google } from 'components/icons';
 import 'common/ambassdorlogin.scss';
-
-const Img = styled.img`
-  width: 600px;
-`;
 
 const AmbassdorLogin = () => {
   const stringifiedParams = queryString.stringify({
@@ -28,7 +23,7 @@ const AmbassdorLogin = () => {
   return (
     <div className="container">
       <div className="sperator">
-        <Img src={CollegeAmbassdor} alt="illustration" />
+        <img src={CollegeAmbassdor} alt="illustration" />
       </div>
       <div>
         <div className="login-card">
