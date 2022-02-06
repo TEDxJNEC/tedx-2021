@@ -1,8 +1,10 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/control-has-associated-label */
+import React, { useRef } from 'react';
 import { animated } from 'react-spring';
 import '../common/tempteam.scss';
 import { Link } from 'react-router-dom';
 import teamHeading from 'assets/team/teamHeadings';
+import useHorizontalNavRef from 'hooks/useHorizontalNavRef';
 
 const teamName = [
   'official',
@@ -20,10 +22,22 @@ const teamName = [
   'dop',
 ];
 const TempTeam = () => {
+  const ScrollNavRef = useRef(null);
+  const {
+    hasLeftItems,
+    handleLeftNav,
+    hasRightItems,
+    handleRightNav,
+  } = useHorizontalNavRef(ScrollNavRef);
   return (
     <div className="team-list">
-      <div className="left arrow" />
-      <div className="container-team-list">
+      <button
+        type="button"
+        disabled={hasLeftItems}
+        onClick={handleLeftNav}
+        className="left arrow"
+      />
+      <div ref={ScrollNavRef} className="container-team-list">
         {teamName.map((txt) => (
           <animated.div key={txt} className="card-team-list">
             <Link
@@ -35,7 +49,12 @@ const TempTeam = () => {
           </animated.div>
         ))}
       </div>
-      <div className="right arrow" />
+      <button
+        type="button"
+        disabled={hasRightItems}
+        onClick={handleRightNav}
+        className="right arrow"
+      />
     </div>
   );
 };
