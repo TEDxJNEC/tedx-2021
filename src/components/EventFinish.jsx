@@ -2,6 +2,7 @@ import React from 'react';
 import 'common/about-theme.scss';
 
 import KintsugiHeadline from 'assets/theme-logo.svg';
+import TalksGrid from './TalksGrid';
 
 const AboutTheme = () => {
   return (
@@ -18,6 +19,7 @@ const AboutTheme = () => {
         <div className="about-theme-flex">
           <div className="highlights-heading">TEDx JNEC 2021</div>
         </div>
+        <TalksGrid />
       </div>
     </div>
   );

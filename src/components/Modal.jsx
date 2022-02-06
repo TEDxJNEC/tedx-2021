@@ -22,8 +22,8 @@ const ModalWidths = {
 
 export const ModalStyles = styled.div`
   position: fixed;
-  transform: translate(-50%, 0%);
-  background-color: #fff;
+  transform: translate(-50%, -50%);
+  background-color: hsl(0, 0%, 16%);
   z-index: ${1000};
   border-radius: 10px;
   width: 90%;
@@ -39,7 +39,7 @@ export const ModalStyles = styled.div`
     overflow-x: hidden;
     top: 50%;
     bottom: unset;
-    transform: translate(-50%, -50%);
+
     &::-webkit-scrollbar {
       display: none;
     }
@@ -68,7 +68,7 @@ export const ModalHeader = styled.div`
   justify-content: ${({ heading }) => (heading ? 'space-between' : 'flex-end')};
 `;
 
-const Modal = ({ children, isOpen, onClose, heading }) => {
+const Modal = ({ children, isOpen, onClose }) => {
   const ref = useRef(null);
 
   const handleClickOutside = () => {
@@ -85,10 +85,7 @@ const Modal = ({ children, isOpen, onClose, heading }) => {
   return (
     <Portal>
       <OverlayStyles />
-      <ModalStyles ref={ref} size={ModalWidths.normal}>
-        <ModalHeader heading={!!heading}>
-          {heading && <ModalHeading>{heading}</ModalHeading>}
-        </ModalHeader>
+      <ModalStyles ref={ref} size={ModalWidths.wide}>
         {children}
       </ModalStyles>
     </Portal>
