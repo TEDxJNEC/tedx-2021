@@ -1,7 +1,9 @@
-import React from 'react';
+/* eslint-disable jsx-a11y/control-has-associated-label */
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { useSpring } from 'react-spring';
 import { useScroll } from 'react-use-gesture';
+import useHorizontalNavRef from 'hooks/useHorizontalNavRef';
 import '../common/partners.scss';
 import SpeakersCard from './SpeakersCard';
 import SpeakersData from '../assets/speakersData.json';
@@ -24,10 +26,7 @@ const clamp = (value, clampAt = 30) => {
 const SpeakerCardWrapper = styled.div`
   position: relative;
 `;
-const Padder = styled.div`
-  width: 1rem;
-  height: 100%;
-`;
+
 const partners = [
   amol,
   baluji,
@@ -50,12 +49,18 @@ const Speakers = () => {
       }deg)`,
     });
   });
-
+  const ScrollNavRef = useRef(null);
+  const {
+    hasLeftItems,
+    handleLeftNav,
+    hasRightItems,
+    handleRightNav,
+  } = useHorizontalNavRef(ScrollNavRef);
   return (
     <div className="speakers-wrapper">
       <div className="speakers-heading">SPEAKERS</div>
       <hr className="speakers-heading-underline" />
-      <div className="container__speakers" {...bind()}>
+      <div ref={ScrollNavRef} className="container__speakers" {...bind()}>
         {partners.map((src, index) => (
           <SpeakerCardWrapper>
             <SpeakersCard
@@ -65,10 +70,20 @@ const Speakers = () => {
             />
           </SpeakerCardWrapper>
         ))}
-        <Padder />
-        <div className="left arrow" />
-        <div className="right arrow" />
       </div>
+
+      <button
+        type="button"
+        disabled={hasLeftItems}
+        onClick={handleLeftNav}
+        className="left arrow"
+      />
+      <button
+        type="button"
+        disabled={hasRightItems}
+        onClick={handleRightNav}
+        className="right arrow"
+      />
     </div>
   );
 };
